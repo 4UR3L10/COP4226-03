@@ -16,5 +16,10 @@ namespace NeatOffice
         {
             InitializeComponent();
         }
+
+        private void StripMenuFileExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
