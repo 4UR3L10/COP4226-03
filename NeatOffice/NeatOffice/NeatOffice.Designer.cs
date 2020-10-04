@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NeatOffice));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.StripMenuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuAppearance = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFileItemClearCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFileItemSaveCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFilePrintCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFileSaveMinimumSpanningTreeAs = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFileSaveShortestPathAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuOpenCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuOpenGraphMatrixTxT = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuOpenGraphMatrixCSV = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuOpenMultipleGraphs = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuAppearance = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuAppearanceModifyCalculatorDisplayFont = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuAppearanceModifyBackgroundColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuHelpProjectDocumentation = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuHelpHowTo = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,7 @@
             this.StripMenuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(953, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(921, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "File";
             // 
@@ -81,6 +81,46 @@
             this.StripMenuFile.Name = "StripMenuFile";
             this.StripMenuFile.Size = new System.Drawing.Size(54, 29);
             this.StripMenuFile.Text = "File";
+            // 
+            // StripMenuOpen
+            // 
+            this.StripMenuOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StripMenuOpenCalculatorHistory,
+            this.StripMenuOpenGraphMatrixTxT,
+            this.StripMenuOpenGraphMatrixCSV,
+            this.StripMenuOpenMultipleGraphs});
+            this.StripMenuOpen.Name = "StripMenuOpen";
+            this.StripMenuOpen.Size = new System.Drawing.Size(72, 29);
+            this.StripMenuOpen.Text = "Open";
+            // 
+            // StripMenuAppearance
+            // 
+            this.StripMenuAppearance.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StripMenuAppearanceModifyCalculatorDisplayFont,
+            this.StripMenuAppearanceModifyBackgroundColor});
+            this.StripMenuAppearance.Name = "StripMenuAppearance";
+            this.StripMenuAppearance.Size = new System.Drawing.Size(122, 29);
+            this.StripMenuAppearance.Text = "Appearance";
+            // 
+            // StripMenuHelp
+            // 
+            this.StripMenuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StripMenuHelpAbout,
+            this.StripMenuHelpProjectDocumentation,
+            this.StripMenuHelpHowTo,
+            this.StripMenuHelpTutorials,
+            this.aboutToolStripMenuItem2});
+            this.StripMenuHelp.Name = "StripMenuHelp";
+            this.StripMenuHelp.Size = new System.Drawing.Size(65, 29);
+            this.StripMenuHelp.Text = "Help";
+            // 
+            // StripMenuFileExit
+            // 
+            this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
+            this.StripMenuFileExit.Name = "StripMenuFileExit";
+            this.StripMenuFileExit.Size = new System.Drawing.Size(379, 34);
+            this.StripMenuFileExit.Text = "Exit";
+            this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
             // 
             // StripMenuFileItemClearCalculatorHistory
             // 
@@ -117,25 +157,6 @@
             this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(379, 34);
             this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
             // 
-            // StripMenuFileExit
-            // 
-            this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown1;
-            this.StripMenuFileExit.Name = "StripMenuFileExit";
-            this.StripMenuFileExit.Size = new System.Drawing.Size(379, 34);
-            this.StripMenuFileExit.Text = "Exit";
-            this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
-            // 
-            // StripMenuOpen
-            // 
-            this.StripMenuOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripMenuOpenCalculatorHistory,
-            this.StripMenuOpenGraphMatrixTxT,
-            this.StripMenuOpenGraphMatrixCSV,
-            this.StripMenuOpenMultipleGraphs});
-            this.StripMenuOpen.Name = "StripMenuOpen";
-            this.StripMenuOpen.Size = new System.Drawing.Size(72, 29);
-            this.StripMenuOpen.Text = "Open";
-            // 
             // StripMenuOpenCalculatorHistory
             // 
             this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
@@ -164,15 +185,6 @@
             this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(260, 34);
             this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
             // 
-            // StripMenuAppearance
-            // 
-            this.StripMenuAppearance.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripMenuAppearanceModifyCalculatorDisplayFont,
-            this.StripMenuAppearanceModifyBackgroundColor});
-            this.StripMenuAppearance.Name = "StripMenuAppearance";
-            this.StripMenuAppearance.Size = new System.Drawing.Size(122, 29);
-            this.StripMenuAppearance.Text = "Appearance";
-            // 
             // StripMenuAppearanceModifyCalculatorDisplayFont
             // 
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
@@ -186,18 +198,6 @@
             this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
             this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(350, 34);
             this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
-            // 
-            // StripMenuHelp
-            // 
-            this.StripMenuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripMenuHelpAbout,
-            this.StripMenuHelpProjectDocumentation,
-            this.StripMenuHelpHowTo,
-            this.StripMenuHelpTutorials,
-            this.aboutToolStripMenuItem2});
-            this.StripMenuHelp.Name = "StripMenuHelp";
-            this.StripMenuHelp.Size = new System.Drawing.Size(65, 29);
-            this.StripMenuHelp.Text = "Help";
             // 
             // StripMenuHelpAbout
             // 
@@ -238,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 537);
+            this.ClientSize = new System.Drawing.Size(921, 537);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
