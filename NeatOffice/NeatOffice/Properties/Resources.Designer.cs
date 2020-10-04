@@ -233,16 +233,6 @@ namespace NeatOffice.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShutDown1 {
-            get {
-                object obj = ResourceManager.GetObject("ShutDown1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap TXT {
             get {
                 object obj = ResourceManager.GetObject("TXT", resourceCulture);
