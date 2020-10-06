@@ -61,18 +61,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Other Files\undirectedConnected10000.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -85,9 +86,27 @@
   <ItemGroup>
     <Content Include="Other Files\undirectedConnected100.txt" />
     <Content Include="Other Files\undirectedConnected1000.txt" />
+    <None Include="Resources\Delete.ico" />
+    <None Include="Resources\Recursos.ico" />
+    <None Include="Resources\AboutUs.ico" />
+    <None Include="Resources\HowTo.ico" />
+    <None Include="Resources\Documentation.ico" />
+    <None Include="Resources\Manual.ico" />
+    <None Include="Resources\BackgroundColor.ico" />
+    <None Include="Resources\Font.ico" />
+    <None Include="Resources\MultipleGraph.ico" />
+    <None Include="Resources\CSV.ico" />
+    <None Include="Resources\TXT.ico" />
+    <None Include="Resources\CalcHistory.ico" />
+    <None Include="Resources\ShutDown.ico" />
+    <None Include="Resources\ShutDown.png" />
+    <None Include="Resources\ShorPath.ico" />
+    <None Include="Resources\BTree.ico" />
+    <None Include="Resources\Printer.ico" />
+    <None Include="Resources\Save.ico" />
+    <None Include="Resources\Eraser.ico" />
+    <None Include="Resources\Log.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
