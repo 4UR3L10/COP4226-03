@@ -71,6 +71,9 @@
             this.labelDays = new System.Windows.Forms.Label();
             this.labelDayCounter = new System.Windows.Forms.Label();
             this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripLabelReady = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLeft = new System.Windows.Forms.ToolStrip();
             this.ToolStripLeftButtonSafe = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonDelete = new System.Windows.Forms.ToolStripButton();
@@ -112,12 +115,14 @@
             this.statusStripGreeting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).BeginInit();
             this.splitContainerInside.Panel1.SuspendLayout();
+            this.splitContainerInside.Panel2.SuspendLayout();
             this.splitContainerInside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCalculatorandDayCounter)).BeginInit();
             this.splitContainerCalculatorandDayCounter.Panel1.SuspendLayout();
             this.splitContainerCalculatorandDayCounter.Panel2.SuspendLayout();
             this.splitContainerCalculatorandDayCounter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.toolStripLeft.SuspendLayout();
             this.toolStripRight.SuspendLayout();
             this.toolStripTop.SuspendLayout();
@@ -346,7 +351,7 @@
             // toolStripContainerMain.ContentPanel
             // 
             this.toolStripContainerMain.ContentPanel.Controls.Add(this.splitContainerInside);
-            this.toolStripContainerMain.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerMain.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerMain.ContentPanel.Size = new System.Drawing.Size(778, 549);
             this.toolStripContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
@@ -354,7 +359,7 @@
             // 
             this.toolStripContainerMain.LeftToolStripPanel.Controls.Add(this.toolStripLeft);
             this.toolStripContainerMain.Location = new System.Drawing.Point(0, 24);
-            this.toolStripContainerMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerMain.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerMain.Name = "toolStripContainerMain";
             // 
             // toolStripContainerMain.RightToolStripPanel
@@ -389,13 +394,17 @@
             // 
             this.splitContainerInside.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerInside.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerInside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainerInside.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerInside.Name = "splitContainerInside";
             // 
             // splitContainerInside.Panel1
             // 
             this.splitContainerInside.Panel1.Controls.Add(this.splitContainerCalculatorandDayCounter);
             this.splitContainerInside.Panel1.Controls.Add(this.splitterRightSideCalculatorandDayCounter);
+            // 
+            // splitContainerInside.Panel2
+            // 
+            this.splitContainerInside.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainerInside.Size = new System.Drawing.Size(778, 549);
             this.splitContainerInside.SplitterDistance = 324;
             this.splitContainerInside.SplitterWidth = 3;
@@ -406,7 +415,7 @@
             this.splitContainerCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerCalculatorandDayCounter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainerCalculatorandDayCounter.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainerCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerCalculatorandDayCounter.Name = "splitContainerCalculatorandDayCounter";
             this.splitContainerCalculatorandDayCounter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -425,7 +434,7 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(317, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 307;
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 309;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
             // 
@@ -437,7 +446,7 @@
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelCalculator.Location = new System.Drawing.Point(14, 63);
-            this.tableLayoutPanelCalculator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelCalculator.Name = "tableLayoutPanelCalculator";
             this.tableLayoutPanelCalculator.RowCount = 7;
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
@@ -454,8 +463,8 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 299);
-            this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 301);
+            this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(317, 8);
             this.splitterBottomCalculator.TabIndex = 0;
@@ -464,17 +473,18 @@
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Location = new System.Drawing.Point(50, 102);
-            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePickerTo.Size = new System.Drawing.Size(202, 20);
             this.dateTimePickerTo.TabIndex = 6;
+            this.dateTimePickerTo.CloseUp += new System.EventHandler(this.dateTimePickerTo_CloseUp);
             // 
             // dateTimePickerFrom
             // 
             this.dateTimePickerFrom.Location = new System.Drawing.Point(50, 71);
-            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(202, 20);
             this.dateTimePickerFrom.TabIndex = 5;
             // 
             // labelTo
@@ -500,7 +510,7 @@
             // numericUpDownDays
             // 
             this.numericUpDownDays.Location = new System.Drawing.Point(161, 137);
-            this.numericUpDownDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownDays.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownDays.Name = "numericUpDownDays";
             this.numericUpDownDays.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownDays.TabIndex = 2;
@@ -530,11 +540,34 @@
             this.splitterRightSideCalculatorandDayCounter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterRightSideCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Right;
             this.splitterRightSideCalculatorandDayCounter.Location = new System.Drawing.Point(317, 0);
-            this.splitterRightSideCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitterRightSideCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2);
             this.splitterRightSideCalculatorandDayCounter.Name = "splitterRightSideCalculatorandDayCounter";
             this.splitterRightSideCalculatorandDayCounter.Size = new System.Drawing.Size(7, 549);
             this.splitterRightSideCalculatorandDayCounter.TabIndex = 0;
             this.splitterRightSideCalculatorandDayCounter.TabStop = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar,
+            this.toolStripLabelReady});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 524);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(451, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripProgressBar
+            // 
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 22);
+            // 
+            // toolStripLabelReady
+            // 
+            this.toolStripLabelReady.Name = "toolStripLabelReady";
+            this.toolStripLabelReady.Size = new System.Drawing.Size(42, 22);
+            this.toolStripLabelReady.Text = "Ready!";
             // 
             // toolStripLeft
             // 
@@ -589,7 +622,7 @@
             // ToolStripLeftButtonXToY
             // 
             this.ToolStripLeftButtonXToY.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonXToY.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonXToY.Image")));
+            this.ToolStripLeftButtonXToY.Image = global::NeatOffice.Properties.Resources.power;
             this.ToolStripLeftButtonXToY.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripLeftButtonXToY.Name = "ToolStripLeftButtonXToY";
             this.ToolStripLeftButtonXToY.Size = new System.Drawing.Size(27, 28);
@@ -602,15 +635,16 @@
             // ToolStripLeftButtonSin
             // 
             this.ToolStripLeftButtonSin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonSin.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonSin.Image")));
+            this.ToolStripLeftButtonSin.Image = global::NeatOffice.Properties.Resources.sine;
             this.ToolStripLeftButtonSin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripLeftButtonSin.Name = "ToolStripLeftButtonSin";
             this.ToolStripLeftButtonSin.Size = new System.Drawing.Size(27, 28);
             // 
             // ToolStripLeftButtonCos
             // 
+            this.ToolStripLeftButtonCos.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ToolStripLeftButtonCos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonCos.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonCos.Image")));
+            this.ToolStripLeftButtonCos.Image = global::NeatOffice.Properties.Resources.cosine;
             this.ToolStripLeftButtonCos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripLeftButtonCos.Name = "ToolStripLeftButtonCos";
             this.ToolStripLeftButtonCos.Size = new System.Drawing.Size(27, 28);
@@ -618,7 +652,7 @@
             // ToolStripLeftButtonTan
             // 
             this.ToolStripLeftButtonTan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonTan.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonTan.Image")));
+            this.ToolStripLeftButtonTan.Image = global::NeatOffice.Properties.Resources.Tangent;
             this.ToolStripLeftButtonTan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripLeftButtonTan.Name = "ToolStripLeftButtonTan";
             this.ToolStripLeftButtonTan.Size = new System.Drawing.Size(27, 28);
@@ -678,7 +712,7 @@
             // toolStripRightUnknown
             // 
             this.toolStripRightUnknown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripRightUnknown.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRightUnknown.Image")));
+            this.toolStripRightUnknown.Image = global::NeatOffice.Properties.Resources.Unknown;
             this.toolStripRightUnknown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightUnknown.Name = "toolStripRightUnknown";
             this.toolStripRightUnknown.Size = new System.Drawing.Size(27, 28);
@@ -691,7 +725,7 @@
             // toolStripRightCancel
             // 
             this.toolStripRightCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripRightCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRightCancel.Image")));
+            this.toolStripRightCancel.Image = global::NeatOffice.Properties.Resources.X1;
             this.toolStripRightCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightCancel.Name = "toolStripRightCancel";
             this.toolStripRightCancel.Size = new System.Drawing.Size(27, 28);
@@ -778,6 +812,7 @@
             this.toolStripDropDownButtonTop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonTop.Name = "toolStripDropDownButtonTop";
             this.toolStripDropDownButtonTop.Size = new System.Drawing.Size(37, 28);
+            this.toolStripDropDownButtonTop.Click += new System.EventHandler(this.toolStripDropDownButtonTop_Click);
             // 
             // CalculatortoolStripDropDown
             // 
@@ -825,6 +860,8 @@
             this.statusStripGreeting.ResumeLayout(false);
             this.statusStripGreeting.PerformLayout();
             this.splitContainerInside.Panel1.ResumeLayout(false);
+            this.splitContainerInside.Panel2.ResumeLayout(false);
+            this.splitContainerInside.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).EndInit();
             this.splitContainerInside.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel1.ResumeLayout(false);
@@ -833,6 +870,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCalculatorandDayCounter)).EndInit();
             this.splitContainerCalculatorandDayCounter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.toolStripLeft.ResumeLayout(false);
             this.toolStripLeft.PerformLayout();
             this.toolStripRight.ResumeLayout(false);
@@ -918,6 +957,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownDays;
         private System.Windows.Forms.Label labelDays;
         private System.Windows.Forms.Label labelDayCounter;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelReady;
     }
 }
 

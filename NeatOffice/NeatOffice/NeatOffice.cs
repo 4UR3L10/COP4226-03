@@ -22,6 +22,27 @@ namespace NeatOffice
         {
             this.Close();
         }
-        
+
+        private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerTo_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
+            DateTime todate = Convert.ToDateTime(dateTimePickerTo.Text);
+            if (fromdate <= todate)
+            {
+                TimeSpan ts = todate.Subtract(fromdate);
+                int days = Convert.ToInt16(ts.Days);
+                numericUpDownDays.Value = days;
+            }
+            else
+            {
+                MessageBox.Show("Error in the dates");
+            }
+            
+        }
     }
 }
