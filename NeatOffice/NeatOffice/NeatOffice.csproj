@@ -67,10 +67,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Other Files\undirectedConnected10000.csv" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +88,14 @@
   <ItemGroup>
     <Content Include="Other Files\undirectedConnected100.txt" />
     <Content Include="Other Files\undirectedConnected1000.txt" />
+    <None Include="Resources\calendar.ico" />
+    <None Include="Resources\calcu.ico" />
+    <None Include="Resources\X1.ico" />
+    <None Include="Resources\Unknown.ico" />
+    <None Include="Resources\Tangent.ico" />
+    <None Include="Resources\cosine.ico" />
+    <None Include="Resources\sine.ico" />
+    <None Include="Resources\power.ico" />
     <None Include="Resources\Delete.ico" />
     <None Include="Resources\Recursos.ico" />
     <None Include="Resources\AboutUs.ico" />
