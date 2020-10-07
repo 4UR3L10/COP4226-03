@@ -31,77 +31,110 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NeatOffice));
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.StripMenuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuAppearance = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainerMain = new System.Windows.Forms.ToolStripContainer();
-            this.toolStripTop = new System.Windows.Forms.ToolStrip();
-            this.toolStripLeft = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripRight = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.StripMenuFileItemClearCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuFileItemSaveCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuFilePrintCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.StripMenuFileSaveMinimumSpanningTreeAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuFileSaveShortestPathAs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.StripMenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuOpenCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.StripMenuOpenGraphMatrixTxT = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuOpenGraphMatrixCSV = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuOpenMultipleGraphs = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuAppearance = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuAppearanceModifyCalculatorDisplayFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuAppearanceModifyBackgroundColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuHelpProjectDocumentation = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripLeftButtonSafe = new System.Windows.Forms.ToolStripButton();
+            this.StripMenuHelpHowTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.StripMenuHelpTutorials = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainerMain = new System.Windows.Forms.ToolStripContainer();
+            this.statusStripGreeting = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.splitContainerInside = new System.Windows.Forms.SplitContainer();
+            this.splitContainerCalculatorandDayCounter = new System.Windows.Forms.SplitContainer();
+            this.textBoxCalcScreen = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelCalculator = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonLoad = new System.Windows.Forms.Button();
+            this.ButtonCloseParenthesis = new System.Windows.Forms.Button();
+            this.ButtonSave = new System.Windows.Forms.Button();
+            this.ButtonNumberOne = new System.Windows.Forms.Button();
+            this.ButtonOpenParenthesis = new System.Windows.Forms.Button();
+            this.ButtonNumberZero = new System.Windows.Forms.Button();
+            this.ButtonSignChange = new System.Windows.Forms.Button();
+            this.ButtonPowerTwo = new System.Windows.Forms.Button();
+            this.ButtonPeriod = new System.Windows.Forms.Button();
+            this.ButtonNumberNine = new System.Windows.Forms.Button();
+            this.ButtonEqual = new System.Windows.Forms.Button();
+            this.ButtonNumberEight = new System.Windows.Forms.Button();
+            this.ButtonPlus = new System.Windows.Forms.Button();
+            this.ButtonMinus = new System.Windows.Forms.Button();
+            this.ButtonMultiplication = new System.Windows.Forms.Button();
+            this.ButtonDivision = new System.Windows.Forms.Button();
+            this.ButtonOneOver = new System.Windows.Forms.Button();
+            this.ButtonPercentage = new System.Windows.Forms.Button();
+            this.ButtonBackspace = new System.Windows.Forms.Button();
+            this.ButtonClear = new System.Windows.Forms.Button();
+            this.ButtonNumberSeven = new System.Windows.Forms.Button();
+            this.ButtonNumberFour = new System.Windows.Forms.Button();
+            this.ButtonNumberFive = new System.Windows.Forms.Button();
+            this.ButtonNumberSix = new System.Windows.Forms.Button();
+            this.ButtonNumberTwo = new System.Windows.Forms.Button();
+            this.ButtonNumberThree = new System.Windows.Forms.Button();
+            this.ButtonSquareRoot = new System.Windows.Forms.Button();
+            this.ButtonCE = new System.Windows.Forms.Button();
+            this.splitterBottomCalculator = new System.Windows.Forms.Splitter();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.numericUpDownDays = new System.Windows.Forms.NumericUpDown();
+            this.labelDays = new System.Windows.Forms.Label();
+            this.labelDayCounter = new System.Windows.Forms.Label();
+            this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
+            this.toolStripLeft = new System.Windows.Forms.ToolStrip();
+            this.ToolStripLeftButtonSave = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLeftButtonLog = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonXToY = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLeftButtonSin = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonCos = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonTan = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripLeftButtonPrint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripRight = new System.Windows.Forms.ToolStrip();
             this.toolStripRightGraphTXT = new System.Windows.Forms.ToolStripButton();
             this.toolStripRightCSV = new System.Windows.Forms.ToolStripButton();
             this.toolStripRightUnknown = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRightCancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripRightDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRightSaveMinimumSpanTree = new System.Windows.Forms.ToolStripButton();
             this.toolStripRightSaveShortestPath = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRightSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRightPrint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTop = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButtonTop = new System.Windows.Forms.ToolStripDropDownButton();
             this.CalculatortoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
             this.DayCountertoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphSectiontoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileItemClearCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileItemSaveCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFilePrintCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileSaveMinimumSpanningTreeAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileSaveShortestPathAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpenCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpenGraphMatrixTxT = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpenGraphMatrixCSV = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuOpenMultipleGraphs = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuAppearanceModifyCalculatorDisplayFont = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuAppearanceModifyBackgroundColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelpProjectDocumentation = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelpHowTo = new System.Windows.Forms.ToolStripMenuItem();
-            this.StripMenuHelpTutorials = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStripGreeting = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitContainerInside = new System.Windows.Forms.SplitContainer();
-            this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
-            this.splitContainerCalculatorandDayCounter = new System.Windows.Forms.SplitContainer();
-            this.splitterBottomCalculator = new System.Windows.Forms.Splitter();
-            this.tableLayoutPanelCalculator = new System.Windows.Forms.TableLayoutPanel();
-            this.labelDayCounter = new System.Windows.Forms.Label();
-            this.labelDays = new System.Windows.Forms.Label();
-            this.numericUpDownDays = new System.Windows.Forms.NumericUpDown();
-            this.labelFrom = new System.Windows.Forms.Label();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.SaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.OpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.PrintFile = new System.Windows.Forms.PrintDialog();
+            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.menuStripTop.SuspendLayout();
             this.toolStripContainerMain.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.ContentPanel.SuspendLayout();
@@ -109,9 +142,6 @@
             this.toolStripContainerMain.RightToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.TopToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.SuspendLayout();
-            this.toolStripTop.SuspendLayout();
-            this.toolStripLeft.SuspendLayout();
-            this.toolStripRight.SuspendLayout();
             this.statusStripGreeting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).BeginInit();
             this.splitContainerInside.Panel1.SuspendLayout();
@@ -120,12 +150,15 @@
             this.splitContainerCalculatorandDayCounter.Panel1.SuspendLayout();
             this.splitContainerCalculatorandDayCounter.Panel2.SuspendLayout();
             this.splitContainerCalculatorandDayCounter.SuspendLayout();
+            this.tableLayoutPanelCalculator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).BeginInit();
+            this.toolStripLeft.SuspendLayout();
+            this.toolStripRight.SuspendLayout();
+            this.toolStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripTop
             // 
-            this.menuStripTop.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStripTop.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StripMenuFile,
@@ -134,7 +167,8 @@
             this.StripMenuHelp});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
-            this.menuStripTop.Size = new System.Drawing.Size(951, 33);
+            this.menuStripTop.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStripTop.Size = new System.Drawing.Size(836, 24);
             this.menuStripTop.TabIndex = 1;
             this.menuStripTop.Text = "File";
             // 
@@ -150,8 +184,67 @@
             this.toolStripSeparator9,
             this.StripMenuFileExit});
             this.StripMenuFile.Name = "StripMenuFile";
-            this.StripMenuFile.Size = new System.Drawing.Size(54, 30);
+            this.StripMenuFile.Size = new System.Drawing.Size(37, 20);
             this.StripMenuFile.Text = "File";
+            // 
+            // StripMenuFileItemClearCalculatorHistory
+            // 
+            this.StripMenuFileItemClearCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Eraser;
+            this.StripMenuFileItemClearCalculatorHistory.Name = "StripMenuFileItemClearCalculatorHistory";
+            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemClearCalculatorHistory.Text = "Clear calculator history";
+            this.StripMenuFileItemClearCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonDelete_Click);
+            // 
+            // StripMenuFileItemSaveCalculatorHistory
+            // 
+            this.StripMenuFileItemSaveCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Save;
+            this.StripMenuFileItemSaveCalculatorHistory.Name = "StripMenuFileItemSaveCalculatorHistory";
+            this.StripMenuFileItemSaveCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemSaveCalculatorHistory.Text = "Save calculator history as ...";
+            this.StripMenuFileItemSaveCalculatorHistory.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // StripMenuFilePrintCalculatorHistory
+            // 
+            this.StripMenuFilePrintCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Printer;
+            this.StripMenuFilePrintCalculatorHistory.Name = "StripMenuFilePrintCalculatorHistory";
+            this.StripMenuFilePrintCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFilePrintCalculatorHistory.Text = "Print calculator history";
+            this.StripMenuFilePrintCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(263, 6);
+            // 
+            // StripMenuFileSaveMinimumSpanningTreeAs
+            // 
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Image = global::NeatOffice.Properties.Resources.BTree;
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Name = "StripMenuFileSaveMinimumSpanningTreeAs";
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Text = "Save minimum spanning tree as...";
+            // 
+            // StripMenuFileSaveShortestPathAs
+            // 
+            this.StripMenuFileSaveShortestPathAs.Image = global::NeatOffice.Properties.Resources.ShorPath;
+            this.StripMenuFileSaveShortestPathAs.Name = "StripMenuFileSaveShortestPathAs";
+            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(263, 6);
+            // 
+            // StripMenuFileExit
+            // 
+            this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
+            this.StripMenuFileExit.Name = "StripMenuFileExit";
+            this.StripMenuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.StripMenuFileExit.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileExit.Text = "Exit";
+            this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
             // 
             // StripMenuOpen
             // 
@@ -162,8 +255,42 @@
             this.StripMenuOpenGraphMatrixCSV,
             this.StripMenuOpenMultipleGraphs});
             this.StripMenuOpen.Name = "StripMenuOpen";
-            this.StripMenuOpen.Size = new System.Drawing.Size(72, 30);
+            this.StripMenuOpen.Size = new System.Drawing.Size(48, 20);
             this.StripMenuOpen.Text = "Open";
+            // 
+            // StripMenuOpenCalculatorHistory
+            // 
+            this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
+            this.StripMenuOpenCalculatorHistory.Name = "StripMenuOpenCalculatorHistory";
+            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenCalculatorHistory.Text = "Calculator History";
+            this.StripMenuOpenCalculatorHistory.Click += new System.EventHandler(this.ButtonLoad_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(185, 6);
+            // 
+            // StripMenuOpenGraphMatrixTxT
+            // 
+            this.StripMenuOpenGraphMatrixTxT.Image = global::NeatOffice.Properties.Resources.TXT;
+            this.StripMenuOpenGraphMatrixTxT.Name = "StripMenuOpenGraphMatrixTxT";
+            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixTxT.Text = "Graph Matrix (.txt)";
+            // 
+            // StripMenuOpenGraphMatrixCSV
+            // 
+            this.StripMenuOpenGraphMatrixCSV.Image = global::NeatOffice.Properties.Resources.CSV;
+            this.StripMenuOpenGraphMatrixCSV.Name = "StripMenuOpenGraphMatrixCSV";
+            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixCSV.Text = "Graph Matrix (.csv)";
+            // 
+            // StripMenuOpenMultipleGraphs
+            // 
+            this.StripMenuOpenMultipleGraphs.Image = global::NeatOffice.Properties.Resources.MultipleGraph;
+            this.StripMenuOpenMultipleGraphs.Name = "StripMenuOpenMultipleGraphs";
+            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
             // 
             // StripMenuAppearance
             // 
@@ -171,8 +298,22 @@
             this.StripMenuAppearanceModifyCalculatorDisplayFont,
             this.StripMenuAppearanceModifyBackgroundColor});
             this.StripMenuAppearance.Name = "StripMenuAppearance";
-            this.StripMenuAppearance.Size = new System.Drawing.Size(122, 30);
+            this.StripMenuAppearance.Size = new System.Drawing.Size(82, 20);
             this.StripMenuAppearance.Text = "Appearance";
+            // 
+            // StripMenuAppearanceModifyCalculatorDisplayFont
+            // 
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Name = "StripMenuAppearanceModifyCalculatorDisplayFont";
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Text = "Modify calculator display font";
+            // 
+            // StripMenuAppearanceModifyBackgroundColor
+            // 
+            this.StripMenuAppearanceModifyBackgroundColor.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
+            this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
+            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
             // 
             // StripMenuHelp
             // 
@@ -185,8 +326,53 @@
             this.toolStripSeparator11,
             this.aboutToolStripMenuItem2});
             this.StripMenuHelp.Name = "StripMenuHelp";
-            this.StripMenuHelp.Size = new System.Drawing.Size(65, 30);
+            this.StripMenuHelp.Size = new System.Drawing.Size(44, 20);
             this.StripMenuHelp.Text = "Help";
+            // 
+            // StripMenuHelpAbout
+            // 
+            this.StripMenuHelpAbout.Image = global::NeatOffice.Properties.Resources.Manual;
+            this.StripMenuHelpAbout.Name = "StripMenuHelpAbout";
+            this.StripMenuHelpAbout.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpAbout.Text = "User Manual";
+            // 
+            // StripMenuHelpProjectDocumentation
+            // 
+            this.StripMenuHelpProjectDocumentation.Image = global::NeatOffice.Properties.Resources.Documentation;
+            this.StripMenuHelpProjectDocumentation.Name = "StripMenuHelpProjectDocumentation";
+            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpProjectDocumentation.Text = "Project Documentation";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(194, 6);
+            // 
+            // StripMenuHelpHowTo
+            // 
+            this.StripMenuHelpHowTo.Image = global::NeatOffice.Properties.Resources.HowTo;
+            this.StripMenuHelpHowTo.Name = "StripMenuHelpHowTo";
+            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpHowTo.Text = "How - To Guides";
+            // 
+            // StripMenuHelpTutorials
+            // 
+            this.StripMenuHelpTutorials.Image = global::NeatOffice.Properties.Resources.Recursos;
+            this.StripMenuHelpTutorials.Name = "StripMenuHelpTutorials";
+            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpTutorials.Text = "Resources";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(194, 6);
+            // 
+            // aboutToolStripMenuItem2
+            // 
+            this.aboutToolStripMenuItem2.Image = global::NeatOffice.Properties.Resources.AboutUs;
+            this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(197, 22);
+            this.aboutToolStripMenuItem2.Text = "About";
             // 
             // toolStripContainerMain
             // 
@@ -198,19 +384,21 @@
             // toolStripContainerMain.ContentPanel
             // 
             this.toolStripContainerMain.ContentPanel.Controls.Add(this.splitContainerInside);
-            this.toolStripContainerMain.ContentPanel.Size = new System.Drawing.Size(879, 512);
+            this.toolStripContainerMain.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripContainerMain.ContentPanel.Size = new System.Drawing.Size(778, 549);
             this.toolStripContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainerMain.LeftToolStripPanel
             // 
             this.toolStripContainerMain.LeftToolStripPanel.Controls.Add(this.toolStripLeft);
-            this.toolStripContainerMain.Location = new System.Drawing.Point(0, 33);
+            this.toolStripContainerMain.Location = new System.Drawing.Point(0, 24);
+            this.toolStripContainerMain.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerMain.Name = "toolStripContainerMain";
             // 
             // toolStripContainerMain.RightToolStripPanel
             // 
             this.toolStripContainerMain.RightToolStripPanel.Controls.Add(this.toolStripRight);
-            this.toolStripContainerMain.Size = new System.Drawing.Size(951, 577);
+            this.toolStripContainerMain.Size = new System.Drawing.Size(836, 602);
             this.toolStripContainerMain.TabIndex = 2;
             this.toolStripContainerMain.Text = "toolStripContainer1";
             // 
@@ -218,23 +406,579 @@
             // 
             this.toolStripContainerMain.TopToolStripPanel.Controls.Add(this.toolStripTop);
             // 
-            // toolStripTop
+            // statusStripGreeting
             // 
-            this.toolStripTop.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStripTop.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButtonTop});
-            this.toolStripTop.Location = new System.Drawing.Point(4, 0);
-            this.toolStripTop.Name = "toolStripTop";
-            this.toolStripTop.Size = new System.Drawing.Size(60, 33);
-            this.toolStripTop.TabIndex = 0;
+            this.statusStripGreeting.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStripGreeting.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStripGreeting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStripGreeting.Location = new System.Drawing.Point(0, 0);
+            this.statusStripGreeting.Name = "statusStripGreeting";
+            this.statusStripGreeting.Size = new System.Drawing.Size(836, 22);
+            this.statusStripGreeting.TabIndex = 0;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // splitContainerInside
+            // 
+            this.splitContainerInside.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerInside.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerInside.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainerInside.Name = "splitContainerInside";
+            // 
+            // splitContainerInside.Panel1
+            // 
+            this.splitContainerInside.Panel1.Controls.Add(this.splitContainerCalculatorandDayCounter);
+            this.splitContainerInside.Panel1.Controls.Add(this.splitterRightSideCalculatorandDayCounter);
+            this.splitContainerInside.Size = new System.Drawing.Size(778, 549);
+            this.splitContainerInside.SplitterDistance = 323;
+            this.splitContainerInside.SplitterWidth = 3;
+            this.splitContainerInside.TabIndex = 0;
+            // 
+            // splitContainerCalculatorandDayCounter
+            // 
+            this.splitContainerCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerCalculatorandDayCounter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainerCalculatorandDayCounter.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainerCalculatorandDayCounter.Name = "splitContainerCalculatorandDayCounter";
+            this.splitContainerCalculatorandDayCounter.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerCalculatorandDayCounter.Panel1
+            // 
+            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.textBoxCalcScreen);
+            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.tableLayoutPanelCalculator);
+            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.splitterBottomCalculator);
+            // 
+            // splitContainerCalculatorandDayCounter.Panel2
+            // 
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerTo);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerFrom);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelTo);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelFrom);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.numericUpDownDays);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
+            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
+            this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(316, 549);
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 317;
+            this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
+            this.splitContainerCalculatorandDayCounter.TabIndex = 1;
+            // 
+            // textBoxCalcScreen
+            // 
+            this.textBoxCalcScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCalcScreen.Location = new System.Drawing.Point(3, 11);
+            this.textBoxCalcScreen.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCalcScreen.Multiline = true;
+            this.textBoxCalcScreen.Name = "textBoxCalcScreen";
+            this.textBoxCalcScreen.Size = new System.Drawing.Size(309, 49);
+            this.textBoxCalcScreen.TabIndex = 1;
+            // 
+            // tableLayoutPanelCalculator
+            // 
+            this.tableLayoutPanelCalculator.ColumnCount = 4;
+            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonLoad, 3, 7);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonCloseParenthesis, 1, 7);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonSave, 2, 7);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberOne, 0, 5);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonOpenParenthesis, 0, 7);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberZero, 1, 6);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonSignChange, 0, 6);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonPowerTwo, 1, 2);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonPeriod, 2, 6);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberNine, 2, 3);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonEqual, 3, 6);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberEight, 1, 3);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonPlus, 3, 5);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonMinus, 3, 4);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonMultiplication, 3, 3);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonDivision, 3, 2);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonOneOver, 0, 2);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonPercentage, 0, 1);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonBackspace, 3, 1);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonClear, 2, 1);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberSeven, 0, 3);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberFour, 0, 4);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberFive, 1, 4);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberSix, 2, 4);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberTwo, 1, 5);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonNumberThree, 2, 5);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonSquareRoot, 2, 2);
+            this.tableLayoutPanelCalculator.Controls.Add(this.ButtonCE, 1, 1);
+            this.tableLayoutPanelCalculator.Location = new System.Drawing.Point(2, 64);
+            this.tableLayoutPanelCalculator.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanelCalculator.Name = "tableLayoutPanelCalculator";
+            this.tableLayoutPanelCalculator.RowCount = 8;
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(311, 239);
+            this.tableLayoutPanelCalculator.TabIndex = 1;
+            // 
+            // ButtonLoad
+            // 
+            this.ButtonLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLoad.Location = new System.Drawing.Point(232, 204);
+            this.ButtonLoad.Margin = new System.Windows.Forms.Padding(1);
+            this.ButtonLoad.Name = "ButtonLoad";
+            this.ButtonLoad.Size = new System.Drawing.Size(78, 34);
+            this.ButtonLoad.TabIndex = 19;
+            this.ButtonLoad.Text = "Load";
+            this.ButtonLoad.UseVisualStyleBackColor = true;
+            this.ButtonLoad.Click += new System.EventHandler(this.ButtonLoad_Click);
+            // 
+            // ButtonCloseParenthesis
+            // 
+            this.ButtonCloseParenthesis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonCloseParenthesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCloseParenthesis.Location = new System.Drawing.Point(79, 205);
+            this.ButtonCloseParenthesis.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonCloseParenthesis.Name = "ButtonCloseParenthesis";
+            this.ButtonCloseParenthesis.Size = new System.Drawing.Size(73, 32);
+            this.ButtonCloseParenthesis.TabIndex = 1;
+            this.ButtonCloseParenthesis.Text = ")";
+            this.ButtonCloseParenthesis.UseVisualStyleBackColor = true;
+            this.ButtonCloseParenthesis.Click += new System.EventHandler(this.ButtonCloseParenthesis_Click);
+            // 
+            // ButtonSave
+            // 
+            this.ButtonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSave.Location = new System.Drawing.Point(155, 204);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(1);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(75, 34);
+            this.ButtonSave.TabIndex = 18;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // ButtonNumberOne
+            // 
+            this.ButtonNumberOne.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberOne.Location = new System.Drawing.Point(2, 147);
+            this.ButtonNumberOne.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberOne.Name = "ButtonNumberOne";
+            this.ButtonNumberOne.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberOne.TabIndex = 1;
+            this.ButtonNumberOne.Text = "1";
+            this.ButtonNumberOne.UseVisualStyleBackColor = true;
+            this.ButtonNumberOne.Click += new System.EventHandler(this.ButtonNumberOne_Click);
+            // 
+            // ButtonOpenParenthesis
+            // 
+            this.ButtonOpenParenthesis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonOpenParenthesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOpenParenthesis.Location = new System.Drawing.Point(2, 205);
+            this.ButtonOpenParenthesis.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonOpenParenthesis.Name = "ButtonOpenParenthesis";
+            this.ButtonOpenParenthesis.Size = new System.Drawing.Size(73, 32);
+            this.ButtonOpenParenthesis.TabIndex = 2;
+            this.ButtonOpenParenthesis.Text = "(";
+            this.ButtonOpenParenthesis.UseVisualStyleBackColor = true;
+            this.ButtonOpenParenthesis.Click += new System.EventHandler(this.ButtonOpenParenthesis_Click);
+            // 
+            // ButtonNumberZero
+            // 
+            this.ButtonNumberZero.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberZero.Location = new System.Drawing.Point(79, 176);
+            this.ButtonNumberZero.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberZero.Name = "ButtonNumberZero";
+            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberZero.TabIndex = 2;
+            this.ButtonNumberZero.Text = "0";
+            this.ButtonNumberZero.UseVisualStyleBackColor = true;
+            this.ButtonNumberZero.Click += new System.EventHandler(this.ButtonNumberZero_Click);
+            // 
+            // ButtonSignChange
+            // 
+            this.ButtonSignChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonSignChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSignChange.Location = new System.Drawing.Point(3, 177);
+            this.ButtonSignChange.Name = "ButtonSignChange";
+            this.ButtonSignChange.Size = new System.Drawing.Size(71, 23);
+            this.ButtonSignChange.TabIndex = 11;
+            this.ButtonSignChange.Text = "+/-";
+            this.ButtonSignChange.UseVisualStyleBackColor = true;
+            this.ButtonSignChange.Click += new System.EventHandler(this.ButtonSignChange_Click);
+            // 
+            // ButtonPowerTwo
+            // 
+            this.ButtonPowerTwo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPowerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPowerTwo.Location = new System.Drawing.Point(80, 61);
+            this.ButtonPowerTwo.Name = "ButtonPowerTwo";
+            this.ButtonPowerTwo.Size = new System.Drawing.Size(71, 23);
+            this.ButtonPowerTwo.TabIndex = 23;
+            this.ButtonPowerTwo.Text = "^2";
+            this.ButtonPowerTwo.UseVisualStyleBackColor = true;
+            this.ButtonPowerTwo.Click += new System.EventHandler(this.ButtonPowerTwo_Click);
+            // 
+            // ButtonPeriod
+            // 
+            this.ButtonPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPeriod.Location = new System.Drawing.Point(156, 176);
+            this.ButtonPeriod.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonPeriod.Name = "ButtonPeriod";
+            this.ButtonPeriod.Size = new System.Drawing.Size(73, 25);
+            this.ButtonPeriod.TabIndex = 9;
+            this.ButtonPeriod.Text = ".";
+            this.ButtonPeriod.UseVisualStyleBackColor = true;
+            this.ButtonPeriod.Click += new System.EventHandler(this.ButtonPeriod_Click);
+            // 
+            // ButtonNumberNine
+            // 
+            this.ButtonNumberNine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberNine.Location = new System.Drawing.Point(156, 89);
+            this.ButtonNumberNine.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberNine.Name = "ButtonNumberNine";
+            this.ButtonNumberNine.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberNine.TabIndex = 9;
+            this.ButtonNumberNine.Text = "9";
+            this.ButtonNumberNine.UseVisualStyleBackColor = true;
+            this.ButtonNumberNine.Click += new System.EventHandler(this.ButtonNumberNine_Click);
+            // 
+            // ButtonEqual
+            // 
+            this.ButtonEqual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonEqual.Location = new System.Drawing.Point(232, 175);
+            this.ButtonEqual.Margin = new System.Windows.Forms.Padding(1);
+            this.ButtonEqual.Name = "ButtonEqual";
+            this.ButtonEqual.Size = new System.Drawing.Size(78, 27);
+            this.ButtonEqual.TabIndex = 10;
+            this.ButtonEqual.Text = "=";
+            this.ButtonEqual.UseVisualStyleBackColor = true;
+            this.ButtonEqual.Click += new System.EventHandler(this.ButtonEqual_Click);
+            // 
+            // ButtonNumberEight
+            // 
+            this.ButtonNumberEight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberEight.Location = new System.Drawing.Point(79, 89);
+            this.ButtonNumberEight.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberEight.Name = "ButtonNumberEight";
+            this.ButtonNumberEight.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberEight.TabIndex = 6;
+            this.ButtonNumberEight.Text = "8";
+            this.ButtonNumberEight.UseVisualStyleBackColor = true;
+            this.ButtonNumberEight.Click += new System.EventHandler(this.ButtonNumberEight_Click);
+            // 
+            // ButtonPlus
+            // 
+            this.ButtonPlus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPlus.Location = new System.Drawing.Point(233, 147);
+            this.ButtonPlus.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonPlus.Name = "ButtonPlus";
+            this.ButtonPlus.Size = new System.Drawing.Size(76, 25);
+            this.ButtonPlus.TabIndex = 5;
+            this.ButtonPlus.Text = "+";
+            this.ButtonPlus.UseVisualStyleBackColor = true;
+            this.ButtonPlus.Click += new System.EventHandler(this.ButtonPlus_Click);
+            // 
+            // ButtonMinus
+            // 
+            this.ButtonMinus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonMinus.Location = new System.Drawing.Point(233, 118);
+            this.ButtonMinus.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonMinus.Name = "ButtonMinus";
+            this.ButtonMinus.Size = new System.Drawing.Size(76, 25);
+            this.ButtonMinus.TabIndex = 4;
+            this.ButtonMinus.Text = "-";
+            this.ButtonMinus.UseVisualStyleBackColor = true;
+            this.ButtonMinus.Click += new System.EventHandler(this.ButtonMinus_Click);
+            // 
+            // ButtonMultiplication
+            // 
+            this.ButtonMultiplication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonMultiplication.Location = new System.Drawing.Point(233, 89);
+            this.ButtonMultiplication.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonMultiplication.Name = "ButtonMultiplication";
+            this.ButtonMultiplication.Size = new System.Drawing.Size(76, 25);
+            this.ButtonMultiplication.TabIndex = 3;
+            this.ButtonMultiplication.Text = "*";
+            this.ButtonMultiplication.UseVisualStyleBackColor = true;
+            this.ButtonMultiplication.Click += new System.EventHandler(this.ButtonMultiplication_Click);
+            // 
+            // ButtonDivision
+            // 
+            this.ButtonDivision.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDivision.Location = new System.Drawing.Point(233, 60);
+            this.ButtonDivision.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonDivision.Name = "ButtonDivision";
+            this.ButtonDivision.Size = new System.Drawing.Size(76, 25);
+            this.ButtonDivision.TabIndex = 2;
+            this.ButtonDivision.Text = "/";
+            this.ButtonDivision.UseVisualStyleBackColor = true;
+            this.ButtonDivision.Click += new System.EventHandler(this.ButtonDivision_Click);
+            // 
+            // ButtonOneOver
+            // 
+            this.ButtonOneOver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonOneOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOneOver.Location = new System.Drawing.Point(3, 61);
+            this.ButtonOneOver.Name = "ButtonOneOver";
+            this.ButtonOneOver.Size = new System.Drawing.Size(71, 23);
+            this.ButtonOneOver.TabIndex = 19;
+            this.ButtonOneOver.Text = "1/X";
+            this.ButtonOneOver.UseVisualStyleBackColor = true;
+            this.ButtonOneOver.Click += new System.EventHandler(this.ButtonOneOver_Click);
+            // 
+            // ButtonPercentage
+            // 
+            this.ButtonPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPercentage.Location = new System.Drawing.Point(3, 32);
+            this.ButtonPercentage.Name = "ButtonPercentage";
+            this.ButtonPercentage.Size = new System.Drawing.Size(71, 23);
+            this.ButtonPercentage.TabIndex = 20;
+            this.ButtonPercentage.Text = "%";
+            this.ButtonPercentage.UseVisualStyleBackColor = true;
+            this.ButtonPercentage.Click += new System.EventHandler(this.ButtonPercentage_Click);
+            // 
+            // ButtonBackspace
+            // 
+            this.ButtonBackspace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ButtonBackspace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonBackspace.Location = new System.Drawing.Point(233, 31);
+            this.ButtonBackspace.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonBackspace.Name = "ButtonBackspace";
+            this.ButtonBackspace.Size = new System.Drawing.Size(76, 25);
+            this.ButtonBackspace.TabIndex = 17;
+            this.ButtonBackspace.Text = "<-";
+            this.ButtonBackspace.UseVisualStyleBackColor = true;
+            this.ButtonBackspace.Click += new System.EventHandler(this.ButtonBackspace_Click);
+            // 
+            // ButtonClear
+            // 
+            this.ButtonClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonClear.Location = new System.Drawing.Point(156, 31);
+            this.ButtonClear.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonClear.Name = "ButtonClear";
+            this.ButtonClear.Size = new System.Drawing.Size(73, 25);
+            this.ButtonClear.TabIndex = 16;
+            this.ButtonClear.Text = "Clear";
+            this.ButtonClear.UseVisualStyleBackColor = true;
+            this.ButtonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            // 
+            // ButtonNumberSeven
+            // 
+            this.ButtonNumberSeven.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberSeven.Location = new System.Drawing.Point(2, 89);
+            this.ButtonNumberSeven.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberSeven.Name = "ButtonNumberSeven";
+            this.ButtonNumberSeven.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberSeven.TabIndex = 3;
+            this.ButtonNumberSeven.Text = "7";
+            this.ButtonNumberSeven.UseVisualStyleBackColor = true;
+            this.ButtonNumberSeven.Click += new System.EventHandler(this.ButtonNumberSeven_Click);
+            // 
+            // ButtonNumberFour
+            // 
+            this.ButtonNumberFour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberFour.Location = new System.Drawing.Point(2, 118);
+            this.ButtonNumberFour.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberFour.Name = "ButtonNumberFour";
+            this.ButtonNumberFour.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberFour.TabIndex = 2;
+            this.ButtonNumberFour.Text = "4";
+            this.ButtonNumberFour.UseVisualStyleBackColor = true;
+            this.ButtonNumberFour.Click += new System.EventHandler(this.ButtonNumberFour_Click);
+            // 
+            // ButtonNumberFive
+            // 
+            this.ButtonNumberFive.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberFive.Location = new System.Drawing.Point(79, 118);
+            this.ButtonNumberFive.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberFive.Name = "ButtonNumberFive";
+            this.ButtonNumberFive.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberFive.TabIndex = 5;
+            this.ButtonNumberFive.Text = "5";
+            this.ButtonNumberFive.UseVisualStyleBackColor = true;
+            this.ButtonNumberFive.Click += new System.EventHandler(this.ButtonNumberFive_Click);
+            // 
+            // ButtonNumberSix
+            // 
+            this.ButtonNumberSix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberSix.Location = new System.Drawing.Point(156, 118);
+            this.ButtonNumberSix.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberSix.Name = "ButtonNumberSix";
+            this.ButtonNumberSix.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberSix.TabIndex = 8;
+            this.ButtonNumberSix.Text = "6";
+            this.ButtonNumberSix.UseVisualStyleBackColor = true;
+            this.ButtonNumberSix.Click += new System.EventHandler(this.ButtonNumberSix_Click);
+            // 
+            // ButtonNumberTwo
+            // 
+            this.ButtonNumberTwo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberTwo.Location = new System.Drawing.Point(79, 147);
+            this.ButtonNumberTwo.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberTwo.Name = "ButtonNumberTwo";
+            this.ButtonNumberTwo.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberTwo.TabIndex = 4;
+            this.ButtonNumberTwo.Text = "2";
+            this.ButtonNumberTwo.UseVisualStyleBackColor = true;
+            this.ButtonNumberTwo.Click += new System.EventHandler(this.ButtonNumberTwo_Click);
+            // 
+            // ButtonNumberThree
+            // 
+            this.ButtonNumberThree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonNumberThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNumberThree.Location = new System.Drawing.Point(156, 147);
+            this.ButtonNumberThree.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonNumberThree.Name = "ButtonNumberThree";
+            this.ButtonNumberThree.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberThree.TabIndex = 7;
+            this.ButtonNumberThree.Text = "3";
+            this.ButtonNumberThree.UseVisualStyleBackColor = true;
+            this.ButtonNumberThree.Click += new System.EventHandler(this.ButtonNumberThree_Click);
+            // 
+            // ButtonSquareRoot
+            // 
+            this.ButtonSquareRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonSquareRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSquareRoot.Location = new System.Drawing.Point(157, 61);
+            this.ButtonSquareRoot.Name = "ButtonSquareRoot";
+            this.ButtonSquareRoot.Size = new System.Drawing.Size(71, 23);
+            this.ButtonSquareRoot.TabIndex = 22;
+            this.ButtonSquareRoot.Text = "SQRT";
+            this.ButtonSquareRoot.UseVisualStyleBackColor = true;
+            this.ButtonSquareRoot.Click += new System.EventHandler(this.ButtonSquareRoot_Click);
+            // 
+            // ButtonCE
+            // 
+            this.ButtonCE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCE.Location = new System.Drawing.Point(80, 32);
+            this.ButtonCE.Name = "ButtonCE";
+            this.ButtonCE.Size = new System.Drawing.Size(71, 23);
+            this.ButtonCE.TabIndex = 18;
+            this.ButtonCE.Text = "CE";
+            this.ButtonCE.UseVisualStyleBackColor = true;
+            this.ButtonCE.Click += new System.EventHandler(this.ButtonCE_Click);
+            // 
+            // splitterBottomCalculator
+            // 
+            this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 309);
+            this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
+            this.splitterBottomCalculator.Name = "splitterBottomCalculator";
+            this.splitterBottomCalculator.Size = new System.Drawing.Size(316, 8);
+            this.splitterBottomCalculator.TabIndex = 0;
+            this.splitterBottomCalculator.TabStop = false;
+            // 
+            // dateTimePickerTo
+            // 
+            this.dateTimePickerTo.Location = new System.Drawing.Point(50, 102);
+            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePickerTo.TabIndex = 6;
+            // 
+            // dateTimePickerFrom
+            // 
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(50, 71);
+            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePickerFrom.TabIndex = 5;
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(12, 106);
+            this.labelTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(23, 13);
+            this.labelTo.TabIndex = 4;
+            this.labelTo.Text = "To:";
+            // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(12, 71);
+            this.labelFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(33, 13);
+            this.labelFrom.TabIndex = 3;
+            this.labelFrom.Text = "From:";
+            // 
+            // numericUpDownDays
+            // 
+            this.numericUpDownDays.Location = new System.Drawing.Point(161, 137);
+            this.numericUpDownDays.Margin = new System.Windows.Forms.Padding(2);
+            this.numericUpDownDays.Name = "numericUpDownDays";
+            this.numericUpDownDays.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownDays.TabIndex = 2;
+            // 
+            // labelDays
+            // 
+            this.labelDays.AutoSize = true;
+            this.labelDays.Location = new System.Drawing.Point(124, 141);
+            this.labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDays.Name = "labelDays";
+            this.labelDays.Size = new System.Drawing.Size(34, 13);
+            this.labelDays.TabIndex = 1;
+            this.labelDays.Text = "Days:";
+            // 
+            // labelDayCounter
+            // 
+            this.labelDayCounter.AutoSize = true;
+            this.labelDayCounter.Location = new System.Drawing.Point(12, 45);
+            this.labelDayCounter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDayCounter.Name = "labelDayCounter";
+            this.labelDayCounter.Size = new System.Drawing.Size(66, 13);
+            this.labelDayCounter.TabIndex = 0;
+            this.labelDayCounter.Text = "Day Counter";
+            // 
+            // splitterRightSideCalculatorandDayCounter
+            // 
+            this.splitterRightSideCalculatorandDayCounter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitterRightSideCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitterRightSideCalculatorandDayCounter.Location = new System.Drawing.Point(316, 0);
+            this.splitterRightSideCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2);
+            this.splitterRightSideCalculatorandDayCounter.Name = "splitterRightSideCalculatorandDayCounter";
+            this.splitterRightSideCalculatorandDayCounter.Size = new System.Drawing.Size(7, 549);
+            this.splitterRightSideCalculatorandDayCounter.TabIndex = 0;
+            this.splitterRightSideCalculatorandDayCounter.TabStop = false;
             // 
             // toolStripLeft
             // 
             this.toolStripLeft.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStripLeft.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStripLeft.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripLeftButtonSafe,
+            this.ToolStripLeftButtonSave,
             this.ToolStripLeftButtonDelete,
             this.toolStripSeparator1,
             this.ToolStripLeftButtonLog,
@@ -247,23 +991,95 @@
             this.ToolStripLeftButtonPrint});
             this.toolStripLeft.Location = new System.Drawing.Point(0, 4);
             this.toolStripLeft.Name = "toolStripLeft";
-            this.toolStripLeft.Size = new System.Drawing.Size(36, 298);
+            this.toolStripLeft.Size = new System.Drawing.Size(29, 277);
             this.toolStripLeft.TabIndex = 0;
+            // 
+            // ToolStripLeftButtonSave
+            // 
+            this.ToolStripLeftButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonSave.Image = global::NeatOffice.Properties.Resources.Save;
+            this.ToolStripLeftButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonSave.Name = "ToolStripLeftButtonSave";
+            this.ToolStripLeftButtonSave.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // ToolStripLeftButtonDelete
+            // 
+            this.ToolStripLeftButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonDelete.Image = global::NeatOffice.Properties.Resources.Eraser;
+            this.ToolStripLeftButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonDelete.Name = "ToolStripLeftButtonDelete";
+            this.ToolStripLeftButtonDelete.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonDelete.Click += new System.EventHandler(this.ToolStripLeftButtonDelete_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(33, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(27, 6);
+            // 
+            // ToolStripLeftButtonLog
+            // 
+            this.ToolStripLeftButtonLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonLog.Image = global::NeatOffice.Properties.Resources.Log;
+            this.ToolStripLeftButtonLog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonLog.Name = "ToolStripLeftButtonLog";
+            this.ToolStripLeftButtonLog.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonLog.Click += new System.EventHandler(this.ToolStripLeftButtonLog_Click);
+            // 
+            // ToolStripLeftButtonXToY
+            // 
+            this.ToolStripLeftButtonXToY.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonXToY.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonXToY.Image")));
+            this.ToolStripLeftButtonXToY.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonXToY.Name = "ToolStripLeftButtonXToY";
+            this.ToolStripLeftButtonXToY.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonXToY.Click += new System.EventHandler(this.ToolStripLeftButtonXToY_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(33, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(27, 6);
+            // 
+            // ToolStripLeftButtonSin
+            // 
+            this.ToolStripLeftButtonSin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonSin.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonSin.Image")));
+            this.ToolStripLeftButtonSin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonSin.Name = "ToolStripLeftButtonSin";
+            this.ToolStripLeftButtonSin.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonSin.Click += new System.EventHandler(this.ToolStripLeftButtonSin_Click);
+            // 
+            // ToolStripLeftButtonCos
+            // 
+            this.ToolStripLeftButtonCos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonCos.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonCos.Image")));
+            this.ToolStripLeftButtonCos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonCos.Name = "ToolStripLeftButtonCos";
+            this.ToolStripLeftButtonCos.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonCos.Click += new System.EventHandler(this.ToolStripLeftButtonCos_Click);
+            // 
+            // ToolStripLeftButtonTan
+            // 
+            this.ToolStripLeftButtonTan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonTan.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonTan.Image")));
+            this.ToolStripLeftButtonTan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonTan.Name = "ToolStripLeftButtonTan";
+            this.ToolStripLeftButtonTan.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonTan.Click += new System.EventHandler(this.ToolStripLeftButtonTan_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(33, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(27, 6);
+            // 
+            // ToolStripLeftButtonPrint
+            // 
+            this.ToolStripLeftButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripLeftButtonPrint.Image = global::NeatOffice.Properties.Resources.Printer;
+            this.ToolStripLeftButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripLeftButtonPrint.Name = "ToolStripLeftButtonPrint";
+            this.ToolStripLeftButtonPrint.Size = new System.Drawing.Size(27, 28);
+            this.ToolStripLeftButtonPrint.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
             // 
             // toolStripRight
             // 
@@ -285,117 +1101,8 @@
             this.toolStripRightPrint});
             this.toolStripRight.Location = new System.Drawing.Point(0, 4);
             this.toolStripRight.Name = "toolStripRight";
-            this.toolStripRight.Size = new System.Drawing.Size(36, 337);
+            this.toolStripRight.Size = new System.Drawing.Size(29, 314);
             this.toolStripRight.TabIndex = 0;
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(33, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(33, 6);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(33, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(33, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(387, 6);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(387, 6);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(267, 6);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(293, 6);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(293, 6);
-            // 
-            // ToolStripLeftButtonSafe
-            // 
-            this.ToolStripLeftButtonSafe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonSafe.Image = global::NeatOffice.Properties.Resources.Save;
-            this.ToolStripLeftButtonSafe.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonSafe.Name = "ToolStripLeftButtonSafe";
-            this.ToolStripLeftButtonSafe.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonDelete
-            // 
-            this.ToolStripLeftButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonDelete.Image = global::NeatOffice.Properties.Resources.Eraser;
-            this.ToolStripLeftButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonDelete.Name = "ToolStripLeftButtonDelete";
-            this.ToolStripLeftButtonDelete.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonLog
-            // 
-            this.ToolStripLeftButtonLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonLog.Image = global::NeatOffice.Properties.Resources.Log;
-            this.ToolStripLeftButtonLog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonLog.Name = "ToolStripLeftButtonLog";
-            this.ToolStripLeftButtonLog.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonXToY
-            // 
-            this.ToolStripLeftButtonXToY.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonXToY.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonXToY.Image")));
-            this.ToolStripLeftButtonXToY.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonXToY.Name = "ToolStripLeftButtonXToY";
-            this.ToolStripLeftButtonXToY.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonSin
-            // 
-            this.ToolStripLeftButtonSin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonSin.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonSin.Image")));
-            this.ToolStripLeftButtonSin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonSin.Name = "ToolStripLeftButtonSin";
-            this.ToolStripLeftButtonSin.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonCos
-            // 
-            this.ToolStripLeftButtonCos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonCos.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonCos.Image")));
-            this.ToolStripLeftButtonCos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonCos.Name = "ToolStripLeftButtonCos";
-            this.ToolStripLeftButtonCos.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonTan
-            // 
-            this.ToolStripLeftButtonTan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonTan.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripLeftButtonTan.Image")));
-            this.ToolStripLeftButtonTan.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonTan.Name = "ToolStripLeftButtonTan";
-            this.ToolStripLeftButtonTan.Size = new System.Drawing.Size(33, 28);
-            // 
-            // ToolStripLeftButtonPrint
-            // 
-            this.ToolStripLeftButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripLeftButtonPrint.Image = global::NeatOffice.Properties.Resources.Printer;
-            this.ToolStripLeftButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripLeftButtonPrint.Name = "ToolStripLeftButtonPrint";
-            this.ToolStripLeftButtonPrint.Size = new System.Drawing.Size(33, 28);
             // 
             // toolStripRightGraphTXT
             // 
@@ -403,7 +1110,7 @@
             this.toolStripRightGraphTXT.Image = global::NeatOffice.Properties.Resources.TXT;
             this.toolStripRightGraphTXT.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightGraphTXT.Name = "toolStripRightGraphTXT";
-            this.toolStripRightGraphTXT.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightGraphTXT.Size = new System.Drawing.Size(27, 28);
             // 
             // toolStripRightCSV
             // 
@@ -411,7 +1118,7 @@
             this.toolStripRightCSV.Image = global::NeatOffice.Properties.Resources.CSV;
             this.toolStripRightCSV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightCSV.Name = "toolStripRightCSV";
-            this.toolStripRightCSV.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightCSV.Size = new System.Drawing.Size(27, 28);
             // 
             // toolStripRightUnknown
             // 
@@ -419,7 +1126,12 @@
             this.toolStripRightUnknown.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRightUnknown.Image")));
             this.toolStripRightUnknown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightUnknown.Name = "toolStripRightUnknown";
-            this.toolStripRightUnknown.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightUnknown.Size = new System.Drawing.Size(27, 28);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(27, 6);
             // 
             // toolStripRightCancel
             // 
@@ -427,7 +1139,7 @@
             this.toolStripRightCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRightCancel.Image")));
             this.toolStripRightCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightCancel.Name = "toolStripRightCancel";
-            this.toolStripRightCancel.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightCancel.Size = new System.Drawing.Size(27, 28);
             // 
             // toolStripRightDelete
             // 
@@ -435,8 +1147,13 @@
             this.toolStripRightDelete.Image = global::NeatOffice.Properties.Resources.Delete;
             this.toolStripRightDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightDelete.Name = "toolStripRightDelete";
-            this.toolStripRightDelete.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightDelete.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightDelete.Text = "Delete";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(27, 6);
             // 
             // toolStripRightSaveMinimumSpanTree
             // 
@@ -444,7 +1161,7 @@
             this.toolStripRightSaveMinimumSpanTree.Image = global::NeatOffice.Properties.Resources.BTree;
             this.toolStripRightSaveMinimumSpanTree.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightSaveMinimumSpanTree.Name = "toolStripRightSaveMinimumSpanTree";
-            this.toolStripRightSaveMinimumSpanTree.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightSaveMinimumSpanTree.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightSaveMinimumSpanTree.Text = "Save Minimum SpanTree";
             // 
             // toolStripRightSaveShortestPath
@@ -453,8 +1170,13 @@
             this.toolStripRightSaveShortestPath.Image = global::NeatOffice.Properties.Resources.ShorPath;
             this.toolStripRightSaveShortestPath.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightSaveShortestPath.Name = "toolStripRightSaveShortestPath";
-            this.toolStripRightSaveShortestPath.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightSaveShortestPath.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightSaveShortestPath.Text = "Save Shortest Path";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(27, 6);
             // 
             // toolStripRightSave
             // 
@@ -462,8 +1184,13 @@
             this.toolStripRightSave.Image = global::NeatOffice.Properties.Resources.Save;
             this.toolStripRightSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightSave.Name = "toolStripRightSave";
-            this.toolStripRightSave.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightSave.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightSave.Text = "Save";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(27, 6);
             // 
             // toolStripRightPrint
             // 
@@ -471,8 +1198,19 @@
             this.toolStripRightPrint.Image = global::NeatOffice.Properties.Resources.Printer;
             this.toolStripRightPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightPrint.Name = "toolStripRightPrint";
-            this.toolStripRightPrint.Size = new System.Drawing.Size(33, 28);
+            this.toolStripRightPrint.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightPrint.Text = "toolStripButton9";
+            // 
+            // toolStripTop
+            // 
+            this.toolStripTop.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripTop.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButtonTop});
+            this.toolStripTop.Location = new System.Drawing.Point(4, 0);
+            this.toolStripTop.Name = "toolStripTop";
+            this.toolStripTop.Size = new System.Drawing.Size(49, 31);
+            this.toolStripTop.TabIndex = 0;
             // 
             // toolStripDropDownButtonTop
             // 
@@ -484,314 +1222,49 @@
             this.toolStripDropDownButtonTop.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
             this.toolStripDropDownButtonTop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonTop.Name = "toolStripDropDownButtonTop";
-            this.toolStripDropDownButtonTop.Size = new System.Drawing.Size(42, 28);
+            this.toolStripDropDownButtonTop.Size = new System.Drawing.Size(37, 28);
             // 
             // CalculatortoolStripDropDown
             // 
             this.CalculatortoolStripDropDown.Name = "CalculatortoolStripDropDown";
-            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(223, 34);
+            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.CalculatortoolStripDropDown.Text = "Calculator";
             // 
             // DayCountertoolStripDropDown
             // 
             this.DayCountertoolStripDropDown.Name = "DayCountertoolStripDropDown";
-            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(223, 34);
+            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.DayCountertoolStripDropDown.Text = "Day counter";
             // 
             // GraphSectiontoolStripDropDown
             // 
             this.GraphSectiontoolStripDropDown.Image = global::NeatOffice.Properties.Resources.BTree;
             this.GraphSectiontoolStripDropDown.Name = "GraphSectiontoolStripDropDown";
-            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(223, 34);
+            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.GraphSectiontoolStripDropDown.Text = "Graph section";
             // 
-            // StripMenuFileItemClearCalculatorHistory
+            // OpenFile
             // 
-            this.StripMenuFileItemClearCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Eraser;
-            this.StripMenuFileItemClearCalculatorHistory.Name = "StripMenuFileItemClearCalculatorHistory";
-            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFileItemClearCalculatorHistory.Text = "Clear calculator history";
+            this.OpenFile.FileName = "OpenFile";
             // 
-            // StripMenuFileItemSaveCalculatorHistory
+            // PrintFile
             // 
-            this.StripMenuFileItemSaveCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Save;
-            this.StripMenuFileItemSaveCalculatorHistory.Name = "StripMenuFileItemSaveCalculatorHistory";
-            this.StripMenuFileItemSaveCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFileItemSaveCalculatorHistory.Text = "Save calculator history as ...";
+            this.PrintFile.UseEXDialog = true;
             // 
-            // StripMenuFilePrintCalculatorHistory
+            // PrintDocument
             // 
-            this.StripMenuFilePrintCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Printer;
-            this.StripMenuFilePrintCalculatorHistory.Name = "StripMenuFilePrintCalculatorHistory";
-            this.StripMenuFilePrintCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFilePrintCalculatorHistory.Text = "Print calculator history";
-            // 
-            // StripMenuFileSaveMinimumSpanningTreeAs
-            // 
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Image = global::NeatOffice.Properties.Resources.BTree;
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Name = "StripMenuFileSaveMinimumSpanningTreeAs";
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Text = "Save minimum spanning tree as...";
-            // 
-            // StripMenuFileSaveShortestPathAs
-            // 
-            this.StripMenuFileSaveShortestPathAs.Image = global::NeatOffice.Properties.Resources.ShorPath;
-            this.StripMenuFileSaveShortestPathAs.Name = "StripMenuFileSaveShortestPathAs";
-            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
-            // 
-            // StripMenuFileExit
-            // 
-            this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
-            this.StripMenuFileExit.Name = "StripMenuFileExit";
-            this.StripMenuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.StripMenuFileExit.Size = new System.Drawing.Size(390, 34);
-            this.StripMenuFileExit.Text = "Exit";
-            this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
-            // 
-            // StripMenuOpenCalculatorHistory
-            // 
-            this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
-            this.StripMenuOpenCalculatorHistory.Name = "StripMenuOpenCalculatorHistory";
-            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(270, 34);
-            this.StripMenuOpenCalculatorHistory.Text = "Calculator History";
-            // 
-            // StripMenuOpenGraphMatrixTxT
-            // 
-            this.StripMenuOpenGraphMatrixTxT.Image = global::NeatOffice.Properties.Resources.TXT;
-            this.StripMenuOpenGraphMatrixTxT.Name = "StripMenuOpenGraphMatrixTxT";
-            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(270, 34);
-            this.StripMenuOpenGraphMatrixTxT.Text = "Graph Matrix (.txt)";
-            // 
-            // StripMenuOpenGraphMatrixCSV
-            // 
-            this.StripMenuOpenGraphMatrixCSV.Image = global::NeatOffice.Properties.Resources.CSV;
-            this.StripMenuOpenGraphMatrixCSV.Name = "StripMenuOpenGraphMatrixCSV";
-            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(270, 34);
-            this.StripMenuOpenGraphMatrixCSV.Text = "Graph Matrix (.csv)";
-            // 
-            // StripMenuOpenMultipleGraphs
-            // 
-            this.StripMenuOpenMultipleGraphs.Image = global::NeatOffice.Properties.Resources.MultipleGraph;
-            this.StripMenuOpenMultipleGraphs.Name = "StripMenuOpenMultipleGraphs";
-            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(270, 34);
-            this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
-            // 
-            // StripMenuAppearanceModifyCalculatorDisplayFont
-            // 
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Name = "StripMenuAppearanceModifyCalculatorDisplayFont";
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(350, 34);
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Text = "Modify calculator display font";
-            // 
-            // StripMenuAppearanceModifyBackgroundColor
-            // 
-            this.StripMenuAppearanceModifyBackgroundColor.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
-            this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
-            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(350, 34);
-            this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
-            // 
-            // StripMenuHelpAbout
-            // 
-            this.StripMenuHelpAbout.Image = global::NeatOffice.Properties.Resources.Manual;
-            this.StripMenuHelpAbout.Name = "StripMenuHelpAbout";
-            this.StripMenuHelpAbout.Size = new System.Drawing.Size(296, 34);
-            this.StripMenuHelpAbout.Text = "User Manual";
-            // 
-            // StripMenuHelpProjectDocumentation
-            // 
-            this.StripMenuHelpProjectDocumentation.Image = global::NeatOffice.Properties.Resources.Documentation;
-            this.StripMenuHelpProjectDocumentation.Name = "StripMenuHelpProjectDocumentation";
-            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(296, 34);
-            this.StripMenuHelpProjectDocumentation.Text = "Project Documentation";
-            // 
-            // StripMenuHelpHowTo
-            // 
-            this.StripMenuHelpHowTo.Image = global::NeatOffice.Properties.Resources.HowTo;
-            this.StripMenuHelpHowTo.Name = "StripMenuHelpHowTo";
-            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(296, 34);
-            this.StripMenuHelpHowTo.Text = "How - To Guides";
-            // 
-            // StripMenuHelpTutorials
-            // 
-            this.StripMenuHelpTutorials.Image = global::NeatOffice.Properties.Resources.Recursos;
-            this.StripMenuHelpTutorials.Name = "StripMenuHelpTutorials";
-            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(296, 34);
-            this.StripMenuHelpTutorials.Text = "Resources";
-            // 
-            // aboutToolStripMenuItem2
-            // 
-            this.aboutToolStripMenuItem2.Image = global::NeatOffice.Properties.Resources.AboutUs;
-            this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(296, 34);
-            this.aboutToolStripMenuItem2.Text = "About";
-            // 
-            // statusStripGreeting
-            // 
-            this.statusStripGreeting.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStripGreeting.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStripGreeting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStripGreeting.Location = new System.Drawing.Point(0, 0);
-            this.statusStripGreeting.Name = "statusStripGreeting";
-            this.statusStripGreeting.Size = new System.Drawing.Size(951, 32);
-            this.statusStripGreeting.TabIndex = 0;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 25);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // splitContainerInside
-            // 
-            this.splitContainerInside.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerInside.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerInside.Name = "splitContainerInside";
-            // 
-            // splitContainerInside.Panel1
-            // 
-            this.splitContainerInside.Panel1.Controls.Add(this.splitContainerCalculatorandDayCounter);
-            this.splitContainerInside.Panel1.Controls.Add(this.splitterRightSideCalculatorandDayCounter);
-            this.splitContainerInside.Size = new System.Drawing.Size(879, 512);
-            this.splitContainerInside.SplitterDistance = 367;
-            this.splitContainerInside.TabIndex = 0;
-            // 
-            // splitterRightSideCalculatorandDayCounter
-            // 
-            this.splitterRightSideCalculatorandDayCounter.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.splitterRightSideCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitterRightSideCalculatorandDayCounter.Location = new System.Drawing.Point(357, 0);
-            this.splitterRightSideCalculatorandDayCounter.Name = "splitterRightSideCalculatorandDayCounter";
-            this.splitterRightSideCalculatorandDayCounter.Size = new System.Drawing.Size(10, 512);
-            this.splitterRightSideCalculatorandDayCounter.TabIndex = 0;
-            this.splitterRightSideCalculatorandDayCounter.TabStop = false;
-            // 
-            // splitContainerCalculatorandDayCounter
-            // 
-            this.splitContainerCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerCalculatorandDayCounter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainerCalculatorandDayCounter.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerCalculatorandDayCounter.Name = "splitContainerCalculatorandDayCounter";
-            this.splitContainerCalculatorandDayCounter.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainerCalculatorandDayCounter.Panel1
-            // 
-            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.tableLayoutPanelCalculator);
-            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.splitterBottomCalculator);
-            // 
-            // splitContainerCalculatorandDayCounter.Panel2
-            // 
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerTo);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerFrom);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelTo);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelFrom);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.numericUpDownDays);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
-            this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
-            this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(357, 512);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 267;
-            this.splitContainerCalculatorandDayCounter.TabIndex = 1;
-            // 
-            // splitterBottomCalculator
-            // 
-            this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 254);
-            this.splitterBottomCalculator.Name = "splitterBottomCalculator";
-            this.splitterBottomCalculator.Size = new System.Drawing.Size(357, 13);
-            this.splitterBottomCalculator.TabIndex = 0;
-            this.splitterBottomCalculator.TabStop = false;
-            // 
-            // tableLayoutPanelCalculator
-            // 
-            this.tableLayoutPanelCalculator.ColumnCount = 4;
-            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelCalculator.Location = new System.Drawing.Point(15, 90);
-            this.tableLayoutPanelCalculator.Name = "tableLayoutPanelCalculator";
-            this.tableLayoutPanelCalculator.RowCount = 7;
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(336, 158);
-            this.tableLayoutPanelCalculator.TabIndex = 1;
-            // 
-            // labelDayCounter
-            // 
-            this.labelDayCounter.AutoSize = true;
-            this.labelDayCounter.Location = new System.Drawing.Point(18, 69);
-            this.labelDayCounter.Name = "labelDayCounter";
-            this.labelDayCounter.Size = new System.Drawing.Size(98, 20);
-            this.labelDayCounter.TabIndex = 0;
-            this.labelDayCounter.Text = "Day Counter";
-            // 
-            // labelDays
-            // 
-            this.labelDays.AutoSize = true;
-            this.labelDays.Location = new System.Drawing.Point(187, 218);
-            this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(49, 20);
-            this.labelDays.TabIndex = 1;
-            this.labelDays.Text = "Days:";
-            // 
-            // numericUpDownDays
-            // 
-            this.numericUpDownDays.Location = new System.Drawing.Point(242, 211);
-            this.numericUpDownDays.Name = "numericUpDownDays";
-            this.numericUpDownDays.Size = new System.Drawing.Size(96, 26);
-            this.numericUpDownDays.TabIndex = 2;
-            // 
-            // labelFrom
-            // 
-            this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(18, 109);
-            this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(50, 20);
-            this.labelFrom.TabIndex = 3;
-            this.labelFrom.Text = "From:";
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(18, 164);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(31, 20);
-            this.labelTo.TabIndex = 4;
-            this.labelTo.Text = "To:";
-            // 
-            // dateTimePickerFrom
-            // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(75, 109);
-            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePickerFrom.TabIndex = 5;
-            // 
-            // dateTimePickerTo
-            // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(75, 157);
-            this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePickerTo.TabIndex = 6;
+            this.PrintDocument.DocumentName = "Calculator History";
+            this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
             // NeatOffice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 610);
+            this.ClientSize = new System.Drawing.Size(836, 626);
             this.Controls.Add(this.toolStripContainerMain);
             this.Controls.Add(this.menuStripTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripTop;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NeatOffice";
             this.Text = "Neat Office";
             this.menuStripTop.ResumeLayout(false);
@@ -807,23 +1280,25 @@
             this.toolStripContainerMain.TopToolStripPanel.PerformLayout();
             this.toolStripContainerMain.ResumeLayout(false);
             this.toolStripContainerMain.PerformLayout();
-            this.toolStripTop.ResumeLayout(false);
-            this.toolStripTop.PerformLayout();
-            this.toolStripLeft.ResumeLayout(false);
-            this.toolStripLeft.PerformLayout();
-            this.toolStripRight.ResumeLayout(false);
-            this.toolStripRight.PerformLayout();
             this.statusStripGreeting.ResumeLayout(false);
             this.statusStripGreeting.PerformLayout();
             this.splitContainerInside.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).EndInit();
             this.splitContainerInside.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel1.ResumeLayout(false);
+            this.splitContainerCalculatorandDayCounter.Panel1.PerformLayout();
             this.splitContainerCalculatorandDayCounter.Panel2.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCalculatorandDayCounter)).EndInit();
             this.splitContainerCalculatorandDayCounter.ResumeLayout(false);
+            this.tableLayoutPanelCalculator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).EndInit();
+            this.toolStripLeft.ResumeLayout(false);
+            this.toolStripLeft.PerformLayout();
+            this.toolStripRight.ResumeLayout(false);
+            this.toolStripRight.PerformLayout();
+            this.toolStripTop.ResumeLayout(false);
+            this.toolStripTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -858,7 +1333,7 @@
         private System.Windows.Forms.ToolStripMenuItem DayCountertoolStripDropDown;
         private System.Windows.Forms.ToolStripMenuItem GraphSectiontoolStripDropDown;
         private System.Windows.Forms.ToolStrip toolStripLeft;
-        private System.Windows.Forms.ToolStripButton ToolStripLeftButtonSafe;
+        private System.Windows.Forms.ToolStripButton ToolStripLeftButtonSave;
         private System.Windows.Forms.ToolStripButton ToolStripLeftButtonDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton ToolStripLeftButtonLog;
@@ -903,6 +1378,39 @@
         private System.Windows.Forms.NumericUpDown numericUpDownDays;
         private System.Windows.Forms.Label labelDays;
         private System.Windows.Forms.Label labelDayCounter;
+        private System.Windows.Forms.TextBox textBoxCalcScreen;
+        private System.Windows.Forms.Button ButtonNumberOne;
+        private System.Windows.Forms.Button ButtonNumberZero;
+        private System.Windows.Forms.Button ButtonSignChange;
+        private System.Windows.Forms.Button ButtonPowerTwo;
+        private System.Windows.Forms.Button ButtonPeriod;
+        private System.Windows.Forms.Button ButtonNumberNine;
+        private System.Windows.Forms.Button ButtonEqual;
+        private System.Windows.Forms.Button ButtonNumberEight;
+        private System.Windows.Forms.Button ButtonPlus;
+        private System.Windows.Forms.Button ButtonMinus;
+        private System.Windows.Forms.Button ButtonMultiplication;
+        private System.Windows.Forms.Button ButtonDivision;
+        private System.Windows.Forms.Button ButtonOneOver;
+        private System.Windows.Forms.Button ButtonPercentage;
+        private System.Windows.Forms.Button ButtonBackspace;
+        private System.Windows.Forms.Button ButtonCE;
+        private System.Windows.Forms.Button ButtonClear;
+        private System.Windows.Forms.Button ButtonNumberSeven;
+        private System.Windows.Forms.Button ButtonNumberFour;
+        private System.Windows.Forms.Button ButtonNumberFive;
+        private System.Windows.Forms.Button ButtonNumberSix;
+        private System.Windows.Forms.Button ButtonNumberTwo;
+        private System.Windows.Forms.Button ButtonNumberThree;
+        private System.Windows.Forms.Button ButtonSquareRoot;
+        private System.Windows.Forms.SaveFileDialog SaveFile;
+        private System.Windows.Forms.OpenFileDialog OpenFile;
+        private System.Windows.Forms.PrintDialog PrintFile;
+        private System.Drawing.Printing.PrintDocument PrintDocument;
+        private System.Windows.Forms.Button ButtonLoad;
+        private System.Windows.Forms.Button ButtonCloseParenthesis;
+        private System.Windows.Forms.Button ButtonSave;
+        private System.Windows.Forms.Button ButtonOpenParenthesis;
     }
 }
 
