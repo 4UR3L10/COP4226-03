@@ -135,6 +135,10 @@
             this.OpenFile = new System.Windows.Forms.OpenFileDialog();
             this.PrintFile = new System.Windows.Forms.PrintDialog();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.ListBoxImport = new System.Windows.Forms.ListBox();
+            this.ListBoxResults = new System.Windows.Forms.ListBox();
+            this.LabelImported = new System.Windows.Forms.Label();
+            this.LabelResults = new System.Windows.Forms.Label();
             this.menuStripTop.SuspendLayout();
             this.toolStripContainerMain.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.ContentPanel.SuspendLayout();
@@ -145,6 +149,7 @@
             this.statusStripGreeting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).BeginInit();
             this.splitContainerInside.Panel1.SuspendLayout();
+            this.splitContainerInside.Panel2.SuspendLayout();
             this.splitContainerInside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCalculatorandDayCounter)).BeginInit();
             this.splitContainerCalculatorandDayCounter.Panel1.SuspendLayout();
@@ -305,14 +310,14 @@
             // 
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Name = "StripMenuAppearanceModifyCalculatorDisplayFont";
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(240, 30);
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Text = "Modify calculator display font";
             // 
             // StripMenuAppearanceModifyBackgroundColor
             // 
             this.StripMenuAppearanceModifyBackgroundColor.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
             this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
-            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(240, 30);
             this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
             // 
             // StripMenuHelp
@@ -434,6 +439,14 @@
             // 
             this.splitContainerInside.Panel1.Controls.Add(this.splitContainerCalculatorandDayCounter);
             this.splitContainerInside.Panel1.Controls.Add(this.splitterRightSideCalculatorandDayCounter);
+            // 
+            // splitContainerInside.Panel2
+            // 
+            this.splitContainerInside.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.splitContainerInside.Panel2.Controls.Add(this.LabelResults);
+            this.splitContainerInside.Panel2.Controls.Add(this.LabelImported);
+            this.splitContainerInside.Panel2.Controls.Add(this.ListBoxResults);
+            this.splitContainerInside.Panel2.Controls.Add(this.ListBoxImport);
             this.splitContainerInside.Size = new System.Drawing.Size(778, 549);
             this.splitContainerInside.SplitterDistance = 323;
             this.splitContainerInside.SplitterWidth = 3;
@@ -464,7 +477,7 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(316, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 317;
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 319;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
             // 
@@ -891,7 +904,7 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 309);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 311);
             this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(316, 8);
@@ -1256,6 +1269,40 @@
             this.PrintDocument.DocumentName = "Calculator History";
             this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
+            // ListBoxImport
+            // 
+            this.ListBoxImport.FormattingEnabled = true;
+            this.ListBoxImport.Location = new System.Drawing.Point(47, 37);
+            this.ListBoxImport.Name = "ListBoxImport";
+            this.ListBoxImport.Size = new System.Drawing.Size(363, 95);
+            this.ListBoxImport.TabIndex = 3;
+            // 
+            // ListBoxResults
+            // 
+            this.ListBoxResults.FormattingEnabled = true;
+            this.ListBoxResults.Location = new System.Drawing.Point(47, 406);
+            this.ListBoxResults.Name = "ListBoxResults";
+            this.ListBoxResults.Size = new System.Drawing.Size(363, 95);
+            this.ListBoxResults.TabIndex = 4;
+            // 
+            // LabelImported
+            // 
+            this.LabelImported.AutoSize = true;
+            this.LabelImported.Location = new System.Drawing.Point(44, 21);
+            this.LabelImported.Name = "LabelImported";
+            this.LabelImported.Size = new System.Drawing.Size(116, 13);
+            this.LabelImported.TabIndex = 5;
+            this.LabelImported.Text = "List of Imported Graphs";
+            // 
+            // LabelResults
+            // 
+            this.LabelResults.AutoSize = true;
+            this.LabelResults.Location = new System.Drawing.Point(44, 390);
+            this.LabelResults.Name = "LabelResults";
+            this.LabelResults.Size = new System.Drawing.Size(73, 13);
+            this.LabelResults.TabIndex = 6;
+            this.LabelResults.Text = "List of Results";
+            // 
             // NeatOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1283,6 +1330,8 @@
             this.statusStripGreeting.ResumeLayout(false);
             this.statusStripGreeting.PerformLayout();
             this.splitContainerInside.Panel1.ResumeLayout(false);
+            this.splitContainerInside.Panel2.ResumeLayout(false);
+            this.splitContainerInside.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).EndInit();
             this.splitContainerInside.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel1.ResumeLayout(false);
@@ -1411,6 +1460,10 @@
         private System.Windows.Forms.Button ButtonCloseParenthesis;
         private System.Windows.Forms.Button ButtonSave;
         private System.Windows.Forms.Button ButtonOpenParenthesis;
+        private System.Windows.Forms.Label LabelResults;
+        private System.Windows.Forms.Label LabelImported;
+        private System.Windows.Forms.ListBox ListBoxResults;
+        private System.Windows.Forms.ListBox ListBoxImport;
     }
 }
 
