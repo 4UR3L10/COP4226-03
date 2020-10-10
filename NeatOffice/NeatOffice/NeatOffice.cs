@@ -361,18 +361,14 @@ namespace NeatOffice
         {
             DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
             DateTime todate = Convert.ToDateTime(dateTimePickerTo.Text);
-            if (fromdate <= todate)
-            {
-                TimeSpan ts = todate.Subtract(fromdate);
-                int days = Convert.ToInt16(ts.Days);
-                numericUpDownDays.Value = days;
-            }
-            else
-            {
-                MessageBox.Show("Error in the dates");
-            }
-            
+            TimeSpan ts = todate.Subtract(fromdate);
+            int days = Convert.ToInt16(ts.Days);
+            numericUpDownDays.Value = days;
         }
 
+        private void Numeric_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
+        }
     }
 }
