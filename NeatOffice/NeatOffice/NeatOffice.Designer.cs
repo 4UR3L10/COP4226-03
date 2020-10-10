@@ -84,7 +84,7 @@
             this.labelDayCounter = new System.Windows.Forms.Label();
             this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
             this.statusStripProgressBar = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabelReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.LabelResults = new System.Windows.Forms.Label();
             this.LabelImported = new System.Windows.Forms.Label();
@@ -127,6 +127,10 @@
             this.CalculatortoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
             this.DayCountertoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphSectiontoolStripDropDown = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.OpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.PrintFile = new System.Windows.Forms.PrintDialog();
+            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.StripMenuFileItemClearCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFileItemSaveCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenuFilePrintCalculatorHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,15 +202,66 @@
             this.StripMenuFile.Size = new System.Drawing.Size(37, 20);
             this.StripMenuFile.Text = "File";
             // 
+            // StripMenuFileItemClearCalculatorHistory
+            // 
+            this.StripMenuFileItemClearCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Eraser;
+            this.StripMenuFileItemClearCalculatorHistory.Name = "StripMenuFileItemClearCalculatorHistory";
+            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemClearCalculatorHistory.Text = "Clear calculator history";
+            this.StripMenuFileItemClearCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonDelete_Click);
+            // 
+            // StripMenuFileItemSaveCalculatorHistory
+            // 
+            this.StripMenuFileItemSaveCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Save;
+            this.StripMenuFileItemSaveCalculatorHistory.Name = "StripMenuFileItemSaveCalculatorHistory";
+            this.StripMenuFileItemSaveCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemSaveCalculatorHistory.Text = "Save calculator history as ...";
+            this.StripMenuFileItemSaveCalculatorHistory.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // StripMenuFilePrintCalculatorHistory
+            // 
+            this.StripMenuFilePrintCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Printer;
+            this.StripMenuFilePrintCalculatorHistory.Name = "StripMenuFilePrintCalculatorHistory";
+            this.StripMenuFilePrintCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFilePrintCalculatorHistory.Text = "Print calculator history";
+            this.StripMenuFilePrintCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
+            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(263, 6);
             // 
+            // StripMenuFileSaveMinimumSpanningTreeAs
+            // 
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Image = global::NeatOffice.Properties.Resources.BTree;
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Name = "StripMenuFileSaveMinimumSpanningTreeAs";
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Text = "Save minimum spanning tree as...";
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Click += new System.EventHandler(this.toolStripRightSave_Click);
+            // 
+            // StripMenuFileSaveShortestPathAs
+            // 
+            this.StripMenuFileSaveShortestPathAs.Image = global::NeatOffice.Properties.Resources.ShorPath;
+            this.StripMenuFileSaveShortestPathAs.Name = "StripMenuFileSaveShortestPathAs";
+            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
+            this.StripMenuFileSaveShortestPathAs.Click += new System.EventHandler(this.toolStripRightSave_Click);
+            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(263, 6);
+            // 
+            // StripMenuFileExit
+            // 
+            this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
+            this.StripMenuFileExit.Name = "StripMenuFileExit";
+            this.StripMenuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.StripMenuFileExit.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileExit.Text = "Exit";
+            this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
             // 
             // StripMenuOpen
             // 
@@ -220,10 +275,42 @@
             this.StripMenuOpen.Size = new System.Drawing.Size(48, 20);
             this.StripMenuOpen.Text = "Open";
             // 
+            // StripMenuOpenCalculatorHistory
+            // 
+            this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
+            this.StripMenuOpenCalculatorHistory.Name = "StripMenuOpenCalculatorHistory";
+            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenCalculatorHistory.Text = "Calculator History";
+            this.StripMenuOpenCalculatorHistory.Click += new System.EventHandler(this.ButtonLoad_Click);
+            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(185, 6);
+            // 
+            // StripMenuOpenGraphMatrixTxT
+            // 
+            this.StripMenuOpenGraphMatrixTxT.Image = global::NeatOffice.Properties.Resources.TXT;
+            this.StripMenuOpenGraphMatrixTxT.Name = "StripMenuOpenGraphMatrixTxT";
+            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixTxT.Text = "Graph Matrix (.txt)";
+            this.StripMenuOpenGraphMatrixTxT.Click += new System.EventHandler(this.toolStripRightGraphTXT_Click);
+            // 
+            // StripMenuOpenGraphMatrixCSV
+            // 
+            this.StripMenuOpenGraphMatrixCSV.Image = global::NeatOffice.Properties.Resources.CSV;
+            this.StripMenuOpenGraphMatrixCSV.Name = "StripMenuOpenGraphMatrixCSV";
+            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixCSV.Text = "Graph Matrix (.csv)";
+            this.StripMenuOpenGraphMatrixCSV.Click += new System.EventHandler(this.toolStripRightCSV_Click);
+            // 
+            // StripMenuOpenMultipleGraphs
+            // 
+            this.StripMenuOpenMultipleGraphs.Image = global::NeatOffice.Properties.Resources.MultipleGraph;
+            this.StripMenuOpenMultipleGraphs.Name = "StripMenuOpenMultipleGraphs";
+            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
+            this.StripMenuOpenMultipleGraphs.Click += new System.EventHandler(this.toolStripRightUnknown_Click);
             // 
             // StripMenuAppearance
             // 
@@ -357,6 +444,7 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(314, 549);
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 317;
             this.splitContainerCalculatorandDayCounter.SplitterDistance = 319;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
@@ -433,7 +521,7 @@
             this.ButtonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonLoad.Location = new System.Drawing.Point(232, 211);
             this.ButtonLoad.Margin = new System.Windows.Forms.Padding(1);
-            this.ButtonLoad.Name = "ButtonLoad";
+            this.ButtonLoad.Name = "ButtonLoad"; 
             this.ButtonLoad.Size = new System.Drawing.Size(76, 33);
             this.ButtonLoad.TabIndex = 19;
             this.ButtonLoad.Text = "Load";
@@ -887,7 +975,7 @@
             // statusStripProgressBar
             // 
             this.statusStripProgressBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
+            this.toolStripProgressBar,
             this.toolStripStatusLabelReady});
             this.statusStripProgressBar.Location = new System.Drawing.Point(0, 527);
             this.statusStripProgressBar.Name = "statusStripProgressBar";
@@ -895,10 +983,10 @@
             this.statusStripProgressBar.TabIndex = 7;
             this.statusStripProgressBar.Text = "statusStrip1";
             // 
-            // toolStripProgressBar1
+            // toolStripProgressBar
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // toolStripStatusLabelReady
             // 
@@ -1116,6 +1204,29 @@
             this.ToolStripLeftButtonPrint.Size = new System.Drawing.Size(27, 28);
             this.ToolStripLeftButtonPrint.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
             // 
+            // toolStripRight
+            // 
+            this.toolStripRight.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripRight.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStripRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripRightGraphTXT,
+            this.toolStripRightCSV,
+            this.toolStripRightUnknown,
+            this.toolStripSeparator4,
+            this.toolStripRightCancel,
+            this.toolStripRightDelete,
+            this.toolStripSeparator5,
+            this.toolStripRightSaveMinimumSpanTree,
+            this.toolStripRightSaveShortestPath,
+            this.toolStripSeparator6,
+            this.toolStripRightSave,
+            this.toolStripSeparator7,
+            this.toolStripRightPrint});
+            this.toolStripRight.Location = new System.Drawing.Point(0, 4);
+            this.toolStripRight.Name = "toolStripRight";
+            this.toolStripRight.Size = new System.Drawing.Size(32, 333);
+            this.toolStripRight.TabIndex = 0;
+            // 
             // toolStripRightGraphTXT
             // 
             this.toolStripRightGraphTXT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1123,6 +1234,7 @@
             this.toolStripRightGraphTXT.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightGraphTXT.Name = "toolStripRightGraphTXT";
             this.toolStripRightGraphTXT.Size = new System.Drawing.Size(30, 28);
+            this.toolStripRightGraphTXT.Click += new System.EventHandler(this.toolStripRightGraphTXT_Click);
             // 
             // toolStripRightCSV
             // 
@@ -1131,6 +1243,7 @@
             this.toolStripRightCSV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightCSV.Name = "toolStripRightCSV";
             this.toolStripRightCSV.Size = new System.Drawing.Size(30, 28);
+            this.toolStripRightCSV.Click += new System.EventHandler(this.toolStripRightCSV_Click);
             // 
             // toolStripRightUnknown
             // 
@@ -1139,6 +1252,12 @@
             this.toolStripRightUnknown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightUnknown.Name = "toolStripRightUnknown";
             this.toolStripRightUnknown.Size = new System.Drawing.Size(30, 28);
+            this.toolStripRightUnknown.Click += new System.EventHandler(this.toolStripRightUnknown_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(30, 6);
             // 
             // toolStripRightCancel
             // 
@@ -1147,6 +1266,7 @@
             this.toolStripRightCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRightCancel.Name = "toolStripRightCancel";
             this.toolStripRightCancel.Size = new System.Drawing.Size(30, 28);
+            this.toolStripRightCancel.Click += new System.EventHandler(this.toolStripRightCancel_Click);
             // 
             // toolStripRightDelete
             // 
@@ -1156,6 +1276,12 @@
             this.toolStripRightDelete.Name = "toolStripRightDelete";
             this.toolStripRightDelete.Size = new System.Drawing.Size(30, 28);
             this.toolStripRightDelete.Text = "Delete";
+            this.toolStripRightDelete.Click += new System.EventHandler(this.toolStripRightDelete_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(30, 6);
             // 
             // toolStripRightSaveMinimumSpanTree
             // 
@@ -1165,6 +1291,7 @@
             this.toolStripRightSaveMinimumSpanTree.Name = "toolStripRightSaveMinimumSpanTree";
             this.toolStripRightSaveMinimumSpanTree.Size = new System.Drawing.Size(30, 28);
             this.toolStripRightSaveMinimumSpanTree.Text = "Save Minimum SpanTree";
+            this.toolStripRightSaveMinimumSpanTree.Click += new System.EventHandler(this.toolStripRightSaveMinimumSpanTree_Click);
             // 
             // toolStripRightSaveShortestPath
             // 
@@ -1174,6 +1301,12 @@
             this.toolStripRightSaveShortestPath.Name = "toolStripRightSaveShortestPath";
             this.toolStripRightSaveShortestPath.Size = new System.Drawing.Size(30, 28);
             this.toolStripRightSaveShortestPath.Text = "Save Shortest Path";
+            this.toolStripRightSaveShortestPath.Click += new System.EventHandler(this.toolStripRightSaveShortestPath_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(30, 6);
             // 
             // toolStripRightSave
             // 
@@ -1183,6 +1316,12 @@
             this.toolStripRightSave.Name = "toolStripRightSave";
             this.toolStripRightSave.Size = new System.Drawing.Size(30, 28);
             this.toolStripRightSave.Text = "Save";
+            this.toolStripRightSave.Click += new System.EventHandler(this.toolStripRightSave_Click);
+            //
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(30, 6);
             // 
             // toolStripRightPrint
             // 
@@ -1208,7 +1347,7 @@
             // 
             // CalculatortoolStripDropDown
             // 
-            this.CalculatortoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calcu1;
+            this.CalculatortoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calcu;
             this.CalculatortoolStripDropDown.Name = "CalculatortoolStripDropDown";
             this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(155, 30);
             this.CalculatortoolStripDropDown.Text = "Calculator";
@@ -1216,7 +1355,7 @@
             // 
             // DayCountertoolStripDropDown
             // 
-            this.DayCountertoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calendar1;
+            this.DayCountertoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calendar;
             this.DayCountertoolStripDropDown.Name = "DayCountertoolStripDropDown";
             this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(155, 30);
             this.DayCountertoolStripDropDown.Text = "Day counter";
@@ -1358,7 +1497,7 @@
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
             this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(205, 30);
             this.aboutToolStripMenuItem2.Text = "About";
-            // 
+            //
             // NeatOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1523,7 +1662,7 @@
         private System.Windows.Forms.ListBox ListBoxResults;
         private System.Windows.Forms.ListBox ListBoxImport;
         private System.Windows.Forms.StatusStrip statusStripProgressBar;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelReady;
         private System.Windows.Forms.ColorDialog BackgroundColorSelector;
         private System.Windows.Forms.FontDialog fontSelector;
