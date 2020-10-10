@@ -88,6 +88,7 @@
   <ItemGroup>
     <Content Include="Other Files\undirectedConnected100.txt" />
     <Content Include="Other Files\undirectedConnected1000.txt" />
+    <None Include="Resources\Questionsss.ico" />
     <None Include="Resources\calendar.ico" />
     <None Include="Resources\calcu.ico" />
     <None Include="Resources\X1.ico" />

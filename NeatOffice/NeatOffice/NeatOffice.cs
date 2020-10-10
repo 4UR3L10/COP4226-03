@@ -1,5 +1,4 @@
-﻿using PA3Draft;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +28,7 @@ namespace NeatOffice
             textBoxCalcScreen.ReadOnly = true; 
             textBoxCalcScreen.Text = String.Empty;           
             graphAlObj = new GraphAlgorithms(toolStripProgressBar, toolStripStatusLabelReady, statusStripProgressBar);
+            toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
         }
 
         /**********************************/
@@ -349,32 +349,10 @@ namespace NeatOffice
 
             e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
         }
-
-        // Exit Menu.
-        private void StripMenuFileExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePickerTo_CloseUp(object sender, EventArgs e)
-        {
-            DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
-            DateTime todate = Convert.ToDateTime(dateTimePickerTo.Text);
-            TimeSpan ts = todate.Subtract(fromdate);
-            int days = Convert.ToInt16(ts.Days);
-            numericUpDownDays.Value = days;
-        }
         
-        private void Numeric_ValueChanged(object sender, EventArgs e)
-        {
-            this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
-        }
-
+        /**********************************/
+        /* Graphs Functions               */
+        /**********************************/        
         // Reading its matrix representation stored in a .txt file
         private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
         {
@@ -467,7 +445,7 @@ namespace NeatOffice
             graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
             ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
         }
-
+        
         // Saving History 
         // FINISH SAVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
         // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
@@ -489,6 +467,129 @@ namespace NeatOffice
             else
             {
                 // Cancel Button.
+            }
+        }
+
+        /**********************************/
+        /* WA Functions.                  */
+        /**********************************/  
+        /**
+         * 1.- Exits Menu.
+         */
+        private void StripMenuFileExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+        /**
+         * 1.- Prints Message.
+         */
+        private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
+        {
+            string s = "Good Day !";
+        }        
+        
+        /**
+         * 1.- The dateTimePickerTo_CloseUp method receives two parameters
+         * 2.- creates two variables of type Datetime
+         * 3.- converts the values of the two variables to datetime type
+         * 4.- calculates the total time substracting to and from date
+         * 5.- declares a variable int and converts the value obtaines by calculating the totla time
+         */
+        private void dateTimePickerTo_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
+            DateTime todate = Convert.ToDateTime(dateTimePickerTo.Text);
+            TimeSpan ts = todate.Subtract(fromdate);
+            int days = Convert.ToInt16(ts.Days);
+            numericUpDownDays.Value = days;
+        }
+        
+        /**
+         * 1.- The Numeric_ValueChanged method receives two parameters
+         * 2.- changes the values of datetimepickerto according to the user selection
+         */
+        private void Numeric_ValueChanged(object sender, EventArgs e)
+        {
+            this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
+        }
+
+        /**
+         * 1.- The BackgroundColorSelector_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void BackgroundColorSelector_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tableLayoutPanelCalculator.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The DayCountertoolStripDropDown_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void DayCountertoolStripDropDown_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The GraphSectiontoolStripDropDown_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void GraphSectiontoolStripDropDown_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The StripMenuAppearanceModifyCalculatorDisplayFont_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void StripMenuAppearanceModifyCalculatorDisplayFont_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = fontSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                textBoxCalcScreen.Font = fontSelector.Font;
+            }
+        }
+        
+        /**
+         * 1.- The StripMenuAppearanceModifyBackgroundColor_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void StripMenuAppearanceModifyBackgroundColor_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tableLayoutPanelCalculator.BackColor = BackgroundColorSelector.Color;
+                splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
+                splitContainerCalculatorandDayCounter.Panel1.BackColor = BackgroundColorSelector.Color;
+                splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
+
             }
         }
     }
