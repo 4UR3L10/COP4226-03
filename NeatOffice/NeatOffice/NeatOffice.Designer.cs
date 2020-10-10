@@ -100,9 +100,10 @@
             this.labelDays = new System.Windows.Forms.Label();
             this.labelDayCounter = new System.Windows.Forms.Label();
             this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripLabelReady = new System.Windows.Forms.ToolStripLabel();
+            this.LabelResults = new System.Windows.Forms.Label();
+            this.LabelImported = new System.Windows.Forms.Label();
+            this.ListBoxResults = new System.Windows.Forms.ListBox();
+            this.ListBoxImport = new System.Windows.Forms.ListBox();
             this.toolStripLeft = new System.Windows.Forms.ToolStrip();
             this.ToolStripLeftButtonSave = new System.Windows.Forms.ToolStripButton();
             this.ToolStripLeftButtonDelete = new System.Windows.Forms.ToolStripButton();
@@ -138,10 +139,9 @@
             this.OpenFile = new System.Windows.Forms.OpenFileDialog();
             this.PrintFile = new System.Windows.Forms.PrintDialog();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.ListBoxImport = new System.Windows.Forms.ListBox();
-            this.ListBoxResults = new System.Windows.Forms.ListBox();
-            this.LabelImported = new System.Windows.Forms.Label();
-            this.LabelResults = new System.Windows.Forms.Label();
+            this.statusStripProgressBar = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabelReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStripTop.SuspendLayout();
             this.toolStripContainerMain.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.ContentPanel.SuspendLayout();
@@ -160,10 +160,10 @@
             this.splitContainerCalculatorandDayCounter.SuspendLayout();
             this.tableLayoutPanelCalculator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.toolStripLeft.SuspendLayout();
             this.toolStripRight.SuspendLayout();
             this.toolStripTop.SuspendLayout();
+            this.statusStripProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripTop
@@ -200,7 +200,7 @@
             // 
             this.StripMenuFileItemClearCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Eraser;
             this.StripMenuFileItemClearCalculatorHistory.Name = "StripMenuFileItemClearCalculatorHistory";
-            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFileItemClearCalculatorHistory.Text = "Clear calculator history";
             this.StripMenuFileItemClearCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonDelete_Click);
             // 
@@ -209,7 +209,7 @@
             this.StripMenuFileItemSaveCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Save;
             this.StripMenuFileItemSaveCalculatorHistory.Name = "StripMenuFileItemSaveCalculatorHistory";
             this.StripMenuFileItemSaveCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFileItemSaveCalculatorHistory.Text = "Save calculator history as ...";
             this.StripMenuFileItemSaveCalculatorHistory.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
@@ -218,40 +218,40 @@
             this.StripMenuFilePrintCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Printer;
             this.StripMenuFilePrintCalculatorHistory.Name = "StripMenuFilePrintCalculatorHistory";
             this.StripMenuFilePrintCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFilePrintCalculatorHistory.Text = "Print calculator history";
             this.StripMenuFilePrintCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(255, 6);
             // 
             // StripMenuFileSaveMinimumSpanningTreeAs
             // 
             this.StripMenuFileSaveMinimumSpanningTreeAs.Image = global::NeatOffice.Properties.Resources.BTree;
             this.StripMenuFileSaveMinimumSpanningTreeAs.Name = "StripMenuFileSaveMinimumSpanningTreeAs";
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFileSaveMinimumSpanningTreeAs.Text = "Save minimum spanning tree as...";
             // 
             // StripMenuFileSaveShortestPathAs
             // 
             this.StripMenuFileSaveShortestPathAs.Image = global::NeatOffice.Properties.Resources.ShorPath;
             this.StripMenuFileSaveShortestPathAs.Name = "StripMenuFileSaveShortestPathAs";
-            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(255, 6);
             // 
             // StripMenuFileExit
             // 
             this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
             this.StripMenuFileExit.Name = "StripMenuFileExit";
             this.StripMenuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.StripMenuFileExit.Size = new System.Drawing.Size(266, 30);
+            this.StripMenuFileExit.Size = new System.Drawing.Size(258, 22);
             this.StripMenuFileExit.Text = "Exit";
             this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
             // 
@@ -271,34 +271,34 @@
             // 
             this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
             this.StripMenuOpenCalculatorHistory.Name = "StripMenuOpenCalculatorHistory";
-            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(174, 22);
             this.StripMenuOpenCalculatorHistory.Text = "Calculator History";
             this.StripMenuOpenCalculatorHistory.Click += new System.EventHandler(this.ButtonLoad_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(171, 6);
             // 
             // StripMenuOpenGraphMatrixTxT
             // 
             this.StripMenuOpenGraphMatrixTxT.Image = global::NeatOffice.Properties.Resources.TXT;
             this.StripMenuOpenGraphMatrixTxT.Name = "StripMenuOpenGraphMatrixTxT";
-            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(174, 22);
             this.StripMenuOpenGraphMatrixTxT.Text = "Graph Matrix (.txt)";
             // 
             // StripMenuOpenGraphMatrixCSV
             // 
             this.StripMenuOpenGraphMatrixCSV.Image = global::NeatOffice.Properties.Resources.CSV;
             this.StripMenuOpenGraphMatrixCSV.Name = "StripMenuOpenGraphMatrixCSV";
-            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(174, 22);
             this.StripMenuOpenGraphMatrixCSV.Text = "Graph Matrix (.csv)";
             // 
             // StripMenuOpenMultipleGraphs
             // 
             this.StripMenuOpenMultipleGraphs.Image = global::NeatOffice.Properties.Resources.MultipleGraph;
             this.StripMenuOpenMultipleGraphs.Name = "StripMenuOpenMultipleGraphs";
-            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(188, 30);
+            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(174, 22);
             this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
             // 
             // StripMenuAppearance
@@ -446,8 +446,8 @@
             // 
             // splitContainerInside.Panel2
             // 
-            this.splitContainerInside.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainerInside.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.splitContainerInside.Panel2.Controls.Add(this.statusStripProgressBar);
             this.splitContainerInside.Panel2.Controls.Add(this.LabelResults);
             this.splitContainerInside.Panel2.Controls.Add(this.LabelImported);
             this.splitContainerInside.Panel2.Controls.Add(this.ListBoxResults);
@@ -468,7 +468,6 @@
             // 
             // splitContainerCalculatorandDayCounter.Panel1
             // 
-            this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.textBoxCalcScreen);
             this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.tableLayoutPanelCalculator);
             this.splitContainerCalculatorandDayCounter.Panel1.Controls.Add(this.splitterBottomCalculator);
             // 
@@ -481,28 +480,34 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.numericUpDownDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
-            this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(317, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 309;
+            this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(316, 549);
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 313;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
             // 
             // textBoxCalcScreen
             // 
+            this.tableLayoutPanelCalculator.SetColumnSpan(this.textBoxCalcScreen, 4);
+            this.textBoxCalcScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxCalcScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCalcScreen.Location = new System.Drawing.Point(3, 11);
+            this.textBoxCalcScreen.Location = new System.Drawing.Point(2, 2);
             this.textBoxCalcScreen.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCalcScreen.Multiline = true;
             this.textBoxCalcScreen.Name = "textBoxCalcScreen";
-            this.textBoxCalcScreen.Size = new System.Drawing.Size(309, 49);
+            this.textBoxCalcScreen.Size = new System.Drawing.Size(307, 25);
             this.textBoxCalcScreen.TabIndex = 1;
             // 
             // tableLayoutPanelCalculator
             // 
+            this.tableLayoutPanelCalculator.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelCalculator.ColumnCount = 4;
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelCalculator.Controls.Add(this.textBoxCalcScreen, 0, 0);
             this.tableLayoutPanelCalculator.Controls.Add(this.ButtonLoad, 3, 7);
             this.tableLayoutPanelCalculator.Controls.Add(this.ButtonCloseParenthesis, 1, 7);
             this.tableLayoutPanelCalculator.Controls.Add(this.ButtonSave, 2, 7);
@@ -909,7 +914,7 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 311);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 305);
             this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(316, 8);
@@ -957,9 +962,20 @@
             // 
             this.numericUpDownDays.Location = new System.Drawing.Point(161, 137);
             this.numericUpDownDays.Margin = new System.Windows.Forms.Padding(2);
+            this.numericUpDownDays.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.numericUpDownDays.Minimum = new decimal(new int[] {
+            200000,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownDays.Name = "numericUpDownDays";
             this.numericUpDownDays.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownDays.TabIndex = 2;
+            this.numericUpDownDays.ValueChanged += new System.EventHandler(this.Numeric_ValueChanged);
             // 
             // labelDays
             // 
@@ -985,35 +1001,46 @@
             // 
             this.splitterRightSideCalculatorandDayCounter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterRightSideCalculatorandDayCounter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitterRightSideCalculatorandDayCounter.Location = new System.Drawing.Point(317, 0);
+            this.splitterRightSideCalculatorandDayCounter.Location = new System.Drawing.Point(316, 0);
             this.splitterRightSideCalculatorandDayCounter.Margin = new System.Windows.Forms.Padding(2);
             this.splitterRightSideCalculatorandDayCounter.Name = "splitterRightSideCalculatorandDayCounter";
             this.splitterRightSideCalculatorandDayCounter.Size = new System.Drawing.Size(7, 549);
             this.splitterRightSideCalculatorandDayCounter.TabIndex = 0;
             this.splitterRightSideCalculatorandDayCounter.TabStop = false;
             // 
-            // toolStrip1
+            // LabelResults
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar,
-            this.toolStripLabelReady});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 524);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(451, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.LabelResults.AutoSize = true;
+            this.LabelResults.Location = new System.Drawing.Point(44, 390);
+            this.LabelResults.Name = "LabelResults";
+            this.LabelResults.Size = new System.Drawing.Size(73, 13);
+            this.LabelResults.TabIndex = 6;
+            this.LabelResults.Text = "List of Results";
             // 
-            // toolStripProgressBar
+            // LabelImported
             // 
-            this.toolStripProgressBar.Name = "toolStripProgressBar";
-            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 22);
+            this.LabelImported.AutoSize = true;
+            this.LabelImported.Location = new System.Drawing.Point(44, 21);
+            this.LabelImported.Name = "LabelImported";
+            this.LabelImported.Size = new System.Drawing.Size(116, 13);
+            this.LabelImported.TabIndex = 5;
+            this.LabelImported.Text = "List of Imported Graphs";
             // 
-            // toolStripLabelReady
+            // ListBoxResults
             // 
-            this.toolStripLabelReady.Name = "toolStripLabelReady";
-            this.toolStripLabelReady.Size = new System.Drawing.Size(42, 22);
-            this.toolStripLabelReady.Text = "Ready!";
+            this.ListBoxResults.FormattingEnabled = true;
+            this.ListBoxResults.Location = new System.Drawing.Point(47, 406);
+            this.ListBoxResults.Name = "ListBoxResults";
+            this.ListBoxResults.Size = new System.Drawing.Size(363, 95);
+            this.ListBoxResults.TabIndex = 4;
+            // 
+            // ListBoxImport
+            // 
+            this.ListBoxImport.FormattingEnabled = true;
+            this.ListBoxImport.Location = new System.Drawing.Point(47, 37);
+            this.ListBoxImport.Name = "ListBoxImport";
+            this.ListBoxImport.Size = new System.Drawing.Size(363, 95);
+            this.ListBoxImport.TabIndex = 3;
             // 
             // toolStripLeft
             // 
@@ -1270,21 +1297,23 @@
             // 
             // CalculatortoolStripDropDown
             // 
+            this.CalculatortoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calcu1;
             this.CalculatortoolStripDropDown.Name = "CalculatortoolStripDropDown";
-            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.CalculatortoolStripDropDown.Text = "Calculator";
             // 
             // DayCountertoolStripDropDown
             // 
+            this.DayCountertoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calendar1;
             this.DayCountertoolStripDropDown.Name = "DayCountertoolStripDropDown";
-            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.DayCountertoolStripDropDown.Text = "Day counter";
             // 
             // GraphSectiontoolStripDropDown
             // 
             this.GraphSectiontoolStripDropDown.Image = global::NeatOffice.Properties.Resources.BTree;
             this.GraphSectiontoolStripDropDown.Name = "GraphSectiontoolStripDropDown";
-            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.GraphSectiontoolStripDropDown.Text = "Graph section";
             // 
             // OpenFile
@@ -1300,39 +1329,27 @@
             this.PrintDocument.DocumentName = "Calculator History";
             this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
-            // ListBoxImport
+            // statusStripProgressBar
             // 
-            this.ListBoxImport.FormattingEnabled = true;
-            this.ListBoxImport.Location = new System.Drawing.Point(47, 37);
-            this.ListBoxImport.Name = "ListBoxImport";
-            this.ListBoxImport.Size = new System.Drawing.Size(363, 95);
-            this.ListBoxImport.TabIndex = 3;
+            this.statusStripProgressBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabelReady});
+            this.statusStripProgressBar.Location = new System.Drawing.Point(0, 527);
+            this.statusStripProgressBar.Name = "statusStripProgressBar";
+            this.statusStripProgressBar.Size = new System.Drawing.Size(452, 22);
+            this.statusStripProgressBar.TabIndex = 7;
+            this.statusStripProgressBar.Text = "statusStrip1";
             // 
-            // ListBoxResults
+            // toolStripProgressBar1
             // 
-            this.ListBoxResults.FormattingEnabled = true;
-            this.ListBoxResults.Location = new System.Drawing.Point(47, 406);
-            this.ListBoxResults.Name = "ListBoxResults";
-            this.ListBoxResults.Size = new System.Drawing.Size(363, 95);
-            this.ListBoxResults.TabIndex = 4;
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
-            // LabelImported
+            // toolStripStatusLabelReady
             // 
-            this.LabelImported.AutoSize = true;
-            this.LabelImported.Location = new System.Drawing.Point(44, 21);
-            this.LabelImported.Name = "LabelImported";
-            this.LabelImported.Size = new System.Drawing.Size(116, 13);
-            this.LabelImported.TabIndex = 5;
-            this.LabelImported.Text = "List of Imported Graphs";
-            // 
-            // LabelResults
-            // 
-            this.LabelResults.AutoSize = true;
-            this.LabelResults.Location = new System.Drawing.Point(44, 390);
-            this.LabelResults.Name = "LabelResults";
-            this.LabelResults.Size = new System.Drawing.Size(73, 13);
-            this.LabelResults.TabIndex = 6;
-            this.LabelResults.Text = "List of Results";
+            this.toolStripStatusLabelReady.Name = "toolStripStatusLabelReady";
+            this.toolStripStatusLabelReady.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabelReady.Text = "Ready!";
             // 
             // NeatOffice
             // 
@@ -1366,21 +1383,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInside)).EndInit();
             this.splitContainerInside.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel1.ResumeLayout(false);
-            this.splitContainerCalculatorandDayCounter.Panel1.PerformLayout();
             this.splitContainerCalculatorandDayCounter.Panel2.ResumeLayout(false);
             this.splitContainerCalculatorandDayCounter.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCalculatorandDayCounter)).EndInit();
             this.splitContainerCalculatorandDayCounter.ResumeLayout(false);
             this.tableLayoutPanelCalculator.ResumeLayout(false);
+            this.tableLayoutPanelCalculator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.toolStripLeft.ResumeLayout(false);
             this.toolStripLeft.PerformLayout();
             this.toolStripRight.ResumeLayout(false);
             this.toolStripRight.PerformLayout();
             this.toolStripTop.ResumeLayout(false);
             this.toolStripTop.PerformLayout();
+            this.statusStripProgressBar.ResumeLayout(false);
+            this.statusStripProgressBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1460,9 +1477,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownDays;
         private System.Windows.Forms.Label labelDays;
         private System.Windows.Forms.Label labelDayCounter;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelReady;
         private System.Windows.Forms.TextBox textBoxCalcScreen;
         private System.Windows.Forms.Button ButtonNumberOne;
         private System.Windows.Forms.Button ButtonNumberZero;
@@ -1500,6 +1514,9 @@
         private System.Windows.Forms.Label LabelImported;
         private System.Windows.Forms.ListBox ListBoxResults;
         private System.Windows.Forms.ListBox ListBoxImport;
+        private System.Windows.Forms.StatusStrip statusStripProgressBar;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelReady;
     }
 }
 
