@@ -355,7 +355,7 @@ namespace NeatOffice
 
         private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
         {
-            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            string s = "Good Day !";
         }
         /**
          * 1.- The dateTimePickerTo_CloseUp method receives two parameters
