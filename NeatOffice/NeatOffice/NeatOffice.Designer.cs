@@ -100,10 +100,6 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTop = new System.Windows.Forms.ToolStrip();
-            this.SaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.OpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.PrintFile = new System.Windows.Forms.PrintDialog();
-            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.BackgroundColorSelector = new System.Windows.Forms.ColorDialog();
             this.fontSelector = new System.Windows.Forms.FontDialog();
             this.ToolStripLeftButtonSave = new System.Windows.Forms.ToolStripButton();
