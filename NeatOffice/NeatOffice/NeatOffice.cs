@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PA3Draft;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,10 @@ namespace NeatOffice
         public NeatOffice()
         {
             InitializeComponent();
-            // textBoxCalcScreen.ReadOnly = true;
+            textBoxCalcScreen.ReadOnly = true; 
             textBoxCalcScreen.Text = String.Empty;
+
+            // GraphAlgorithms g = new GraphAlgorithms(toolStripProgressBar, toolStripLabelReady, toolStripGraph);
         }
 
         /**********************************/
@@ -33,7 +36,7 @@ namespace NeatOffice
         /**********************************/
         public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
-
+        
         /**********************************/
         /* Numbers                        */
         /**********************************/
@@ -365,7 +368,7 @@ namespace NeatOffice
             int days = Convert.ToInt16(ts.Days);
             numericUpDownDays.Value = days;
         }
-
+        
         private void Numeric_ValueChanged(object sender, EventArgs e)
         {
             this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
