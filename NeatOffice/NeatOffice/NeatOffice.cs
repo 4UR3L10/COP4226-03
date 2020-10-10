@@ -24,11 +24,12 @@ namespace NeatOffice
         */
         public NeatOffice()
         {
+            // Initialization.
             InitializeComponent();
             textBoxCalcScreen.ReadOnly = true; 
-            textBoxCalcScreen.Text = String.Empty;
-
-            // GraphAlgorithms g = new GraphAlgorithms(toolStripProgressBar, toolStripLabelReady, toolStripGraph);
+            textBoxCalcScreen.Text = String.Empty;           
+            graphAlObj = new GraphAlgorithms(toolStripProgressBar, toolStripStatusLabelReady, statusStripProgressBar);
+            toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
         }
 
         /**********************************/
@@ -36,7 +37,8 @@ namespace NeatOffice
         /**********************************/
         public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
-        
+        GraphAlgorithms graphAlObj;
+
         /**********************************/
         /* Numbers                        */
         /**********************************/
@@ -239,12 +241,12 @@ namespace NeatOffice
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // Save the order info to a file using Save Dialog.  
-            SaveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            SaveFile.FileName = "Calculator_History";
+            SaveFileCalculator.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            SaveFileCalculator.FileName = "Calculator_History";
 
-            if (SaveFile.ShowDialog() == DialogResult.OK)
+            if (SaveFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter outputFile = new StreamWriter(SaveFile.OpenFile());
+                StreamWriter outputFile = new StreamWriter(SaveFileCalculator.OpenFile());
                 foreach (String Calculation in calculatorHistory)
                 {
                     outputFile.WriteLine(Calculation);
@@ -262,16 +264,16 @@ namespace NeatOffice
         private void ButtonLoad_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "Calculator_History";
+            OpenFileCalculator.FileName = "Calculator_History";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileCalculator.ShowDialog() == DialogResult.OK)
             {
                 // Declare a StreamReader variable.
                 StreamReader inputFile;
-                inputFile = File.OpenText(OpenFile.FileName);
+                inputFile = File.OpenText(OpenFileCalculator.FileName);
 
                 // Filetype Validation.
-                if (!OpenFile.ToString().Contains(".txt"))
+                if (!OpenFileCalculator.ToString().Contains(".txt"))
                 {
                     MessageBox.Show("That is not a (.txt) file!!!");
                 }
@@ -326,13 +328,13 @@ namespace NeatOffice
         // Print History.
         private void ToolStripLeftButtonPrint_Click(object sender, EventArgs e)
         {
-            PrintFile.Document = PrintDocument;
-            PrintFile.AllowSelection = true;
-            PrintFile.AllowSomePages = true;
+            PrintFileCalculator.Document = PrintDocumentCalculator;
+            PrintFileCalculator.AllowSelection = true;
+            PrintFileCalculator.AllowSomePages = true;
 
-            if (PrintFile.ShowDialog() == DialogResult.OK)
+            if (PrintFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                PrintDocument.Print();
+                PrintDocumentCalculator.Print();
             }
         }
 
@@ -348,18 +350,153 @@ namespace NeatOffice
 
             e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
         }
+        
+        /**********************************/
+        /* Graphs Functions               */
+        /**********************************/        
+        // Reading its matrix representation stored in a .txt file
+        private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "txt files (*.txt)|*.txt";
 
-        // Exit Menu.
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .csv file.
+        private void toolStripRightCSV_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "csv files (*.csv)|*.csv";
+
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .txt or .csv files.
+        // Finishhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+        private void toolStripRightUnknown_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Multiselect = true;
+            OpenFileGraph.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                // Filetype Validation.
+                if (OpenFileGraph.ToString().Contains(".txt"))
+                {
+                    graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                }
+                if (OpenFileGraph.ToString().Contains(".csv"))
+                {
+                    graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                }                
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Deletes a selected graph file from the list.
+        private void toolStripRightCancel_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);            
+        }
+
+        // Deletes all graph files from the list.
+        private void toolStripRightDelete_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Clear();
+        }
+
+        // Prim's Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveMinimumSpanTree_Click(object sender, EventArgs e)
+        {
+            graphAlObj.GetMST(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("MST: " + ListBoxImport.SelectedItem);           
+        }
+
+        // Dijkstra’s Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveShortestPath_Click(object sender, EventArgs e)
+        {
+            graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
+        }
+        
+        // Saving History 
+        // FINISH SAVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSave_Click(object sender, EventArgs e)
+        {
+            if (SaveFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                if(ListBoxImport.SelectedItem.ToString().Contains("MST:"))
+                {
+                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxImport.SelectedItem.ToString());
+                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                }
+                if (ListBoxImport.SelectedItem.ToString().Contains("Shortest Paths:"))
+                {
+                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.OpenFile().ToString(), ListBoxImport.SelectedItem.ToString());
+                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                }
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        /**********************************/
+        /* WA Functions.                  */
+        /**********************************/  
+        /**
+         * 1.- Exits Menu.
+         */
         private void StripMenuFileExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        
+        /**
+         * 1.- Prints Message.
+         */
         private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
         {
-
-        }
-
+            string s = "Good Day !";
+        }        
+        
+        /**
+         * 1.- The dateTimePickerTo_CloseUp method receives two parameters
+         * 2.- creates two variables of type Datetime
+         * 3.- converts the values of the two variables to datetime type
+         * 4.- calculates the total time substracting to and from date
+         * 5.- declares a variable int and converts the value obtaines by calculating the totla time
+         */
         private void dateTimePickerTo_CloseUp(object sender, EventArgs e)
         {
             DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
@@ -369,9 +506,92 @@ namespace NeatOffice
             numericUpDownDays.Value = days;
         }
         
+        /**
+         * 1.- The Numeric_ValueChanged method receives two parameters
+         * 2.- changes the values of datetimepickerto according to the user selection
+         */
         private void Numeric_ValueChanged(object sender, EventArgs e)
         {
             this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
+        }
+
+        /**
+         * 1.- The BackgroundColorSelector_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void BackgroundColorSelector_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tableLayoutPanelCalculator.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The DayCountertoolStripDropDown_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void DayCountertoolStripDropDown_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The GraphSectiontoolStripDropDown_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void GraphSectiontoolStripDropDown_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
+            }
+        }
+        
+        /**
+         * 1.- The StripMenuAppearanceModifyCalculatorDisplayFont_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void StripMenuAppearanceModifyCalculatorDisplayFont_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = fontSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                textBoxCalcScreen.Font = fontSelector.Font;
+            }
+        }
+        
+        /**
+         * 1.- The StripMenuAppearanceModifyBackgroundColor_Click method receives two parameters
+         * 2.- create a variable dr of type DialogResult and displays a message to the user.
+         * 3.- compares if the value of of the declared variable is ok
+         * 4.- if value equals ok , it changes he backcolor
+         */
+        private void StripMenuAppearanceModifyBackgroundColor_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = BackgroundColorSelector.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tableLayoutPanelCalculator.BackColor = BackgroundColorSelector.Color;
+                splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
+                splitContainerCalculatorandDayCounter.Panel1.BackColor = BackgroundColorSelector.Color;
+                splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
+
+            }
         }
     }
 }
