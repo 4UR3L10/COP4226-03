@@ -241,12 +241,12 @@ namespace NeatOffice
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // Save the order info to a file using Save Dialog.  
-            SaveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            SaveFile.FileName = "Calculator_History";
+            SaveFileCalculator.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            SaveFileCalculator.FileName = "Calculator_History";
 
-            if (SaveFile.ShowDialog() == DialogResult.OK)
+            if (SaveFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter outputFile = new StreamWriter(SaveFile.OpenFile());
+                StreamWriter outputFile = new StreamWriter(SaveFileCalculator.OpenFile());
                 foreach (String Calculation in calculatorHistory)
                 {
                     outputFile.WriteLine(Calculation);
@@ -264,16 +264,16 @@ namespace NeatOffice
         private void ButtonLoad_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "Calculator_History";
+            OpenFileCalculator.FileName = "Calculator_History";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileCalculator.ShowDialog() == DialogResult.OK)
             {
                 // Declare a StreamReader variable.
                 StreamReader inputFile;
-                inputFile = File.OpenText(OpenFile.FileName);
+                inputFile = File.OpenText(OpenFileCalculator.FileName);
 
                 // Filetype Validation.
-                if (!OpenFile.ToString().Contains(".txt"))
+                if (!OpenFileCalculator.ToString().Contains(".txt"))
                 {
                     MessageBox.Show("That is not a (.txt) file!!!");
                 }
@@ -328,13 +328,13 @@ namespace NeatOffice
         // Print History.
         private void ToolStripLeftButtonPrint_Click(object sender, EventArgs e)
         {
-            PrintFile.Document = PrintDocument;
-            PrintFile.AllowSelection = true;
-            PrintFile.AllowSomePages = true;
+            PrintFileCalculator.Document = PrintDocumentCalculator;
+            PrintFileCalculator.AllowSelection = true;
+            PrintFileCalculator.AllowSomePages = true;
 
-            if (PrintFile.ShowDialog() == DialogResult.OK)
+            if (PrintFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                PrintDocument.Print();
+                PrintDocumentCalculator.Print();
             }
         }
 
@@ -358,13 +358,13 @@ namespace NeatOffice
         private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "undirectedConnected";
-            OpenFile.Filter = "txt files (*.txt)|*.txt";
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "txt files (*.txt)|*.txt";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
             {
-                graphAlObj.ReadGraphFromTXTFile(OpenFile.FileName);
-                ListBoxImport.Items.Add(OpenFile.FileName);
+                graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
             }
             else
             {
@@ -376,13 +376,13 @@ namespace NeatOffice
         private void toolStripRightCSV_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "undirectedConnected";
-            OpenFile.Filter = "csv files (*.csv)|*.csv";
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "csv files (*.csv)|*.csv";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
             {
-                graphAlObj.ReadGraphFromCSVFile(OpenFile.FileName);
-                ListBoxImport.Items.Add(OpenFile.FileName);
+                graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
             }
             else
             {
@@ -395,22 +395,22 @@ namespace NeatOffice
         private void toolStripRightUnknown_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "undirectedConnected";
-            OpenFile.Multiselect = true;
-            OpenFile.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Multiselect = true;
+            OpenFileGraph.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
             {
                 // Filetype Validation.
-                if (OpenFile.ToString().Contains(".txt"))
+                if (OpenFileGraph.ToString().Contains(".txt"))
                 {
-                    graphAlObj.ReadGraphFromTXTFile(OpenFile.FileName);
-                    ListBoxImport.Items.Add(OpenFile.FileName);
+                    graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
                 }
-                if (OpenFile.ToString().Contains(".csv"))
+                if (OpenFileGraph.ToString().Contains(".csv"))
                 {
-                    graphAlObj.ReadGraphFromCSVFile(OpenFile.FileName);
-                    ListBoxImport.Items.Add(OpenFile.FileName);
+                    graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
                 }                
             }
             else
@@ -452,16 +452,16 @@ namespace NeatOffice
         // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
         private void toolStripRightSave_Click(object sender, EventArgs e)
         {
-            if (SaveFile.ShowDialog() == DialogResult.OK)
+            if (SaveFileGraph.ShowDialog() == DialogResult.OK)
             {
                 if(ListBoxImport.SelectedItem.ToString().Contains("MST:"))
                 {
-                    graphAlObj.WriteMSTSolutionTo(SaveFile.FileName, ListBoxImport.SelectedItem.ToString());
+                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxImport.SelectedItem.ToString());
                     ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
                 }
                 if (ListBoxImport.SelectedItem.ToString().Contains("Shortest Paths:"))
                 {
-                    graphAlObj.WriteSSSPSolutionTo(SaveFile.OpenFile().ToString(), ListBoxImport.SelectedItem.ToString());
+                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.OpenFile().ToString(), ListBoxImport.SelectedItem.ToString());
                     ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
                 }
             }
