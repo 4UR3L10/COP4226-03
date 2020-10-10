@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PA3Draft;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,10 @@ namespace NeatOffice
         public NeatOffice()
         {
             InitializeComponent();
-            // textBoxCalcScreen.ReadOnly = true;
+            textBoxCalcScreen.ReadOnly = true; 
             textBoxCalcScreen.Text = String.Empty;
+
+            // GraphAlgorithms g = new GraphAlgorithms(toolStripProgressBar, toolStripLabelReady, toolStripGraph);
         }
 
         /**********************************/
@@ -33,7 +36,7 @@ namespace NeatOffice
         /**********************************/
         public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
-
+        
         /**********************************/
         /* Numbers                        */
         /**********************************/
@@ -373,6 +376,5 @@ namespace NeatOffice
             }
             
         }
-
     }
 }
