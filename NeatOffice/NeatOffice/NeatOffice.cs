@@ -24,11 +24,11 @@ namespace NeatOffice
         */
         public NeatOffice()
         {
+            // Initialization.
             InitializeComponent();
             textBoxCalcScreen.ReadOnly = true; 
-            textBoxCalcScreen.Text = String.Empty;
-
-            // GraphAlgorithms g = new GraphAlgorithms(toolStripProgressBar, toolStripLabelReady, toolStripGraph);
+            textBoxCalcScreen.Text = String.Empty;           
+            graphAlObj = new GraphAlgorithms(toolStripProgressBar, toolStripStatusLabelReady, statusStripProgressBar);
         }
 
         /**********************************/
@@ -36,7 +36,8 @@ namespace NeatOffice
         /**********************************/
         public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
-        
+        GraphAlgorithms graphAlObj;
+
         /**********************************/
         /* Numbers                        */
         /**********************************/
@@ -372,6 +373,123 @@ namespace NeatOffice
         private void Numeric_ValueChanged(object sender, EventArgs e)
         {
             this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
+        }
+
+        // Reading its matrix representation stored in a .txt file
+        private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFile.FileName = "undirectedConnected";
+            OpenFile.Filter = "txt files (*.txt)|*.txt";
+
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromTXTFile(OpenFile.FileName);
+                ListBoxImport.Items.Add(OpenFile.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .csv file.
+        private void toolStripRightCSV_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFile.FileName = "undirectedConnected";
+            OpenFile.Filter = "csv files (*.csv)|*.csv";
+
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromCSVFile(OpenFile.FileName);
+                ListBoxImport.Items.Add(OpenFile.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .txt or .csv files.
+        // Finishhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+        private void toolStripRightUnknown_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFile.FileName = "undirectedConnected";
+            OpenFile.Multiselect = true;
+            OpenFile.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                // Filetype Validation.
+                if (OpenFile.ToString().Contains(".txt"))
+                {
+                    graphAlObj.ReadGraphFromTXTFile(OpenFile.FileName);
+                    ListBoxImport.Items.Add(OpenFile.FileName);
+                }
+                if (OpenFile.ToString().Contains(".csv"))
+                {
+                    graphAlObj.ReadGraphFromCSVFile(OpenFile.FileName);
+                    ListBoxImport.Items.Add(OpenFile.FileName);
+                }                
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Deletes a selected graph file from the list.
+        private void toolStripRightCancel_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);            
+        }
+
+        // Deletes all graph files from the list.
+        private void toolStripRightDelete_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Clear();
+        }
+
+        // Prim's Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveMinimumSpanTree_Click(object sender, EventArgs e)
+        {
+            graphAlObj.GetMST(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("MST: " + ListBoxImport.SelectedItem);           
+        }
+
+        // Dijkstra’s Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveShortestPath_Click(object sender, EventArgs e)
+        {
+            graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
+        }
+
+        // Saving History 
+        // FINISH SAVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSave_Click(object sender, EventArgs e)
+        {
+            if (SaveFile.ShowDialog() == DialogResult.OK)
+            {
+                if(ListBoxImport.SelectedItem.ToString().Contains("MST:"))
+                {
+                    graphAlObj.WriteMSTSolutionTo(SaveFile.FileName, ListBoxImport.SelectedItem.ToString());
+                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                }
+                if (ListBoxImport.SelectedItem.ToString().Contains("Shortest Paths:"))
+                {
+                    graphAlObj.WriteSSSPSolutionTo(SaveFile.OpenFile().ToString(), ListBoxImport.SelectedItem.ToString());
+                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                }
+            }
+            else
+            {
+                // Cancel Button.
+            }
         }
     }
 }
