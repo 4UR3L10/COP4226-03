@@ -58,11 +58,11 @@
             this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainerMain = new System.Windows.Forms.ToolStripContainer();
             this.statusStripGreeting = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelGoodDay = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainerInside = new System.Windows.Forms.SplitContainer();
             this.splitContainerCalculatorandDayCounter = new System.Windows.Forms.SplitContainer();
-            this.textBoxCalcScreen = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelCalculator = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxCalcScreen = new System.Windows.Forms.TextBox();
             this.ButtonLoad = new System.Windows.Forms.Button();
             this.ButtonCloseParenthesis = new System.Windows.Forms.Button();
             this.ButtonSave = new System.Windows.Forms.Button();
@@ -100,6 +100,9 @@
             this.labelDays = new System.Windows.Forms.Label();
             this.labelDayCounter = new System.Windows.Forms.Label();
             this.splitterRightSideCalculatorandDayCounter = new System.Windows.Forms.Splitter();
+            this.statusStripProgressBar = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabelReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.LabelResults = new System.Windows.Forms.Label();
             this.LabelImported = new System.Windows.Forms.Label();
             this.ListBoxResults = new System.Windows.Forms.ListBox();
@@ -139,9 +142,8 @@
             this.OpenFile = new System.Windows.Forms.OpenFileDialog();
             this.PrintFile = new System.Windows.Forms.PrintDialog();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.statusStripProgressBar = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabelReady = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BackgroundColorSelector = new System.Windows.Forms.ColorDialog();
+            this.fontSelector = new System.Windows.Forms.FontDialog();
             this.menuStripTop.SuspendLayout();
             this.toolStripContainerMain.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainerMain.ContentPanel.SuspendLayout();
@@ -160,10 +162,10 @@
             this.splitContainerCalculatorandDayCounter.SuspendLayout();
             this.tableLayoutPanelCalculator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).BeginInit();
+            this.statusStripProgressBar.SuspendLayout();
             this.toolStripLeft.SuspendLayout();
             this.toolStripRight.SuspendLayout();
             this.toolStripTop.SuspendLayout();
-            this.statusStripProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripTop
@@ -314,15 +316,17 @@
             // 
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Name = "StripMenuAppearanceModifyCalculatorDisplayFont";
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(240, 30);
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(232, 22);
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Text = "Modify calculator display font";
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Click += new System.EventHandler(this.StripMenuAppearanceModifyCalculatorDisplayFont_Click);
             // 
             // StripMenuAppearanceModifyBackgroundColor
             // 
             this.StripMenuAppearanceModifyBackgroundColor.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
             this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
-            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(240, 30);
+            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(232, 22);
             this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
+            this.StripMenuAppearanceModifyBackgroundColor.Click += new System.EventHandler(this.StripMenuAppearanceModifyBackgroundColor_Click);
             // 
             // StripMenuHelp
             // 
@@ -342,45 +346,45 @@
             // 
             this.StripMenuHelpAbout.Image = global::NeatOffice.Properties.Resources.Manual;
             this.StripMenuHelpAbout.Name = "StripMenuHelpAbout";
-            this.StripMenuHelpAbout.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpAbout.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpAbout.Text = "User Manual";
             // 
             // StripMenuHelpProjectDocumentation
             // 
             this.StripMenuHelpProjectDocumentation.Image = global::NeatOffice.Properties.Resources.Documentation;
             this.StripMenuHelpProjectDocumentation.Name = "StripMenuHelpProjectDocumentation";
-            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpProjectDocumentation.Text = "Project Documentation";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(202, 6);
             // 
             // StripMenuHelpHowTo
             // 
-            this.StripMenuHelpHowTo.Image = global::NeatOffice.Properties.Resources.HowTo;
+            this.StripMenuHelpHowTo.Image = global::NeatOffice.Properties.Resources.Questionsss;
             this.StripMenuHelpHowTo.Name = "StripMenuHelpHowTo";
-            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpHowTo.Text = "How - To Guides";
             // 
             // StripMenuHelpTutorials
             // 
             this.StripMenuHelpTutorials.Image = global::NeatOffice.Properties.Resources.Recursos;
             this.StripMenuHelpTutorials.Name = "StripMenuHelpTutorials";
-            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpTutorials.Text = "Resources";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(202, 6);
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Image = global::NeatOffice.Properties.Resources.AboutUs;
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(197, 22);
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(205, 30);
             this.aboutToolStripMenuItem2.Text = "About";
             // 
             // toolStripContainerMain
@@ -420,17 +424,17 @@
             this.statusStripGreeting.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStripGreeting.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStripGreeting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabelGoodDay});
             this.statusStripGreeting.Location = new System.Drawing.Point(0, 0);
             this.statusStripGreeting.Name = "statusStripGreeting";
             this.statusStripGreeting.Size = new System.Drawing.Size(836, 22);
             this.statusStripGreeting.TabIndex = 0;
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLabelGoodDay
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabelGoodDay.Name = "toolStripStatusLabelGoodDay";
+            this.toolStripStatusLabelGoodDay.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabelGoodDay.Text = "toolStripStatusLabel1";
             // 
             // splitContainerInside
             // 
@@ -473,6 +477,7 @@
             // 
             // splitContainerCalculatorandDayCounter.Panel2
             // 
+            this.splitContainerCalculatorandDayCounter.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerTo);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.dateTimePickerFrom);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelTo);
@@ -481,21 +486,9 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(316, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 313;
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 319;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
-            // 
-            // textBoxCalcScreen
-            // 
-            this.tableLayoutPanelCalculator.SetColumnSpan(this.textBoxCalcScreen, 4);
-            this.textBoxCalcScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCalcScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCalcScreen.Location = new System.Drawing.Point(2, 2);
-            this.textBoxCalcScreen.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxCalcScreen.Multiline = true;
-            this.textBoxCalcScreen.Name = "textBoxCalcScreen";
-            this.textBoxCalcScreen.Size = new System.Drawing.Size(307, 25);
-            this.textBoxCalcScreen.TabIndex = 1;
             // 
             // tableLayoutPanelCalculator
             // 
@@ -548,17 +541,29 @@
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(311, 239);
+            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(311, 245);
             this.tableLayoutPanelCalculator.TabIndex = 1;
+            // 
+            // textBoxCalcScreen
+            // 
+            this.tableLayoutPanelCalculator.SetColumnSpan(this.textBoxCalcScreen, 4);
+            this.textBoxCalcScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxCalcScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCalcScreen.Location = new System.Drawing.Point(2, 2);
+            this.textBoxCalcScreen.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCalcScreen.Multiline = true;
+            this.textBoxCalcScreen.Name = "textBoxCalcScreen";
+            this.textBoxCalcScreen.Size = new System.Drawing.Size(307, 26);
+            this.textBoxCalcScreen.TabIndex = 1;
             // 
             // ButtonLoad
             // 
             this.ButtonLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonLoad.Location = new System.Drawing.Point(232, 204);
+            this.ButtonLoad.Location = new System.Drawing.Point(232, 211);
             this.ButtonLoad.Margin = new System.Windows.Forms.Padding(1);
             this.ButtonLoad.Name = "ButtonLoad";
-            this.ButtonLoad.Size = new System.Drawing.Size(78, 34);
+            this.ButtonLoad.Size = new System.Drawing.Size(78, 33);
             this.ButtonLoad.TabIndex = 19;
             this.ButtonLoad.Text = "Load";
             this.ButtonLoad.UseVisualStyleBackColor = true;
@@ -568,10 +573,10 @@
             // 
             this.ButtonCloseParenthesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonCloseParenthesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCloseParenthesis.Location = new System.Drawing.Point(79, 205);
+            this.ButtonCloseParenthesis.Location = new System.Drawing.Point(79, 212);
             this.ButtonCloseParenthesis.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonCloseParenthesis.Name = "ButtonCloseParenthesis";
-            this.ButtonCloseParenthesis.Size = new System.Drawing.Size(73, 32);
+            this.ButtonCloseParenthesis.Size = new System.Drawing.Size(73, 31);
             this.ButtonCloseParenthesis.TabIndex = 1;
             this.ButtonCloseParenthesis.Text = ")";
             this.ButtonCloseParenthesis.UseVisualStyleBackColor = true;
@@ -581,10 +586,10 @@
             // 
             this.ButtonSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSave.Location = new System.Drawing.Point(155, 204);
+            this.ButtonSave.Location = new System.Drawing.Point(155, 211);
             this.ButtonSave.Margin = new System.Windows.Forms.Padding(1);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(75, 34);
+            this.ButtonSave.Size = new System.Drawing.Size(75, 33);
             this.ButtonSave.TabIndex = 18;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
@@ -594,10 +599,10 @@
             // 
             this.ButtonNumberOne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberOne.Location = new System.Drawing.Point(2, 147);
+            this.ButtonNumberOne.Location = new System.Drawing.Point(2, 152);
             this.ButtonNumberOne.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberOne.Name = "ButtonNumberOne";
-            this.ButtonNumberOne.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberOne.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberOne.TabIndex = 1;
             this.ButtonNumberOne.Text = "1";
             this.ButtonNumberOne.UseVisualStyleBackColor = true;
@@ -607,10 +612,10 @@
             // 
             this.ButtonOpenParenthesis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonOpenParenthesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOpenParenthesis.Location = new System.Drawing.Point(2, 205);
+            this.ButtonOpenParenthesis.Location = new System.Drawing.Point(2, 212);
             this.ButtonOpenParenthesis.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonOpenParenthesis.Name = "ButtonOpenParenthesis";
-            this.ButtonOpenParenthesis.Size = new System.Drawing.Size(73, 32);
+            this.ButtonOpenParenthesis.Size = new System.Drawing.Size(73, 31);
             this.ButtonOpenParenthesis.TabIndex = 2;
             this.ButtonOpenParenthesis.Text = "(";
             this.ButtonOpenParenthesis.UseVisualStyleBackColor = true;
@@ -620,10 +625,10 @@
             // 
             this.ButtonNumberZero.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberZero.Location = new System.Drawing.Point(79, 176);
+            this.ButtonNumberZero.Location = new System.Drawing.Point(79, 182);
             this.ButtonNumberZero.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberZero.Name = "ButtonNumberZero";
-            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberZero.TabIndex = 2;
             this.ButtonNumberZero.Text = "0";
             this.ButtonNumberZero.UseVisualStyleBackColor = true;
@@ -633,9 +638,9 @@
             // 
             this.ButtonSignChange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonSignChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSignChange.Location = new System.Drawing.Point(3, 177);
+            this.ButtonSignChange.Location = new System.Drawing.Point(3, 183);
             this.ButtonSignChange.Name = "ButtonSignChange";
-            this.ButtonSignChange.Size = new System.Drawing.Size(71, 23);
+            this.ButtonSignChange.Size = new System.Drawing.Size(71, 24);
             this.ButtonSignChange.TabIndex = 11;
             this.ButtonSignChange.Text = "+/-";
             this.ButtonSignChange.UseVisualStyleBackColor = true;
@@ -645,9 +650,9 @@
             // 
             this.ButtonPowerTwo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPowerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPowerTwo.Location = new System.Drawing.Point(80, 61);
+            this.ButtonPowerTwo.Location = new System.Drawing.Point(80, 63);
             this.ButtonPowerTwo.Name = "ButtonPowerTwo";
-            this.ButtonPowerTwo.Size = new System.Drawing.Size(71, 23);
+            this.ButtonPowerTwo.Size = new System.Drawing.Size(71, 24);
             this.ButtonPowerTwo.TabIndex = 23;
             this.ButtonPowerTwo.Text = "^2";
             this.ButtonPowerTwo.UseVisualStyleBackColor = true;
@@ -657,10 +662,10 @@
             // 
             this.ButtonPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPeriod.Location = new System.Drawing.Point(156, 176);
+            this.ButtonPeriod.Location = new System.Drawing.Point(156, 182);
             this.ButtonPeriod.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPeriod.Name = "ButtonPeriod";
-            this.ButtonPeriod.Size = new System.Drawing.Size(73, 25);
+            this.ButtonPeriod.Size = new System.Drawing.Size(73, 26);
             this.ButtonPeriod.TabIndex = 9;
             this.ButtonPeriod.Text = ".";
             this.ButtonPeriod.UseVisualStyleBackColor = true;
@@ -670,10 +675,10 @@
             // 
             this.ButtonNumberNine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberNine.Location = new System.Drawing.Point(156, 89);
+            this.ButtonNumberNine.Location = new System.Drawing.Point(156, 92);
             this.ButtonNumberNine.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberNine.Name = "ButtonNumberNine";
-            this.ButtonNumberNine.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberNine.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberNine.TabIndex = 9;
             this.ButtonNumberNine.Text = "9";
             this.ButtonNumberNine.UseVisualStyleBackColor = true;
@@ -683,10 +688,10 @@
             // 
             this.ButtonEqual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEqual.Location = new System.Drawing.Point(232, 175);
+            this.ButtonEqual.Location = new System.Drawing.Point(232, 181);
             this.ButtonEqual.Margin = new System.Windows.Forms.Padding(1);
             this.ButtonEqual.Name = "ButtonEqual";
-            this.ButtonEqual.Size = new System.Drawing.Size(78, 27);
+            this.ButtonEqual.Size = new System.Drawing.Size(78, 28);
             this.ButtonEqual.TabIndex = 10;
             this.ButtonEqual.Text = "=";
             this.ButtonEqual.UseVisualStyleBackColor = true;
@@ -696,10 +701,10 @@
             // 
             this.ButtonNumberEight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberEight.Location = new System.Drawing.Point(79, 89);
+            this.ButtonNumberEight.Location = new System.Drawing.Point(79, 92);
             this.ButtonNumberEight.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberEight.Name = "ButtonNumberEight";
-            this.ButtonNumberEight.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberEight.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberEight.TabIndex = 6;
             this.ButtonNumberEight.Text = "8";
             this.ButtonNumberEight.UseVisualStyleBackColor = true;
@@ -709,10 +714,10 @@
             // 
             this.ButtonPlus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPlus.Location = new System.Drawing.Point(233, 147);
+            this.ButtonPlus.Location = new System.Drawing.Point(233, 152);
             this.ButtonPlus.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPlus.Name = "ButtonPlus";
-            this.ButtonPlus.Size = new System.Drawing.Size(76, 25);
+            this.ButtonPlus.Size = new System.Drawing.Size(76, 26);
             this.ButtonPlus.TabIndex = 5;
             this.ButtonPlus.Text = "+";
             this.ButtonPlus.UseVisualStyleBackColor = true;
@@ -722,10 +727,10 @@
             // 
             this.ButtonMinus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonMinus.Location = new System.Drawing.Point(233, 118);
+            this.ButtonMinus.Location = new System.Drawing.Point(233, 122);
             this.ButtonMinus.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonMinus.Name = "ButtonMinus";
-            this.ButtonMinus.Size = new System.Drawing.Size(76, 25);
+            this.ButtonMinus.Size = new System.Drawing.Size(76, 26);
             this.ButtonMinus.TabIndex = 4;
             this.ButtonMinus.Text = "-";
             this.ButtonMinus.UseVisualStyleBackColor = true;
@@ -735,10 +740,10 @@
             // 
             this.ButtonMultiplication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonMultiplication.Location = new System.Drawing.Point(233, 89);
+            this.ButtonMultiplication.Location = new System.Drawing.Point(233, 92);
             this.ButtonMultiplication.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonMultiplication.Name = "ButtonMultiplication";
-            this.ButtonMultiplication.Size = new System.Drawing.Size(76, 25);
+            this.ButtonMultiplication.Size = new System.Drawing.Size(76, 26);
             this.ButtonMultiplication.TabIndex = 3;
             this.ButtonMultiplication.Text = "*";
             this.ButtonMultiplication.UseVisualStyleBackColor = true;
@@ -748,10 +753,10 @@
             // 
             this.ButtonDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDivision.Location = new System.Drawing.Point(233, 60);
+            this.ButtonDivision.Location = new System.Drawing.Point(233, 62);
             this.ButtonDivision.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonDivision.Name = "ButtonDivision";
-            this.ButtonDivision.Size = new System.Drawing.Size(76, 25);
+            this.ButtonDivision.Size = new System.Drawing.Size(76, 26);
             this.ButtonDivision.TabIndex = 2;
             this.ButtonDivision.Text = "/";
             this.ButtonDivision.UseVisualStyleBackColor = true;
@@ -761,9 +766,9 @@
             // 
             this.ButtonOneOver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonOneOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOneOver.Location = new System.Drawing.Point(3, 61);
+            this.ButtonOneOver.Location = new System.Drawing.Point(3, 63);
             this.ButtonOneOver.Name = "ButtonOneOver";
-            this.ButtonOneOver.Size = new System.Drawing.Size(71, 23);
+            this.ButtonOneOver.Size = new System.Drawing.Size(71, 24);
             this.ButtonOneOver.TabIndex = 19;
             this.ButtonOneOver.Text = "1/X";
             this.ButtonOneOver.UseVisualStyleBackColor = true;
@@ -773,9 +778,9 @@
             // 
             this.ButtonPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPercentage.Location = new System.Drawing.Point(3, 32);
+            this.ButtonPercentage.Location = new System.Drawing.Point(3, 33);
             this.ButtonPercentage.Name = "ButtonPercentage";
-            this.ButtonPercentage.Size = new System.Drawing.Size(71, 23);
+            this.ButtonPercentage.Size = new System.Drawing.Size(71, 24);
             this.ButtonPercentage.TabIndex = 20;
             this.ButtonPercentage.Text = "%";
             this.ButtonPercentage.UseVisualStyleBackColor = true;
@@ -786,10 +791,10 @@
             this.ButtonBackspace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ButtonBackspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonBackspace.Location = new System.Drawing.Point(233, 31);
+            this.ButtonBackspace.Location = new System.Drawing.Point(233, 32);
             this.ButtonBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonBackspace.Name = "ButtonBackspace";
-            this.ButtonBackspace.Size = new System.Drawing.Size(76, 25);
+            this.ButtonBackspace.Size = new System.Drawing.Size(76, 26);
             this.ButtonBackspace.TabIndex = 17;
             this.ButtonBackspace.Text = "<-";
             this.ButtonBackspace.UseVisualStyleBackColor = true;
@@ -799,10 +804,10 @@
             // 
             this.ButtonClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonClear.Location = new System.Drawing.Point(156, 31);
+            this.ButtonClear.Location = new System.Drawing.Point(156, 32);
             this.ButtonClear.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonClear.Name = "ButtonClear";
-            this.ButtonClear.Size = new System.Drawing.Size(73, 25);
+            this.ButtonClear.Size = new System.Drawing.Size(73, 26);
             this.ButtonClear.TabIndex = 16;
             this.ButtonClear.Text = "Clear";
             this.ButtonClear.UseVisualStyleBackColor = true;
@@ -812,10 +817,10 @@
             // 
             this.ButtonNumberSeven.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberSeven.Location = new System.Drawing.Point(2, 89);
+            this.ButtonNumberSeven.Location = new System.Drawing.Point(2, 92);
             this.ButtonNumberSeven.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberSeven.Name = "ButtonNumberSeven";
-            this.ButtonNumberSeven.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberSeven.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberSeven.TabIndex = 3;
             this.ButtonNumberSeven.Text = "7";
             this.ButtonNumberSeven.UseVisualStyleBackColor = true;
@@ -825,10 +830,10 @@
             // 
             this.ButtonNumberFour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberFour.Location = new System.Drawing.Point(2, 118);
+            this.ButtonNumberFour.Location = new System.Drawing.Point(2, 122);
             this.ButtonNumberFour.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberFour.Name = "ButtonNumberFour";
-            this.ButtonNumberFour.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberFour.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberFour.TabIndex = 2;
             this.ButtonNumberFour.Text = "4";
             this.ButtonNumberFour.UseVisualStyleBackColor = true;
@@ -838,10 +843,10 @@
             // 
             this.ButtonNumberFive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberFive.Location = new System.Drawing.Point(79, 118);
+            this.ButtonNumberFive.Location = new System.Drawing.Point(79, 122);
             this.ButtonNumberFive.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberFive.Name = "ButtonNumberFive";
-            this.ButtonNumberFive.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberFive.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberFive.TabIndex = 5;
             this.ButtonNumberFive.Text = "5";
             this.ButtonNumberFive.UseVisualStyleBackColor = true;
@@ -851,10 +856,10 @@
             // 
             this.ButtonNumberSix.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberSix.Location = new System.Drawing.Point(156, 118);
+            this.ButtonNumberSix.Location = new System.Drawing.Point(156, 122);
             this.ButtonNumberSix.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberSix.Name = "ButtonNumberSix";
-            this.ButtonNumberSix.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberSix.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberSix.TabIndex = 8;
             this.ButtonNumberSix.Text = "6";
             this.ButtonNumberSix.UseVisualStyleBackColor = true;
@@ -864,10 +869,10 @@
             // 
             this.ButtonNumberTwo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberTwo.Location = new System.Drawing.Point(79, 147);
+            this.ButtonNumberTwo.Location = new System.Drawing.Point(79, 152);
             this.ButtonNumberTwo.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberTwo.Name = "ButtonNumberTwo";
-            this.ButtonNumberTwo.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberTwo.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberTwo.TabIndex = 4;
             this.ButtonNumberTwo.Text = "2";
             this.ButtonNumberTwo.UseVisualStyleBackColor = true;
@@ -877,10 +882,10 @@
             // 
             this.ButtonNumberThree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberThree.Location = new System.Drawing.Point(156, 147);
+            this.ButtonNumberThree.Location = new System.Drawing.Point(156, 152);
             this.ButtonNumberThree.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberThree.Name = "ButtonNumberThree";
-            this.ButtonNumberThree.Size = new System.Drawing.Size(73, 25);
+            this.ButtonNumberThree.Size = new System.Drawing.Size(73, 26);
             this.ButtonNumberThree.TabIndex = 7;
             this.ButtonNumberThree.Text = "3";
             this.ButtonNumberThree.UseVisualStyleBackColor = true;
@@ -890,9 +895,9 @@
             // 
             this.ButtonSquareRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonSquareRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSquareRoot.Location = new System.Drawing.Point(157, 61);
+            this.ButtonSquareRoot.Location = new System.Drawing.Point(157, 63);
             this.ButtonSquareRoot.Name = "ButtonSquareRoot";
-            this.ButtonSquareRoot.Size = new System.Drawing.Size(71, 23);
+            this.ButtonSquareRoot.Size = new System.Drawing.Size(71, 24);
             this.ButtonSquareRoot.TabIndex = 22;
             this.ButtonSquareRoot.Text = "SQRT";
             this.ButtonSquareRoot.UseVisualStyleBackColor = true;
@@ -902,9 +907,9 @@
             // 
             this.ButtonCE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCE.Location = new System.Drawing.Point(80, 32);
+            this.ButtonCE.Location = new System.Drawing.Point(80, 33);
             this.ButtonCE.Name = "ButtonCE";
-            this.ButtonCE.Size = new System.Drawing.Size(71, 23);
+            this.ButtonCE.Size = new System.Drawing.Size(71, 24);
             this.ButtonCE.TabIndex = 18;
             this.ButtonCE.Text = "CE";
             this.ButtonCE.UseVisualStyleBackColor = true;
@@ -914,7 +919,7 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 305);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 311);
             this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(316, 8);
@@ -1007,6 +1012,28 @@
             this.splitterRightSideCalculatorandDayCounter.Size = new System.Drawing.Size(7, 549);
             this.splitterRightSideCalculatorandDayCounter.TabIndex = 0;
             this.splitterRightSideCalculatorandDayCounter.TabStop = false;
+            // 
+            // statusStripProgressBar
+            // 
+            this.statusStripProgressBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabelReady});
+            this.statusStripProgressBar.Location = new System.Drawing.Point(0, 527);
+            this.statusStripProgressBar.Name = "statusStripProgressBar";
+            this.statusStripProgressBar.Size = new System.Drawing.Size(452, 22);
+            this.statusStripProgressBar.TabIndex = 7;
+            this.statusStripProgressBar.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabelReady
+            // 
+            this.toolStripStatusLabelReady.Name = "toolStripStatusLabelReady";
+            this.toolStripStatusLabelReady.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabelReady.Text = "Ready!";
             // 
             // LabelResults
             // 
@@ -1299,22 +1326,25 @@
             // 
             this.CalculatortoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calcu1;
             this.CalculatortoolStripDropDown.Name = "CalculatortoolStripDropDown";
-            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(188, 30);
+            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.CalculatortoolStripDropDown.Text = "Calculator";
+            this.CalculatortoolStripDropDown.Click += new System.EventHandler(this.BackgroundColorSelector_Click);
             // 
             // DayCountertoolStripDropDown
             // 
             this.DayCountertoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calendar1;
             this.DayCountertoolStripDropDown.Name = "DayCountertoolStripDropDown";
-            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(188, 30);
+            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.DayCountertoolStripDropDown.Text = "Day counter";
+            this.DayCountertoolStripDropDown.Click += new System.EventHandler(this.DayCountertoolStripDropDown_Click);
             // 
             // GraphSectiontoolStripDropDown
             // 
             this.GraphSectiontoolStripDropDown.Image = global::NeatOffice.Properties.Resources.BTree;
             this.GraphSectiontoolStripDropDown.Name = "GraphSectiontoolStripDropDown";
-            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(188, 30);
+            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(147, 22);
             this.GraphSectiontoolStripDropDown.Text = "Graph section";
+            this.GraphSectiontoolStripDropDown.Click += new System.EventHandler(this.GraphSectiontoolStripDropDown_Click);
             // 
             // OpenFile
             // 
@@ -1328,28 +1358,6 @@
             // 
             this.PrintDocument.DocumentName = "Calculator History";
             this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
-            // 
-            // statusStripProgressBar
-            // 
-            this.statusStripProgressBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabelReady});
-            this.statusStripProgressBar.Location = new System.Drawing.Point(0, 527);
-            this.statusStripProgressBar.Name = "statusStripProgressBar";
-            this.statusStripProgressBar.Size = new System.Drawing.Size(452, 22);
-            this.statusStripProgressBar.TabIndex = 7;
-            this.statusStripProgressBar.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
-            // toolStripStatusLabelReady
-            // 
-            this.toolStripStatusLabelReady.Name = "toolStripStatusLabelReady";
-            this.toolStripStatusLabelReady.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabelReady.Text = "Ready!";
             // 
             // NeatOffice
             // 
@@ -1390,14 +1398,14 @@
             this.tableLayoutPanelCalculator.ResumeLayout(false);
             this.tableLayoutPanelCalculator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).EndInit();
+            this.statusStripProgressBar.ResumeLayout(false);
+            this.statusStripProgressBar.PerformLayout();
             this.toolStripLeft.ResumeLayout(false);
             this.toolStripLeft.PerformLayout();
             this.toolStripRight.ResumeLayout(false);
             this.toolStripRight.PerformLayout();
             this.toolStripTop.ResumeLayout(false);
             this.toolStripTop.PerformLayout();
-            this.statusStripProgressBar.ResumeLayout(false);
-            this.statusStripProgressBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1464,7 +1472,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.StatusStrip statusStripGreeting;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelGoodDay;
         private System.Windows.Forms.SplitContainer splitContainerInside;
         private System.Windows.Forms.Splitter splitterRightSideCalculatorandDayCounter;
         private System.Windows.Forms.SplitContainer splitContainerCalculatorandDayCounter;
@@ -1517,6 +1525,8 @@
         private System.Windows.Forms.StatusStrip statusStripProgressBar;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelReady;
+        private System.Windows.Forms.ColorDialog BackgroundColorSelector;
+        private System.Windows.Forms.FontDialog fontSelector;
     }
 }
 
