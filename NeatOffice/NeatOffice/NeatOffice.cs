@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace NeatOffice
 {
     public partial class NeatOffice : Form
@@ -121,7 +122,7 @@ namespace NeatOffice
 
         private void ToolStripLeftButtonXToY_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += " ^ ";
+            textBoxCalcScreen.Text += "^";
         }
 
         /**********************************/
@@ -129,27 +130,27 @@ namespace NeatOffice
         /**********************************/
         private void ButtonSquareRoot_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "sqrt("; // LIKE PROFESSOR.
+            textBoxCalcScreen.Text = Math.Sqrt(Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         private void ButtonPowerTwo_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += " ^2 "; // LIKE PROFESSOR.
+            textBoxCalcScreen.Text = Math.Pow(Double.Parse(textBoxCalcScreen.Text), 2).ToString();
         }
 
         private void ButtonPercentage_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "%("; // IMPLEMENT, LIKE PROFESSOR.
+            textBoxCalcScreen.Text = (Double.Parse(textBoxCalcScreen.Text) / 100).ToString();
         }
 
         private void ButtonOneOver_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "(1/"; // LIKE PROFESSOR.
+            textBoxCalcScreen.Text = (1 / Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         private void ButtonSignChange_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "-"; // IMPLEMENT, LIKE PROFESSOR. 
+            textBoxCalcScreen.Text = (-1 * Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         /**********************************/
@@ -157,21 +158,22 @@ namespace NeatOffice
         /**********************************/
         private void ToolStripLeftButtonLog_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "log(";
+            textBoxCalcScreen.Text = Math.Log(Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
+
         private void ToolStripLeftButtonSin_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "sin(";
+            textBoxCalcScreen.Text = Math.Sin(Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         private void ToolStripLeftButtonCos_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "cos(";
+            textBoxCalcScreen.Text = Math.Cos(Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         private void ToolStripLeftButtonTan_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "tan(";
+            textBoxCalcScreen.Text = Math.Tan(Double.Parse(textBoxCalcScreen.Text)).ToString();
         }
 
         /**********************************/
@@ -180,16 +182,6 @@ namespace NeatOffice
         private void ButtonPeriod_Click(object sender, EventArgs e)
         {
             textBoxCalcScreen.Text += ".";
-        }
-
-        private void ButtonOpenParenthesis_Click(object sender, EventArgs e)
-        {
-            textBoxCalcScreen.Text += "(";
-        }
-
-        private void ButtonCloseParenthesis_Click(object sender, EventArgs e)
-        {
-            textBoxCalcScreen.Text += ")";
         }
 
         private void ButtonBackspace_Click(object sender, EventArgs e)
@@ -214,17 +206,36 @@ namespace NeatOffice
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
+            // Initializing objects.
+            DataTable oDataTable = new DataTable();
+            var anyTypeResult = new object();
+
+
+
             // Compute the calculations.
             try
             {
                 calculatorHistory.Add(textBoxCalcScreen.Text);
-                textBoxCalcScreen.Text = RPN.Calculate(textBoxCalcScreen.Text).ToString();
+
+                if (textBoxCalcScreen.Text.Contains("^"))
+                {
+                    string temp = textBoxCalcScreen.Text;
+                    string[] numbers = temp.Split('^');
+
+                    textBoxCalcScreen.Text = Math.Pow(Double.Parse(numbers[0]), Double.Parse(numbers[1])).ToString();
+                }
+                else
+                {
+                    anyTypeResult = oDataTable.Compute(textBoxCalcScreen.Text, "");
+                    textBoxCalcScreen.Text = anyTypeResult.ToString();
+                }
+               
                 calculatorHistory.Add(textBoxCalcScreen.Text);
             }
             // In case of an error.
-            catch (MyException ex)
+            catch (Exception)
             {
-                textBoxCalcScreen.Text = ex.type;
+                MessageBox.Show("Check Your Input There Is Syntax Error");
             }
         }
 

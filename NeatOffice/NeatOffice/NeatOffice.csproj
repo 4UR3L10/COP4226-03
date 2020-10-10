@@ -66,7 +66,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Other Files\undirectedConnected10000.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,7 +109,6 @@
     <None Include="Resources\TXT.ico" />
     <None Include="Resources\CalcHistory.ico" />
     <None Include="Resources\ShutDown.ico" />
-    <None Include="Resources\ShutDown.png" />
     <None Include="Resources\ShorPath.ico" />
     <None Include="Resources\BTree.ico" />
     <None Include="Resources\Printer.ico" />
