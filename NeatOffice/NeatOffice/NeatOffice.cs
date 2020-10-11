@@ -578,7 +578,7 @@ namespace NeatOffice
             }
         }
         
-        // Saving Graphs
+        // Saving Graph.
         private void toolStripRightSave_Click(object sender, EventArgs e)
         {
             if (ListBoxResults.SelectedIndex != -1)
@@ -609,38 +609,43 @@ namespace NeatOffice
             }
         }
 
+        // Print Graph.
         private void toolStripRightPrint_Click(object sender, EventArgs e)
         {
-            PrintFileGraph.Document = PrintDocumentCalculator;
-            PrintFileGraph.AllowSelection = true;
-            PrintFileGraph.AllowSomePages = true;
-
-            if (PrintFileGraph.ShowDialog() == DialogResult.OK)
+            if (ListBoxResults.SelectedIndex != -1)
             {
-                PrintDocumentGraph.Print();
+                PrintFileGraph.Document = PrintDocumentCalculator;
+                PrintFileGraph.AllowSelection = true;
+                PrintFileGraph.AllowSomePages = true;
+
+                if (PrintFileGraph.ShowDialog() == DialogResult.OK)
+                {
+                    PrintDocumentGraph.Print();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have not selected a value from the list.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Print Graph Setup. 
         private void PrintGraph_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            String tempFile = PrintFileGraph.ToString();
+            String tempString = "";
 
             if (ListBoxResults.SelectedItem.ToString().Contains("MST:"))
             {
-                MessageBox.Show(tempFile);
-                graphAlObj.WriteMSTSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(5));
+                graphAlObj.PrintMSTSolutionTo(ref tempString, ListBoxResults.SelectedItem.ToString().Substring(5));
                 ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
-                MessageBox.Show(tempFile);
             }
             else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
             {
-                MessageBox.Show(tempFile);
-                graphAlObj.WriteSSSPSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(16));
+                graphAlObj.PrintSSSPSolutionTo(ref tempString, ListBoxResults.SelectedItem.ToString().Substring(16));
                 ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
-                MessageBox.Show(tempFile);
             }
 
-            e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
+            e.Graphics.DrawString(tempString, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
         }
 
         /**********************************/
@@ -659,7 +664,7 @@ namespace NeatOffice
          * 2.- creates two variables of type Datetime
          * 3.- converts the values of the two variables to datetime type
          * 4.- calculates the total time substracting to and from date
-         * 5.- declares a variable int and converts the value obtaines by calculating the totla time
+         * 5.- declares a variable int and converts the value obtaines by calculating the total time
          */
         private void dateTimePickerTo_CloseUp(object sender, EventArgs e)
         {
@@ -754,7 +759,6 @@ namespace NeatOffice
                 splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
                 splitContainerCalculatorandDayCounter.Panel1.BackColor = BackgroundColorSelector.Color;
                 splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
-
             }
         }
     }
