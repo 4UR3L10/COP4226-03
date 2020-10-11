@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PA3Draft;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace NeatOffice
 {
@@ -23,17 +25,19 @@ namespace NeatOffice
         */
         public NeatOffice()
         {
+            // Initialization.
             InitializeComponent();
-            // textBoxCalcScreen.ReadOnly = true;
-            textBoxCalcScreen.Text = String.Empty;
+            textBoxCalcScreen.ReadOnly = true; 
+            textBoxCalcScreen.Text = String.Empty;           
+            graphAlObj = new GraphAlgorithms(toolStripProgressBar, toolStripStatusLabelReady, statusStripProgressBar);
             toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
         }
 
         /**********************************/
         /* Class Variables                */
         /**********************************/
-        public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
+        GraphAlgorithms graphAlObj;
 
         /**********************************/
         /* Numbers                        */
@@ -117,7 +121,7 @@ namespace NeatOffice
 
         private void ToolStripLeftButtonXToY_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += " ^ ";
+            textBoxCalcScreen.Text += "^";
         }
 
         /**********************************/
@@ -125,27 +129,72 @@ namespace NeatOffice
         /**********************************/
         private void ButtonSquareRoot_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "sqrt("; // LIKE PROFESSOR.
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Sqrt(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonPowerTwo_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += " ^2 "; // LIKE PROFESSOR.
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Pow(Double.Parse(textBoxCalcScreen.Text), 2).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonPercentage_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "%("; // IMPLEMENT, LIKE PROFESSOR.
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (Double.Parse(textBoxCalcScreen.Text) / 100).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonOneOver_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "(1/"; // LIKE PROFESSOR.
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (1 / Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonSignChange_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "-"; // IMPLEMENT, LIKE PROFESSOR. 
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (-1 * Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         /**********************************/
@@ -153,21 +202,58 @@ namespace NeatOffice
         /**********************************/
         private void ToolStripLeftButtonLog_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "log(";
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Log(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
+
         private void ToolStripLeftButtonSin_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "sin(";
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Sin(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ToolStripLeftButtonCos_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "cos(";
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Cos(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ToolStripLeftButtonTan_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text += "tan(";
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Tan(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         /**********************************/
@@ -176,16 +262,6 @@ namespace NeatOffice
         private void ButtonPeriod_Click(object sender, EventArgs e)
         {
             textBoxCalcScreen.Text += ".";
-        }
-
-        private void ButtonOpenParenthesis_Click(object sender, EventArgs e)
-        {
-            textBoxCalcScreen.Text += "(";
-        }
-
-        private void ButtonCloseParenthesis_Click(object sender, EventArgs e)
-        {
-            textBoxCalcScreen.Text += ")";
         }
 
         private void ButtonBackspace_Click(object sender, EventArgs e)
@@ -199,7 +275,6 @@ namespace NeatOffice
 
         private void ButtonCE_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = answer = String.Empty;
             textBoxCalcScreen.Text = "0";
         }
 
@@ -210,17 +285,34 @@ namespace NeatOffice
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
+            // Initializing objects.
+            DataTable oDataTable = new DataTable();
+            var anyTypeResult = new object();
+
             // Compute the calculations.
             try
             {
                 calculatorHistory.Add(textBoxCalcScreen.Text);
-                textBoxCalcScreen.Text = RPN.Calculate(textBoxCalcScreen.Text).ToString();
+
+                if (textBoxCalcScreen.Text.Contains("^"))
+                {
+                    string temp = textBoxCalcScreen.Text;
+                    string[] numbers = temp.Split('^');
+
+                    textBoxCalcScreen.Text = Math.Pow(Double.Parse(numbers[0]), Double.Parse(numbers[1])).ToString();
+                }
+                else
+                {
+                    anyTypeResult = oDataTable.Compute(textBoxCalcScreen.Text, "");
+                    textBoxCalcScreen.Text = anyTypeResult.ToString();
+                }
+               
                 calculatorHistory.Add(textBoxCalcScreen.Text);
             }
             // In case of an error.
-            catch (MyException ex)
+            catch (Exception)
             {
-                textBoxCalcScreen.Text = ex.type;
+                MessageBox.Show("Check Your Input There Is Syntax Error");
             }
         }
 
@@ -237,12 +329,12 @@ namespace NeatOffice
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // Save the order info to a file using Save Dialog.  
-            SaveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            SaveFile.FileName = "Calculator_History";
+            SaveFileCalculator.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            SaveFileCalculator.FileName = "Calculator_History";
 
-            if (SaveFile.ShowDialog() == DialogResult.OK)
+            if (SaveFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter outputFile = new StreamWriter(SaveFile.OpenFile());
+                StreamWriter outputFile = new StreamWriter(SaveFileCalculator.OpenFile());
                 foreach (String Calculation in calculatorHistory)
                 {
                     outputFile.WriteLine(Calculation);
@@ -260,16 +352,16 @@ namespace NeatOffice
         private void ButtonLoad_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
-            OpenFile.FileName = "Calculator_History";
+            OpenFileCalculator.FileName = "Calculator_History";
 
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if (OpenFileCalculator.ShowDialog() == DialogResult.OK)
             {
                 // Declare a StreamReader variable.
                 StreamReader inputFile;
-                inputFile = File.OpenText(OpenFile.FileName);
+                inputFile = File.OpenText(OpenFileCalculator.FileName);
 
                 // Filetype Validation.
-                if (!OpenFile.ToString().Contains(".txt"))
+                if (!OpenFileCalculator.ToString().Contains(".txt"))
                 {
                     MessageBox.Show("That is not a (.txt) file!!!");
                 }
@@ -324,13 +416,13 @@ namespace NeatOffice
         // Print History.
         private void ToolStripLeftButtonPrint_Click(object sender, EventArgs e)
         {
-            PrintFile.Document = PrintDocument;
-            PrintFile.AllowSelection = true;
-            PrintFile.AllowSomePages = true;
+            PrintFileCalculator.Document = PrintDocumentCalculator;
+            PrintFileCalculator.AllowSelection = true;
+            PrintFileCalculator.AllowSomePages = true;
 
-            if (PrintFile.ShowDialog() == DialogResult.OK)
+            if (PrintFileCalculator.ShowDialog() == DialogResult.OK)
             {
-                PrintDocument.Print();
+                PrintDocumentCalculator.Print();
             }
         }
 
@@ -346,21 +438,182 @@ namespace NeatOffice
 
             e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
         }
+        
+        /**********************************/
+        /* Graphs Functions               */
+        /**********************************/        
+        // Reading its matrix representation stored in a .txt file
+        private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "txt files (*.txt)|*.txt";
 
-        // Exit Menu.
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .csv file.
+        private void toolStripRightCSV_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Filter = "csv files (*.csv)|*.csv";
+
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Reading its matrix representation stored in a .txt or .csv files.
+        private void toolStripRightUnknown_Click(object sender, EventArgs e)
+        {
+            // File Dialog properties setup.
+            OpenFileGraph.FileName = "undirectedConnected";
+            OpenFileGraph.Multiselect = true;
+            OpenFileGraph.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
+
+            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            {
+
+                string[] files = OpenFileGraph.FileNames;
+
+                foreach (string filename in files)
+                {
+                    // Filetype Validation.
+                    if (filename.Contains(".txt"))
+                    {
+                        graphAlObj.ReadGraphFromTXTFile(filename);
+                        ListBoxImport.Items.Add(filename);                        
+                    }
+                    else if (filename.Contains(".csv"))
+                    {
+                        graphAlObj.ReadGraphFromCSVFile(filename);
+                        ListBoxImport.Items.Add(filename);                        
+                    }
+                }             
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        // Deletes a selected graph file from the list.
+        private void toolStripRightCancel_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);            
+        }
+
+        // Deletes all graph files from the list.
+        private void toolStripRightDelete_Click(object sender, EventArgs e)
+        {
+            ListBoxImport.Items.Clear();
+        }
+
+        // Prim's Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveMinimumSpanTree_Click(object sender, EventArgs e)
+        {
+            graphAlObj.GetMST(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("MST: " + ListBoxImport.SelectedItem);           
+        }
+
+        // Dijkstra’s Algorithm.
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSaveShortestPath_Click(object sender, EventArgs e)
+        {
+            graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
+            ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
+        }
+        
+        // Saving Graphs
+        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        private void toolStripRightSave_Click(object sender, EventArgs e)
+        {
+            SaveFileGraph.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (SaveFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                if(ListBoxResults.SelectedItem.ToString().Contains("MST:"))
+                { 
+                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(5));
+                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                }
+                else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
+                {
+                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(16));
+                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                }
+            }
+            else
+            {
+                // Cancel Button.
+            }
+        }
+
+        private void toolStripRightPrint_Click(object sender, EventArgs e)
+        {
+            PrintFileGraph.Document = PrintDocumentCalculator;
+            PrintFileGraph.AllowSelection = true;
+            PrintFileGraph.AllowSomePages = true;
+
+            if (PrintFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                PrintDocumentGraph.Print();
+            }
+        }
+
+        private void PrintGraph_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            String tempFile = PrintFileGraph.ToString();
+
+            if (ListBoxResults.SelectedItem.ToString().Contains("MST:"))
+            {
+                MessageBox.Show(tempFile);
+                graphAlObj.WriteMSTSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(5));
+                ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                MessageBox.Show(tempFile);
+            }
+            else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
+            {
+                MessageBox.Show(tempFile);
+                graphAlObj.WriteSSSPSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(16));
+                ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                MessageBox.Show(tempFile);
+            }
+
+            e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
+        }
+
+        /**********************************/
+        /* WA Functions.                  */
+        /**********************************/
+        /**
+         * 1.- Exits Menu.
+         */
         private void StripMenuFileExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
-        {
-            string s = "Good Day !";
-        }
         /**
          * 1.- The dateTimePickerTo_CloseUp method receives two parameters
          * 2.- creates two variables of type Datetime
-         * 3.- converst the values of the two variables to datetime type
+         * 3.- converts the values of the two variables to datetime type
          * 4.- calculates the total time substracting to and from date
          * 5.- declares a variable int and converts the value obtaines by calculating the totla time
          */
@@ -372,6 +625,7 @@ namespace NeatOffice
             int days = Convert.ToInt16(ts.Days);
             numericUpDownDays.Value = days;
         }
+        
         /**
          * 1.- The Numeric_ValueChanged method receives two parameters
          * 2.- changes the values of datetimepickerto according to the user selection
@@ -380,6 +634,7 @@ namespace NeatOffice
         {
             this.dateTimePickerTo.Value = this.dateTimePickerFrom.Value.AddDays((double)numericUpDownDays.Value);
         }
+
         /**
          * 1.- The BackgroundColorSelector_Click method receives two parameters
          * 2.- create a variable dr of type DialogResult and displays a message to the user.
@@ -394,6 +649,7 @@ namespace NeatOffice
                 tableLayoutPanelCalculator.BackColor = BackgroundColorSelector.Color;
             }
         }
+        
         /**
          * 1.- The DayCountertoolStripDropDown_Click method receives two parameters
          * 2.- create a variable dr of type DialogResult and displays a message to the user.
@@ -408,6 +664,7 @@ namespace NeatOffice
                 splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
             }
         }
+        
         /**
          * 1.- The GraphSectiontoolStripDropDown_Click method receives two parameters
          * 2.- create a variable dr of type DialogResult and displays a message to the user.
@@ -422,6 +679,7 @@ namespace NeatOffice
                 splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
             }
         }
+        
         /**
          * 1.- The StripMenuAppearanceModifyCalculatorDisplayFont_Click method receives two parameters
          * 2.- create a variable dr of type DialogResult and displays a message to the user.
@@ -436,6 +694,7 @@ namespace NeatOffice
                 textBoxCalcScreen.Font = fontSelector.Font;
             }
         }
+        
         /**
          * 1.- The StripMenuAppearanceModifyBackgroundColor_Click method receives two parameters
          * 2.- create a variable dr of type DialogResult and displays a message to the user.
@@ -451,6 +710,7 @@ namespace NeatOffice
                 splitContainerCalculatorandDayCounter.Panel2.BackColor = BackgroundColorSelector.Color;
                 splitContainerCalculatorandDayCounter.Panel1.BackColor = BackgroundColorSelector.Color;
                 splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
+
             }
         }
     }
