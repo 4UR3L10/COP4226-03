@@ -137,7 +137,7 @@ namespace NeatOffice
             }
             catch(FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -151,7 +151,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -165,7 +165,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -179,7 +179,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -193,7 +193,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -210,7 +210,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -224,7 +224,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -238,7 +238,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -252,7 +252,7 @@ namespace NeatOffice
             }
             catch (FormatException)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -312,7 +312,7 @@ namespace NeatOffice
             // In case of an error.
             catch (Exception)
             {
-                MessageBox.Show("Check Your Input There Is Syntax Error");
+                MessageBox.Show("Check Your Input There Is Syntax Error", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -412,7 +412,6 @@ namespace NeatOffice
             }
         }
 
-
         // Print History.
         private void ToolStripLeftButtonPrint_Click(object sender, EventArgs e)
         {
@@ -445,70 +444,97 @@ namespace NeatOffice
         // Reading its matrix representation stored in a .txt file
         private void toolStripRightGraphTXT_Click(object sender, EventArgs e)
         {
-            // File Dialog properties setup.
-            OpenFileGraph.FileName = "undirectedConnected";
-            OpenFileGraph.Filter = "txt files (*.txt)|*.txt";
+            try
+            {
+                // File Dialog properties setup.
+                OpenFileGraph.FileName = "undirectedConnected";
+                OpenFileGraph.Filter = "txt files (*.txt)|*.txt";
 
-            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
-            {
-                graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
-                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+                {
+                    graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                }
+                else
+                {
+                    // Cancel Button.
+                }
             }
-            else
+            catch (FormatException)
             {
-                // Cancel Button.
+                MessageBox.Show("File Format Not Accepted");
+                toolStripStatusLabelReady.Text = "Ready!";
+                ListBoxImport.Items.Clear();
             }
         }
 
         // Reading its matrix representation stored in a .csv file.
         private void toolStripRightCSV_Click(object sender, EventArgs e)
         {
-            // File Dialog properties setup.
-            OpenFileGraph.FileName = "undirectedConnected";
-            OpenFileGraph.Filter = "csv files (*.csv)|*.csv";
+            try
+            {
+                // File Dialog properties setup.
+                OpenFileGraph.FileName = "undirectedConnected";
+                OpenFileGraph.Filter = "csv files (*.csv)|*.csv";
 
-            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
-            {
-                graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
-                ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+                {
+                    graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
+                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
+                }
+                else
+                {
+                    // Cancel Button.
+                }
             }
-            else
+            catch (FormatException)
             {
-                // Cancel Button.
+                MessageBox.Show("File Format Not Accepted");
+                toolStripStatusLabelReady.Text = "Ready!";
+                ListBoxImport.Items.Clear();
             }
         }
 
         // Reading its matrix representation stored in a .txt or .csv files.
         private void toolStripRightUnknown_Click(object sender, EventArgs e)
         {
-            // File Dialog properties setup.
-            OpenFileGraph.FileName = "undirectedConnected";
-            OpenFileGraph.Multiselect = true;
-            OpenFileGraph.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
-
-            if (OpenFileGraph.ShowDialog() == DialogResult.OK)
+            try
             {
+                // File Dialog properties setup.
+                OpenFileGraph.FileName = "undirectedConnected";
+                OpenFileGraph.Multiselect = true;
+                OpenFileGraph.Filter = "all supported(*.csv,*.txt)|*.csv;*.txt|csv files (*.csv)|*.csv|txt files (*.txt)|*.txt";
 
-                string[] files = OpenFileGraph.FileNames;
-
-                foreach (string filename in files)
+                if (OpenFileGraph.ShowDialog() == DialogResult.OK)
                 {
-                    // Filetype Validation.
-                    if (filename.Contains(".txt"))
+
+                    string[] files = OpenFileGraph.FileNames;
+
+                    foreach (string filename in files)
                     {
-                        graphAlObj.ReadGraphFromTXTFile(filename);
-                        ListBoxImport.Items.Add(filename);                        
+                        // Filetype Validation.
+                        if (filename.Contains(".txt"))
+                        {
+                            graphAlObj.ReadGraphFromTXTFile(filename);
+                            ListBoxImport.Items.Add(filename);
+                        }
+                        else if (filename.Contains(".csv"))
+                        {
+                            graphAlObj.ReadGraphFromCSVFile(filename);
+                            ListBoxImport.Items.Add(filename);
+                        }
                     }
-                    else if (filename.Contains(".csv"))
-                    {
-                        graphAlObj.ReadGraphFromCSVFile(filename);
-                        ListBoxImport.Items.Add(filename);                        
-                    }
-                }             
+                }
+                else
+                {
+                    // Cancel Button.
+                }
             }
-            else
+            catch (FormatException)
             {
-                // Cancel Button.
+                MessageBox.Show("File Format Not Accepted");
+                toolStripStatusLabelReady.Text = "Ready!";
+                ListBoxImport.Items.Clear();
             }
         }
 
@@ -525,43 +551,61 @@ namespace NeatOffice
         }
 
         // Prim's Algorithm.
-        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
         private void toolStripRightSaveMinimumSpanTree_Click(object sender, EventArgs e)
         {
-            graphAlObj.GetMST(ListBoxImport.SelectedItem.ToString());
-            ListBoxResults.Items.Add("MST: " + ListBoxImport.SelectedItem);           
+            if(ListBoxImport.SelectedIndex != -1)
+            {
+                graphAlObj.GetMST(ListBoxImport.SelectedItem.ToString());
+                ListBoxResults.Items.Add("MST: " + ListBoxImport.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("You have not selected a value from the list.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Dijkstra’s Algorithm.
-        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
         private void toolStripRightSaveShortestPath_Click(object sender, EventArgs e)
         {
-            graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
-            ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
+            if (ListBoxImport.SelectedIndex != -1)
+            {
+                graphAlObj.Dijkstra(ListBoxImport.SelectedItem.ToString());
+                ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("You have not selected a value from the list.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         
         // Saving Graphs
-        // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
         private void toolStripRightSave_Click(object sender, EventArgs e)
         {
-            SaveFileGraph.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-
-            if (SaveFileGraph.ShowDialog() == DialogResult.OK)
+            if (ListBoxResults.SelectedIndex != -1)
             {
-                if(ListBoxResults.SelectedItem.ToString().Contains("MST:"))
-                { 
-                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(5));
-                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
-                }
-                else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
+                SaveFileGraph.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                if (SaveFileGraph.ShowDialog() == DialogResult.OK)
                 {
-                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(16));
-                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                    if(ListBoxResults.SelectedItem.ToString().Contains("MST:"))
+                    { 
+                        graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(5));
+                        ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                    }
+                    else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
+                    {
+                        graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(16));
+                        ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                    }
+                }
+                else
+                {
+                    // Cancel Button.
                 }
             }
             else
             {
-                // Cancel Button.
+                MessageBox.Show("You have not selected a value from the list.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
