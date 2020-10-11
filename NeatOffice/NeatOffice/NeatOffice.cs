@@ -36,7 +36,6 @@ namespace NeatOffice
         /**********************************/
         /* Class Variables                */
         /**********************************/
-        public static string answer = String.Empty;
         public static ArrayList calculatorHistory = new ArrayList();
         GraphAlgorithms graphAlObj;
 
@@ -130,27 +129,72 @@ namespace NeatOffice
         /**********************************/
         private void ButtonSquareRoot_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Sqrt(Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Sqrt(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonPowerTwo_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Pow(Double.Parse(textBoxCalcScreen.Text), 2).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Pow(Double.Parse(textBoxCalcScreen.Text), 2).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonPercentage_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = (Double.Parse(textBoxCalcScreen.Text) / 100).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (Double.Parse(textBoxCalcScreen.Text) / 100).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonOneOver_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = (1 / Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (1 / Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ButtonSignChange_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = (-1 * Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = (-1 * Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         /**********************************/
@@ -158,22 +202,58 @@ namespace NeatOffice
         /**********************************/
         private void ToolStripLeftButtonLog_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Log(Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Log(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ToolStripLeftButtonSin_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Sin(Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Sin(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ToolStripLeftButtonCos_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Cos(Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Cos(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         private void ToolStripLeftButtonTan_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = Math.Tan(Double.Parse(textBoxCalcScreen.Text)).ToString();
+            try
+            {
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+                textBoxCalcScreen.Text = Math.Tan(Double.Parse(textBoxCalcScreen.Text)).ToString();
+                calculatorHistory.Add(textBoxCalcScreen.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Check Your Input There Is Syntax Error");
+            }
         }
 
         /**********************************/
@@ -195,7 +275,6 @@ namespace NeatOffice
 
         private void ButtonCE_Click(object sender, EventArgs e)
         {
-            textBoxCalcScreen.Text = answer = String.Empty;
             textBoxCalcScreen.Text = "0";
         }
 
@@ -209,8 +288,6 @@ namespace NeatOffice
             // Initializing objects.
             DataTable oDataTable = new DataTable();
             var anyTypeResult = new object();
-
-
 
             // Compute the calculations.
             try
@@ -492,15 +569,7 @@ namespace NeatOffice
         {
             this.Close();
         }
-        
-        /**
-         * 1.- Prints Message.
-         */
-        private void toolStripDropDownButtonTop_Click(object sender, EventArgs e)
-        {
-            string s = "Good Day !";
-        }        
-        
+
         /**
          * 1.- The dateTimePickerTo_CloseUp method receives two parameters
          * 2.- creates two variables of type Datetime
