@@ -202,7 +202,7 @@
             // 
             this.StripMenuFileItemClearCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Eraser;
             this.StripMenuFileItemClearCalculatorHistory.Name = "StripMenuFileItemClearCalculatorHistory";
-            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFileItemClearCalculatorHistory.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFileItemClearCalculatorHistory.Text = "Clear calculator history";
             this.StripMenuFileItemClearCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonDelete_Click);
             // 
@@ -211,7 +211,7 @@
             this.StripMenuFileItemSaveCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Save;
             this.StripMenuFileItemSaveCalculatorHistory.Name = "StripMenuFileItemSaveCalculatorHistory";
             this.StripMenuFileItemSaveCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFileItemSaveCalculatorHistory.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFileItemSaveCalculatorHistory.Text = "Save calculator history as ...";
             this.StripMenuFileItemSaveCalculatorHistory.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
@@ -220,20 +220,20 @@
             this.StripMenuFilePrintCalculatorHistory.Image = global::NeatOffice.Properties.Resources.Printer;
             this.StripMenuFilePrintCalculatorHistory.Name = "StripMenuFilePrintCalculatorHistory";
             this.StripMenuFilePrintCalculatorHistory.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFilePrintCalculatorHistory.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFilePrintCalculatorHistory.Text = "Print calculator history";
             this.StripMenuFilePrintCalculatorHistory.Click += new System.EventHandler(this.ToolStripLeftButtonPrint_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(263, 6);
             // 
             // StripMenuFileSaveMinimumSpanningTreeAs
             // 
             this.StripMenuFileSaveMinimumSpanningTreeAs.Image = global::NeatOffice.Properties.Resources.BTree;
             this.StripMenuFileSaveMinimumSpanningTreeAs.Name = "StripMenuFileSaveMinimumSpanningTreeAs";
-            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFileSaveMinimumSpanningTreeAs.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFileSaveMinimumSpanningTreeAs.Text = "Save minimum spanning tree as...";
             this.StripMenuFileSaveMinimumSpanningTreeAs.Click += new System.EventHandler(this.toolStripRightSave_Click);
             // 
@@ -241,21 +241,21 @@
             // 
             this.StripMenuFileSaveShortestPathAs.Image = global::NeatOffice.Properties.Resources.ShorPath;
             this.StripMenuFileSaveShortestPathAs.Name = "StripMenuFileSaveShortestPathAs";
-            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFileSaveShortestPathAs.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFileSaveShortestPathAs.Text = "Save shortest path as...";
             this.StripMenuFileSaveShortestPathAs.Click += new System.EventHandler(this.toolStripRightSave_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(263, 6);
             // 
             // StripMenuFileExit
             // 
             this.StripMenuFileExit.Image = global::NeatOffice.Properties.Resources.ShutDown;
             this.StripMenuFileExit.Name = "StripMenuFileExit";
             this.StripMenuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.StripMenuFileExit.Size = new System.Drawing.Size(258, 22);
+            this.StripMenuFileExit.Size = new System.Drawing.Size(266, 30);
             this.StripMenuFileExit.Text = "Exit";
             this.StripMenuFileExit.Click += new System.EventHandler(this.StripMenuFileExit_Click);
             // 
@@ -275,20 +275,20 @@
             // 
             this.StripMenuOpenCalculatorHistory.Image = global::NeatOffice.Properties.Resources.CalcHistory;
             this.StripMenuOpenCalculatorHistory.Name = "StripMenuOpenCalculatorHistory";
-            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(174, 22);
+            this.StripMenuOpenCalculatorHistory.Size = new System.Drawing.Size(188, 30);
             this.StripMenuOpenCalculatorHistory.Text = "Calculator History";
             this.StripMenuOpenCalculatorHistory.Click += new System.EventHandler(this.ButtonLoad_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(185, 6);
             // 
             // StripMenuOpenGraphMatrixTxT
             // 
             this.StripMenuOpenGraphMatrixTxT.Image = global::NeatOffice.Properties.Resources.TXT;
             this.StripMenuOpenGraphMatrixTxT.Name = "StripMenuOpenGraphMatrixTxT";
-            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(174, 22);
+            this.StripMenuOpenGraphMatrixTxT.Size = new System.Drawing.Size(188, 30);
             this.StripMenuOpenGraphMatrixTxT.Text = "Graph Matrix (.txt)";
             this.StripMenuOpenGraphMatrixTxT.Click += new System.EventHandler(this.toolStripRightGraphTXT_Click);
             // 
@@ -296,7 +296,7 @@
             // 
             this.StripMenuOpenGraphMatrixCSV.Image = global::NeatOffice.Properties.Resources.CSV;
             this.StripMenuOpenGraphMatrixCSV.Name = "StripMenuOpenGraphMatrixCSV";
-            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(174, 22);
+            this.StripMenuOpenGraphMatrixCSV.Size = new System.Drawing.Size(188, 30);
             this.StripMenuOpenGraphMatrixCSV.Text = "Graph Matrix (.csv)";
             this.StripMenuOpenGraphMatrixCSV.Click += new System.EventHandler(this.toolStripRightCSV_Click);
             // 
@@ -304,7 +304,7 @@
             // 
             this.StripMenuOpenMultipleGraphs.Image = global::NeatOffice.Properties.Resources.MultipleGraph;
             this.StripMenuOpenMultipleGraphs.Name = "StripMenuOpenMultipleGraphs";
-            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(174, 22);
+            this.StripMenuOpenMultipleGraphs.Size = new System.Drawing.Size(188, 30);
             this.StripMenuOpenMultipleGraphs.Text = "Multiple Graphs";
             this.StripMenuOpenMultipleGraphs.Click += new System.EventHandler(this.toolStripRightUnknown_Click);
             // 
@@ -321,7 +321,7 @@
             // 
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Image = global::NeatOffice.Properties.Resources.Font;
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Name = "StripMenuAppearanceModifyCalculatorDisplayFont";
-            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyCalculatorDisplayFont.Size = new System.Drawing.Size(240, 30);
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Text = "Modify calculator display font";
             this.StripMenuAppearanceModifyCalculatorDisplayFont.Click += new System.EventHandler(this.StripMenuAppearanceModifyCalculatorDisplayFont_Click);
             // 
@@ -329,7 +329,7 @@
             // 
             this.StripMenuAppearanceModifyBackgroundColor.Image = global::NeatOffice.Properties.Resources.BackgroundColor;
             this.StripMenuAppearanceModifyBackgroundColor.Name = "StripMenuAppearanceModifyBackgroundColor";
-            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(232, 22);
+            this.StripMenuAppearanceModifyBackgroundColor.Size = new System.Drawing.Size(240, 30);
             this.StripMenuAppearanceModifyBackgroundColor.Text = "Modify background color";
             this.StripMenuAppearanceModifyBackgroundColor.Click += new System.EventHandler(this.StripMenuAppearanceModifyBackgroundColor_Click);
             // 
@@ -351,45 +351,45 @@
             // 
             this.StripMenuHelpAbout.Image = global::NeatOffice.Properties.Resources.Manual;
             this.StripMenuHelpAbout.Name = "StripMenuHelpAbout";
-            this.StripMenuHelpAbout.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpAbout.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpAbout.Text = "User Manual";
             // 
             // StripMenuHelpProjectDocumentation
             // 
             this.StripMenuHelpProjectDocumentation.Image = global::NeatOffice.Properties.Resources.Documentation;
             this.StripMenuHelpProjectDocumentation.Name = "StripMenuHelpProjectDocumentation";
-            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpProjectDocumentation.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpProjectDocumentation.Text = "Project Documentation";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(202, 6);
             // 
             // StripMenuHelpHowTo
             // 
             this.StripMenuHelpHowTo.Image = global::NeatOffice.Properties.Resources.Questionsss;
             this.StripMenuHelpHowTo.Name = "StripMenuHelpHowTo";
-            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpHowTo.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpHowTo.Text = "How - To Guides";
             // 
             // StripMenuHelpTutorials
             // 
             this.StripMenuHelpTutorials.Image = global::NeatOffice.Properties.Resources.Recursos;
             this.StripMenuHelpTutorials.Name = "StripMenuHelpTutorials";
-            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(197, 22);
+            this.StripMenuHelpTutorials.Size = new System.Drawing.Size(205, 30);
             this.StripMenuHelpTutorials.Text = "Resources";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(202, 6);
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Image = global::NeatOffice.Properties.Resources.AboutUs;
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(197, 22);
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(205, 30);
             this.aboutToolStripMenuItem2.Text = "About";
             // 
             // toolStripContainerMain
@@ -491,7 +491,7 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(314, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 329;
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 331;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
             // 
@@ -534,14 +534,14 @@
             this.tableLayoutPanelCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelCalculator.Name = "tableLayoutPanelCalculator";
             this.tableLayoutPanelCalculator.RowCount = 7;
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(309, 255);
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(309, 257);
             this.tableLayoutPanelCalculator.TabIndex = 1;
             // 
             // textBoxCalcScreen
@@ -553,17 +553,17 @@
             this.textBoxCalcScreen.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCalcScreen.Multiline = true;
             this.textBoxCalcScreen.Name = "textBoxCalcScreen";
-            this.textBoxCalcScreen.Size = new System.Drawing.Size(305, 32);
+            this.textBoxCalcScreen.Size = new System.Drawing.Size(305, 52);
             this.textBoxCalcScreen.TabIndex = 1;
             // 
             // ButtonNumberOne
             // 
             this.ButtonNumberOne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberOne.Location = new System.Drawing.Point(2, 182);
+            this.ButtonNumberOne.Location = new System.Drawing.Point(2, 190);
             this.ButtonNumberOne.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberOne.Name = "ButtonNumberOne";
-            this.ButtonNumberOne.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberOne.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberOne.TabIndex = 1;
             this.ButtonNumberOne.Text = "1";
             this.ButtonNumberOne.UseVisualStyleBackColor = true;
@@ -573,10 +573,10 @@
             // 
             this.ButtonNumberZero.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberZero.Location = new System.Drawing.Point(79, 218);
+            this.ButtonNumberZero.Location = new System.Drawing.Point(79, 223);
             this.ButtonNumberZero.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberZero.Name = "ButtonNumberZero";
-            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 35);
+            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 32);
             this.ButtonNumberZero.TabIndex = 2;
             this.ButtonNumberZero.Text = "0";
             this.ButtonNumberZero.UseVisualStyleBackColor = true;
@@ -586,9 +586,9 @@
             // 
             this.ButtonSignChange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonSignChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSignChange.Location = new System.Drawing.Point(3, 219);
+            this.ButtonSignChange.Location = new System.Drawing.Point(3, 224);
             this.ButtonSignChange.Name = "ButtonSignChange";
-            this.ButtonSignChange.Size = new System.Drawing.Size(71, 33);
+            this.ButtonSignChange.Size = new System.Drawing.Size(71, 30);
             this.ButtonSignChange.TabIndex = 11;
             this.ButtonSignChange.Text = "+/-";
             this.ButtonSignChange.UseVisualStyleBackColor = true;
@@ -598,9 +598,9 @@
             // 
             this.ButtonPowerTwo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPowerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPowerTwo.Location = new System.Drawing.Point(80, 75);
+            this.ButtonPowerTwo.Location = new System.Drawing.Point(80, 92);
             this.ButtonPowerTwo.Name = "ButtonPowerTwo";
-            this.ButtonPowerTwo.Size = new System.Drawing.Size(71, 30);
+            this.ButtonPowerTwo.Size = new System.Drawing.Size(71, 27);
             this.ButtonPowerTwo.TabIndex = 23;
             this.ButtonPowerTwo.Text = "SQUARE";
             this.ButtonPowerTwo.UseVisualStyleBackColor = true;
@@ -610,10 +610,10 @@
             // 
             this.ButtonPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPeriod.Location = new System.Drawing.Point(156, 218);
+            this.ButtonPeriod.Location = new System.Drawing.Point(156, 223);
             this.ButtonPeriod.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPeriod.Name = "ButtonPeriod";
-            this.ButtonPeriod.Size = new System.Drawing.Size(73, 35);
+            this.ButtonPeriod.Size = new System.Drawing.Size(73, 32);
             this.ButtonPeriod.TabIndex = 9;
             this.ButtonPeriod.Text = ".";
             this.ButtonPeriod.UseVisualStyleBackColor = true;
@@ -623,10 +623,10 @@
             // 
             this.ButtonNumberNine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberNine.Location = new System.Drawing.Point(156, 110);
+            this.ButtonNumberNine.Location = new System.Drawing.Point(156, 124);
             this.ButtonNumberNine.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberNine.Name = "ButtonNumberNine";
-            this.ButtonNumberNine.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberNine.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberNine.TabIndex = 9;
             this.ButtonNumberNine.Text = "9";
             this.ButtonNumberNine.UseVisualStyleBackColor = true;
@@ -636,10 +636,10 @@
             // 
             this.ButtonEqual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEqual.Location = new System.Drawing.Point(232, 217);
+            this.ButtonEqual.Location = new System.Drawing.Point(232, 222);
             this.ButtonEqual.Margin = new System.Windows.Forms.Padding(1);
             this.ButtonEqual.Name = "ButtonEqual";
-            this.ButtonEqual.Size = new System.Drawing.Size(76, 37);
+            this.ButtonEqual.Size = new System.Drawing.Size(76, 34);
             this.ButtonEqual.TabIndex = 10;
             this.ButtonEqual.Text = "=";
             this.ButtonEqual.UseVisualStyleBackColor = true;
@@ -649,10 +649,10 @@
             // 
             this.ButtonNumberEight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberEight.Location = new System.Drawing.Point(79, 110);
+            this.ButtonNumberEight.Location = new System.Drawing.Point(79, 124);
             this.ButtonNumberEight.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberEight.Name = "ButtonNumberEight";
-            this.ButtonNumberEight.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberEight.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberEight.TabIndex = 6;
             this.ButtonNumberEight.Text = "8";
             this.ButtonNumberEight.UseVisualStyleBackColor = true;
@@ -662,10 +662,10 @@
             // 
             this.ButtonPlus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPlus.Location = new System.Drawing.Point(233, 182);
+            this.ButtonPlus.Location = new System.Drawing.Point(233, 190);
             this.ButtonPlus.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPlus.Name = "ButtonPlus";
-            this.ButtonPlus.Size = new System.Drawing.Size(74, 32);
+            this.ButtonPlus.Size = new System.Drawing.Size(74, 29);
             this.ButtonPlus.TabIndex = 5;
             this.ButtonPlus.Text = "+";
             this.ButtonPlus.UseVisualStyleBackColor = true;
@@ -675,10 +675,10 @@
             // 
             this.ButtonMinus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonMinus.Location = new System.Drawing.Point(233, 146);
+            this.ButtonMinus.Location = new System.Drawing.Point(233, 157);
             this.ButtonMinus.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonMinus.Name = "ButtonMinus";
-            this.ButtonMinus.Size = new System.Drawing.Size(74, 32);
+            this.ButtonMinus.Size = new System.Drawing.Size(74, 29);
             this.ButtonMinus.TabIndex = 4;
             this.ButtonMinus.Text = "-";
             this.ButtonMinus.UseVisualStyleBackColor = true;
@@ -688,10 +688,10 @@
             // 
             this.ButtonMultiplication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonMultiplication.Location = new System.Drawing.Point(233, 110);
+            this.ButtonMultiplication.Location = new System.Drawing.Point(233, 124);
             this.ButtonMultiplication.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonMultiplication.Name = "ButtonMultiplication";
-            this.ButtonMultiplication.Size = new System.Drawing.Size(74, 32);
+            this.ButtonMultiplication.Size = new System.Drawing.Size(74, 29);
             this.ButtonMultiplication.TabIndex = 3;
             this.ButtonMultiplication.Text = "*";
             this.ButtonMultiplication.UseVisualStyleBackColor = true;
@@ -701,10 +701,10 @@
             // 
             this.ButtonDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDivision.Location = new System.Drawing.Point(233, 74);
+            this.ButtonDivision.Location = new System.Drawing.Point(233, 91);
             this.ButtonDivision.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonDivision.Name = "ButtonDivision";
-            this.ButtonDivision.Size = new System.Drawing.Size(74, 32);
+            this.ButtonDivision.Size = new System.Drawing.Size(74, 29);
             this.ButtonDivision.TabIndex = 2;
             this.ButtonDivision.Text = "/";
             this.ButtonDivision.UseVisualStyleBackColor = true;
@@ -714,9 +714,9 @@
             // 
             this.ButtonOneOver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonOneOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOneOver.Location = new System.Drawing.Point(3, 75);
+            this.ButtonOneOver.Location = new System.Drawing.Point(3, 92);
             this.ButtonOneOver.Name = "ButtonOneOver";
-            this.ButtonOneOver.Size = new System.Drawing.Size(71, 30);
+            this.ButtonOneOver.Size = new System.Drawing.Size(71, 27);
             this.ButtonOneOver.TabIndex = 19;
             this.ButtonOneOver.Text = "1/X";
             this.ButtonOneOver.UseVisualStyleBackColor = true;
@@ -726,9 +726,9 @@
             // 
             this.ButtonPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPercentage.Location = new System.Drawing.Point(3, 39);
+            this.ButtonPercentage.Location = new System.Drawing.Point(3, 59);
             this.ButtonPercentage.Name = "ButtonPercentage";
-            this.ButtonPercentage.Size = new System.Drawing.Size(71, 30);
+            this.ButtonPercentage.Size = new System.Drawing.Size(71, 27);
             this.ButtonPercentage.TabIndex = 20;
             this.ButtonPercentage.Text = "%";
             this.ButtonPercentage.UseVisualStyleBackColor = true;
@@ -739,10 +739,10 @@
             this.ButtonBackspace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ButtonBackspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonBackspace.Location = new System.Drawing.Point(233, 38);
+            this.ButtonBackspace.Location = new System.Drawing.Point(233, 58);
             this.ButtonBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonBackspace.Name = "ButtonBackspace";
-            this.ButtonBackspace.Size = new System.Drawing.Size(74, 32);
+            this.ButtonBackspace.Size = new System.Drawing.Size(74, 29);
             this.ButtonBackspace.TabIndex = 17;
             this.ButtonBackspace.Text = "<-";
             this.ButtonBackspace.UseVisualStyleBackColor = true;
@@ -752,10 +752,10 @@
             // 
             this.ButtonClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonClear.Location = new System.Drawing.Point(156, 38);
+            this.ButtonClear.Location = new System.Drawing.Point(156, 58);
             this.ButtonClear.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonClear.Name = "ButtonClear";
-            this.ButtonClear.Size = new System.Drawing.Size(73, 32);
+            this.ButtonClear.Size = new System.Drawing.Size(73, 29);
             this.ButtonClear.TabIndex = 16;
             this.ButtonClear.Text = "Clear";
             this.ButtonClear.UseVisualStyleBackColor = true;
@@ -765,10 +765,10 @@
             // 
             this.ButtonNumberSeven.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberSeven.Location = new System.Drawing.Point(2, 110);
+            this.ButtonNumberSeven.Location = new System.Drawing.Point(2, 124);
             this.ButtonNumberSeven.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberSeven.Name = "ButtonNumberSeven";
-            this.ButtonNumberSeven.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberSeven.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberSeven.TabIndex = 3;
             this.ButtonNumberSeven.Text = "7";
             this.ButtonNumberSeven.UseVisualStyleBackColor = true;
@@ -778,10 +778,10 @@
             // 
             this.ButtonNumberFour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberFour.Location = new System.Drawing.Point(2, 146);
+            this.ButtonNumberFour.Location = new System.Drawing.Point(2, 157);
             this.ButtonNumberFour.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberFour.Name = "ButtonNumberFour";
-            this.ButtonNumberFour.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberFour.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberFour.TabIndex = 2;
             this.ButtonNumberFour.Text = "4";
             this.ButtonNumberFour.UseVisualStyleBackColor = true;
@@ -791,10 +791,10 @@
             // 
             this.ButtonNumberFive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberFive.Location = new System.Drawing.Point(79, 146);
+            this.ButtonNumberFive.Location = new System.Drawing.Point(79, 157);
             this.ButtonNumberFive.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberFive.Name = "ButtonNumberFive";
-            this.ButtonNumberFive.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberFive.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberFive.TabIndex = 5;
             this.ButtonNumberFive.Text = "5";
             this.ButtonNumberFive.UseVisualStyleBackColor = true;
@@ -804,10 +804,10 @@
             // 
             this.ButtonNumberSix.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberSix.Location = new System.Drawing.Point(156, 146);
+            this.ButtonNumberSix.Location = new System.Drawing.Point(156, 157);
             this.ButtonNumberSix.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberSix.Name = "ButtonNumberSix";
-            this.ButtonNumberSix.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberSix.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberSix.TabIndex = 8;
             this.ButtonNumberSix.Text = "6";
             this.ButtonNumberSix.UseVisualStyleBackColor = true;
@@ -817,10 +817,10 @@
             // 
             this.ButtonNumberTwo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberTwo.Location = new System.Drawing.Point(79, 182);
+            this.ButtonNumberTwo.Location = new System.Drawing.Point(79, 190);
             this.ButtonNumberTwo.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberTwo.Name = "ButtonNumberTwo";
-            this.ButtonNumberTwo.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberTwo.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberTwo.TabIndex = 4;
             this.ButtonNumberTwo.Text = "2";
             this.ButtonNumberTwo.UseVisualStyleBackColor = true;
@@ -830,10 +830,10 @@
             // 
             this.ButtonNumberThree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonNumberThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNumberThree.Location = new System.Drawing.Point(156, 182);
+            this.ButtonNumberThree.Location = new System.Drawing.Point(156, 190);
             this.ButtonNumberThree.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberThree.Name = "ButtonNumberThree";
-            this.ButtonNumberThree.Size = new System.Drawing.Size(73, 32);
+            this.ButtonNumberThree.Size = new System.Drawing.Size(73, 29);
             this.ButtonNumberThree.TabIndex = 7;
             this.ButtonNumberThree.Text = "3";
             this.ButtonNumberThree.UseVisualStyleBackColor = true;
@@ -843,9 +843,9 @@
             // 
             this.ButtonSquareRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonSquareRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSquareRoot.Location = new System.Drawing.Point(157, 75);
+            this.ButtonSquareRoot.Location = new System.Drawing.Point(157, 92);
             this.ButtonSquareRoot.Name = "ButtonSquareRoot";
-            this.ButtonSquareRoot.Size = new System.Drawing.Size(71, 30);
+            this.ButtonSquareRoot.Size = new System.Drawing.Size(71, 27);
             this.ButtonSquareRoot.TabIndex = 22;
             this.ButtonSquareRoot.Text = "SQRT";
             this.ButtonSquareRoot.UseVisualStyleBackColor = true;
@@ -855,9 +855,9 @@
             // 
             this.ButtonCE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCE.Location = new System.Drawing.Point(80, 39);
+            this.ButtonCE.Location = new System.Drawing.Point(80, 59);
             this.ButtonCE.Name = "ButtonCE";
-            this.ButtonCE.Size = new System.Drawing.Size(71, 30);
+            this.ButtonCE.Size = new System.Drawing.Size(71, 27);
             this.ButtonCE.TabIndex = 18;
             this.ButtonCE.Text = "CE";
             this.ButtonCE.UseVisualStyleBackColor = true;
@@ -867,7 +867,7 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 321);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 323);
             this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(314, 8);
@@ -1282,7 +1282,7 @@
             // 
             this.CalculatortoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calcu;
             this.CalculatortoolStripDropDown.Name = "CalculatortoolStripDropDown";
-            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.CalculatortoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.CalculatortoolStripDropDown.Text = "Calculator";
             this.CalculatortoolStripDropDown.Click += new System.EventHandler(this.BackgroundColorSelector_Click);
             // 
@@ -1290,7 +1290,7 @@
             // 
             this.DayCountertoolStripDropDown.Image = global::NeatOffice.Properties.Resources.calendar;
             this.DayCountertoolStripDropDown.Name = "DayCountertoolStripDropDown";
-            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.DayCountertoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.DayCountertoolStripDropDown.Text = "Day counter";
             this.DayCountertoolStripDropDown.Click += new System.EventHandler(this.DayCountertoolStripDropDown_Click);
             // 
@@ -1298,7 +1298,7 @@
             // 
             this.GraphSectiontoolStripDropDown.Image = global::NeatOffice.Properties.Resources.BTree;
             this.GraphSectiontoolStripDropDown.Name = "GraphSectiontoolStripDropDown";
-            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(147, 22);
+            this.GraphSectiontoolStripDropDown.Size = new System.Drawing.Size(188, 30);
             this.GraphSectiontoolStripDropDown.Text = "Graph section";
             this.GraphSectiontoolStripDropDown.Click += new System.EventHandler(this.GraphSectiontoolStripDropDown_Click);
             // 

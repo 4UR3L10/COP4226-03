@@ -104,6 +104,33 @@ namespace PA3Draft
             statusStrip.Update();
         }
 
+        internal void PrintMSTSolutionTo(ref string acumulator, string selectedGraphFileName)
+        {
+            Vertex[] vertices = mstSolutions[selectedGraphFileName];
+            long totalWeight = 0;
+            int n = Math.Min(Math.Max(25, selectedGraphFileName.Length / 2), selectedGraphFileName.Length);
+            l.Text = "writing the MST of graph in ..." + selectedGraphFileName.Substring(selectedGraphFileName.Length - n, n);
+            n = Math.Min(Math.Max(25, acumulator.Length / 2), acumulator.Length);
+            l.Text += "to file ..." + acumulator.Substring(acumulator.Length - n, n);
+            statusStrip.Update();
+            double i = 0;
+            foreach (Vertex u in vertices)
+            {
+                p.Value = (int)Math.Round(100 * (i / vertices.Length));
+                if (u.Parent >= 0)
+                {
+                    acumulator = acumulator + "Vertex {0} to Vertex {1} weight is: {2} " + u.V + ", " +  u.Parent + ", " + u.Key + "\n";
+                    totalWeight += u.Key;
+                }
+                i++;
+            }
+            Console.WriteLine("Total Weight: {0}", totalWeight);
+            acumulator = acumulator + "Total Weight: {0}" + ", " + totalWeight + "\n";
+            p.Value = 0;
+            l.Text = "Ready!";
+            statusStrip.Update();
+        }
+
         internal void ReadGraphFromCSVFile(string graphFileName)
         {
             int n = Math.Min(Math.Max(25, graphFileName.Length / 2), graphFileName.Length);
@@ -223,17 +250,48 @@ namespace PA3Draft
             l.Text = "Ready!";
             statusStrip.Update();
         }
+
+        internal void PrintSSSPSolutionTo(ref string accumulator, string selectedGraphFileName)
+        {
+            List<MasterVertex> vertices = ssspSolutions[selectedGraphFileName];
+            int n = Math.Min(Math.Max(25, selectedGraphFileName.Length / 2), selectedGraphFileName.Length);
+            l.Text = "writing the shortest paths of graph in ..." + selectedGraphFileName.Substring(selectedGraphFileName.Length - n, n);
+            n = Math.Min(Math.Max(25, accumulator.Length / 2), accumulator.Length);
+            l.Text += "to file ..." + accumulator.Substring(accumulator.Length - n, n);
+            statusStrip.Update();
+            double i = 0;
+            foreach (MasterVertex u in vertices)
+            {
+                p.Value = (int)Math.Round(100 * (i / vertices.Count));
+                PrintStringPath(ref accumulator, vertices[0], u, vertices);
+                accumulator = accumulator + "\n";
+                i++;
+            }
+            p.Value = 0;
+            l.Text = "Ready!";
+            statusStrip.Update();
+        }
+
         private static void PrintPath(StreamWriter fileStreamWriter, MasterVertex u, MasterVertex v, List<MasterVertex> vertices)
         {
             if (v != u)
             {
                 PrintPath(fileStreamWriter, u, v.Parent, vertices);
-                //Console.WriteLine("Vertax {0} distance: {1}", v.Name, v.D);
                 fileStreamWriter.Write(", " + v.Name);
             }
             else
                 fileStreamWriter.Write(v.Name);
-            //Console.WriteLine("Vertax {0} distance: {1}", v.Name, v.D);
+        }
+
+        private static void PrintStringPath(ref String accumulator, MasterVertex u, MasterVertex v, List<MasterVertex> vertices)
+        {
+            if (v != u)
+            {
+                PrintStringPath(ref accumulator, u, v.Parent, vertices);
+                accumulator = accumulator + ", " + v.Name;
+            }
+            else
+                accumulator = accumulator + v.Name;
         }
 
         private static void InitializeSingleSource(MasterVertex[] vertices, MasterVertex s)
