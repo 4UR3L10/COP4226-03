@@ -491,7 +491,7 @@
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDays);
             this.splitContainerCalculatorandDayCounter.Panel2.Controls.Add(this.labelDayCounter);
             this.splitContainerCalculatorandDayCounter.Size = new System.Drawing.Size(314, 549);
-            this.splitContainerCalculatorandDayCounter.SplitterDistance = 327;
+            this.splitContainerCalculatorandDayCounter.SplitterDistance = 329;
             this.splitContainerCalculatorandDayCounter.SplitterWidth = 2;
             this.splitContainerCalculatorandDayCounter.TabIndex = 1;
             // 
@@ -541,7 +541,7 @@
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(309, 253);
+            this.tableLayoutPanelCalculator.Size = new System.Drawing.Size(309, 255);
             this.tableLayoutPanelCalculator.TabIndex = 1;
             // 
             // textBoxCalcScreen
@@ -576,7 +576,7 @@
             this.ButtonNumberZero.Location = new System.Drawing.Point(79, 218);
             this.ButtonNumberZero.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNumberZero.Name = "ButtonNumberZero";
-            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 33);
+            this.ButtonNumberZero.Size = new System.Drawing.Size(73, 35);
             this.ButtonNumberZero.TabIndex = 2;
             this.ButtonNumberZero.Text = "0";
             this.ButtonNumberZero.UseVisualStyleBackColor = true;
@@ -588,7 +588,7 @@
             this.ButtonSignChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonSignChange.Location = new System.Drawing.Point(3, 219);
             this.ButtonSignChange.Name = "ButtonSignChange";
-            this.ButtonSignChange.Size = new System.Drawing.Size(71, 31);
+            this.ButtonSignChange.Size = new System.Drawing.Size(71, 33);
             this.ButtonSignChange.TabIndex = 11;
             this.ButtonSignChange.Text = "+/-";
             this.ButtonSignChange.UseVisualStyleBackColor = true;
@@ -613,7 +613,7 @@
             this.ButtonPeriod.Location = new System.Drawing.Point(156, 218);
             this.ButtonPeriod.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPeriod.Name = "ButtonPeriod";
-            this.ButtonPeriod.Size = new System.Drawing.Size(73, 33);
+            this.ButtonPeriod.Size = new System.Drawing.Size(73, 35);
             this.ButtonPeriod.TabIndex = 9;
             this.ButtonPeriod.Text = ".";
             this.ButtonPeriod.UseVisualStyleBackColor = true;
@@ -639,7 +639,7 @@
             this.ButtonEqual.Location = new System.Drawing.Point(232, 217);
             this.ButtonEqual.Margin = new System.Windows.Forms.Padding(1);
             this.ButtonEqual.Name = "ButtonEqual";
-            this.ButtonEqual.Size = new System.Drawing.Size(76, 35);
+            this.ButtonEqual.Size = new System.Drawing.Size(76, 37);
             this.ButtonEqual.TabIndex = 10;
             this.ButtonEqual.Text = "=";
             this.ButtonEqual.UseVisualStyleBackColor = true;
@@ -867,7 +867,7 @@
             // 
             this.splitterBottomCalculator.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitterBottomCalculator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 319);
+            this.splitterBottomCalculator.Location = new System.Drawing.Point(0, 321);
             this.splitterBottomCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.splitterBottomCalculator.Name = "splitterBottomCalculator";
             this.splitterBottomCalculator.Size = new System.Drawing.Size(314, 8);
@@ -1253,6 +1253,7 @@
             this.toolStripRightPrint.Name = "toolStripRightPrint";
             this.toolStripRightPrint.Size = new System.Drawing.Size(27, 28);
             this.toolStripRightPrint.Text = "toolStripButton9";
+            this.toolStripRightPrint.Click += new System.EventHandler(this.toolStripRightPrint_Click);
             // 
             // toolStripTop
             // 
@@ -1325,6 +1326,7 @@
             // PrintDocumentGraph
             // 
             this.PrintDocumentGraph.DocumentName = "Graph History";
+            this.PrintDocumentGraph.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintGraph_PrintPage);
             // 
             // NeatOffice
             // 

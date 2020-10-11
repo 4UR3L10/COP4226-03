@@ -479,7 +479,6 @@ namespace NeatOffice
         }
 
         // Reading its matrix representation stored in a .txt or .csv files.
-        // Finishhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
         private void toolStripRightUnknown_Click(object sender, EventArgs e)
         {
             // File Dialog properties setup.
@@ -489,17 +488,23 @@ namespace NeatOffice
 
             if (OpenFileGraph.ShowDialog() == DialogResult.OK)
             {
-                // Filetype Validation.
-                if (OpenFileGraph.ToString().Contains(".txt"))
+
+                string[] files = OpenFileGraph.FileNames;
+
+                foreach (string filename in files)
                 {
-                    graphAlObj.ReadGraphFromTXTFile(OpenFileGraph.FileName);
-                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
-                }
-                if (OpenFileGraph.ToString().Contains(".csv"))
-                {
-                    graphAlObj.ReadGraphFromCSVFile(OpenFileGraph.FileName);
-                    ListBoxImport.Items.Add(OpenFileGraph.FileName);
-                }                
+                    // Filetype Validation.
+                    if (filename.Contains(".txt"))
+                    {
+                        graphAlObj.ReadGraphFromTXTFile(filename);
+                        ListBoxImport.Items.Add(filename);                        
+                    }
+                    else if (filename.Contains(".csv"))
+                    {
+                        graphAlObj.ReadGraphFromCSVFile(filename);
+                        ListBoxImport.Items.Add(filename);                        
+                    }
+                }             
             }
             else
             {
@@ -535,22 +540,23 @@ namespace NeatOffice
             ListBoxResults.Items.Add("Shortest Paths: " + ListBoxImport.SelectedItem);
         }
         
-        // Saving History 
-        // FINISH SAVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        // Saving Graphs
         // Validation WHEN NO SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
         private void toolStripRightSave_Click(object sender, EventArgs e)
         {
+            SaveFileGraph.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
             if (SaveFileGraph.ShowDialog() == DialogResult.OK)
             {
-                if(ListBoxImport.SelectedItem.ToString().Contains("MST:"))
-                {
-                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxImport.SelectedItem.ToString());
-                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                if(ListBoxResults.SelectedItem.ToString().Contains("MST:"))
+                { 
+                    graphAlObj.WriteMSTSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(5));
+                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
                 }
-                if (ListBoxImport.SelectedItem.ToString().Contains("Shortest Paths:"))
+                else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
                 {
-                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.OpenFile().ToString(), ListBoxImport.SelectedItem.ToString());
-                    ListBoxImport.Items.Remove(ListBoxImport.SelectedItem);
+                    graphAlObj.WriteSSSPSolutionTo(SaveFileGraph.FileName, ListBoxResults.SelectedItem.ToString().Substring(16));
+                    ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
                 }
             }
             else
@@ -559,9 +565,43 @@ namespace NeatOffice
             }
         }
 
+        private void toolStripRightPrint_Click(object sender, EventArgs e)
+        {
+            PrintFileGraph.Document = PrintDocumentCalculator;
+            PrintFileGraph.AllowSelection = true;
+            PrintFileGraph.AllowSomePages = true;
+
+            if (PrintFileGraph.ShowDialog() == DialogResult.OK)
+            {
+                PrintDocumentGraph.Print();
+            }
+        }
+
+        private void PrintGraph_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            String tempFile = PrintFileGraph.ToString();
+
+            if (ListBoxResults.SelectedItem.ToString().Contains("MST:"))
+            {
+                MessageBox.Show(tempFile);
+                graphAlObj.WriteMSTSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(5));
+                ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                MessageBox.Show(tempFile);
+            }
+            else if (ListBoxResults.SelectedItem.ToString().Contains("Shortest Paths:"))
+            {
+                MessageBox.Show(tempFile);
+                graphAlObj.WriteSSSPSolutionTo(tempFile, ListBoxResults.SelectedItem.ToString().Substring(16));
+                ListBoxResults.Items.Remove(ListBoxResults.SelectedItem);
+                MessageBox.Show(tempFile);
+            }
+
+            e.Graphics.DrawString(tempFile, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(130, 130));
+        }
+
         /**********************************/
         /* WA Functions.                  */
-        /**********************************/  
+        /**********************************/
         /**
          * 1.- Exits Menu.
          */
