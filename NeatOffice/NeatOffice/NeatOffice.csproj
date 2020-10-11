@@ -66,7 +66,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Other Files\undirectedConnected10000.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +87,7 @@
   <ItemGroup>
     <Content Include="Other Files\undirectedConnected100.txt" />
     <Content Include="Other Files\undirectedConnected1000.txt" />
+    <None Include="Resources\XPowerY.ico" />
     <None Include="Resources\Questionsss.ico" />
     <None Include="Resources\calendar.ico" />
     <None Include="Resources\calcu.ico" />
@@ -110,7 +110,6 @@
     <None Include="Resources\TXT.ico" />
     <None Include="Resources\CalcHistory.ico" />
     <None Include="Resources\ShutDown.ico" />
-    <None Include="Resources\ShutDown.png" />
     <None Include="Resources\ShorPath.ico" />
     <None Include="Resources\BTree.ico" />
     <None Include="Resources\Printer.ico" />
