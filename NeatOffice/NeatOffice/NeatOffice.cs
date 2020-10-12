@@ -30,7 +30,7 @@ namespace NeatOffice
             textBoxCalcScreen.ReadOnly = true; 
             textBoxCalcScreen.Text = String.Empty;           
             graphAlObj = new GraphAlgorithms(toolStripProgressBar, toolStripStatusLabelReady, statusStripProgressBar);
-            toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
+            //toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
         }
 
         /**********************************/
@@ -760,6 +760,42 @@ namespace NeatOffice
                 splitContainerCalculatorandDayCounter.Panel1.BackColor = BackgroundColorSelector.Color;
                 splitContainerInside.Panel2.BackColor = BackgroundColorSelector.Color;
             }
+        }
+
+        /**
+         * 1.- The dateTimePickerTo_CloseUp method receives two parameters
+         * 2.- creates two variables of type Datetime
+         * 3.- converts the values of the two variables to datetime type
+         * 4.- calculates the total time substracting to and from date
+         * 5.- declares a variable int and converts the value obtaines by calculating the total time
+         */
+        private void dateTimePickerFrom_closeup(object sender, EventArgs e)
+        {
+            DateTime fromdate = Convert.ToDateTime(dateTimePickerFrom.Text);
+            DateTime todate = Convert.ToDateTime(dateTimePickerTo.Text);
+            TimeSpan ts = todate.Subtract(fromdate);
+            int days = Convert.ToInt16(ts.Days);
+            numericUpDownDays.Value = days;
+        }
+
+        /**
+         * 1.- The NeatOffice_Load method receives two parameters
+         * 2.- the timerstatusStrip starts the time click
+         */
+        private void NeatOffice_Load(object sender, EventArgs e)
+        {
+            timerStatusStrip.Start();
+        }
+
+        /**
+         * 1.- The timerStatusStrip_Tick method receives two parameters
+         * 2.- Retrieves the current local time
+         * 3.- Displays a message with the current time updating every second
+         */
+        private void timerStatusStrip_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+            this.toolStripStatusLabelGoodDay.Text = "Good Day! Today is " + DateTime.Now.ToString();
         }
     }
 }
